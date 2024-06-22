@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 17:37:03 by akuburas          #+#    #+#             */
-/*   Updated: 2024/06/22 06:43:40 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/06/22 20:58:16 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdbool.h>
+#include <fcntl.h>
 #include "../../MLX42/include/MLX42/MLX42.h"
 
 typedef struct s_data
@@ -23,69 +24,112 @@ typedef struct s_data
 	mlx_texture_t	*texture;
 	mlx_image_t		*image;
 	uint8_t			*pixel_data;
+}	t_data;
+
+int32_t	ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a)
+{
+	return (r << 24 | g << 16 | b << 8 | a);
+}
+
+void	my_keyhook(mlx_key_data_t keydata, void *param)
+{
+	t_data	*data;
+
+	data = (t_data *)param;
+	if (keydata.key == MLX_KEY_J && keydata.action == MLX_PRESS)
+	{
+		printf("J pressed\n");
+		memset(data->image->pixels, 0, sizeof(uint8_t) * (data->image->width * 2) * (data->image->height * 2));
+	}
+	if (keydata.key == MLX_KEY_K && keydata.action == MLX_PRESS)
+	{
+		printf("K pressed\n");
+		memcpy(data->image->pixels, data->pixel_data, sizeof(uint8_t) * (data->image->width * 2) * (data->image->height * 2));
+	}
+	if (keydata.key == MLX_KEY_H && keydata.action == MLX_PRESS)
+	{
+		printf("H pressed\n");
+		int i;
+		i = 0;
+		int j;
+		j = 0;
+		while (i < (data->image->width * 2) * (data->image->height * 2))
+		{
+			if (data->image->pixels[i] != data->image->pixels[i + 4])
+			{
+				j = i + 4;
+				break ;
+			}
+			i += 4;
+		}
+		printf("first different pixel is at index %d\n", j);
+		printf("original pixel colour is r = %d g = %d b = %d a = %d\n", data->image->pixels[0], data->image->pixels[1], data->image->pixels[2], data->image->pixels[3]);
+		printf("first different pixel is r = %d g = %d b = %d a = %d\n", data->image->pixels[j], data->image->pixels[j + 1], data->image->pixels[j + 2], data->image->pixels[j + 3]); 
+		i = 0;
+		while (i < (data->image->width * 2) * (data->image->height * 2))
+		{
+			data->image->pixels[i] = data->pixel_data[j];
+			data->image->pixels[i + 1] = data->pixel_data[j + 1];
+			data->image->pixels[i + 2] = data->pixel_data[j + 2];
+			data->image->pixels[i + 3] = data->pixel_data[j + 3];
+			i += 4;
+		}
+	}
 }
 
 int	main(void)
 {
-	mlx_t			*mlx;
-	mlx_texture_t	*texture;
-	mlx_image_t		*image;
-	uint8_t			*pixel_data;
+	t_data			data;
 	int				i;
 	int				j;
 
-	mlx = mlx_init(840, 840, "test", true);
-	if (!mlx)
+	data.mlx = mlx_init(840, 840, "test", true);
+	if (!data.mlx)
 		return (1);
-	texture = mlx_load_png("./Color_icon_purple_v2.svg.png");
+	data.texture = mlx_load_png("./Color_icon_purple_v2.svg.png");
 	i = 0;
-	if (!texture)
+	if (!data.texture)
 	{
-		mlx_close_window(mlx);
+		mlx_close_window(data.mlx);
 		printf("Failed to load image\n");
 		return (1);
 	}
-	image = mlx_texture_to_image(mlx, texture);
-	if (!image)
+	data.image = mlx_texture_to_image(data.mlx, data.texture);
+	if (!data.image)
 	{
-		mlx_delete_texture(texture);
-		mlx_close_window(mlx);
+		mlx_delete_texture(data.texture);
+		mlx_close_window(data.mlx);
 		printf("Failed to convert texture to image\n");
 		return (1);
 	}
-	printf("image->width = %d\n", image->width);
-	printf("image->height = %d\n", image->height);
-	printf
-	/*i = 0;
-	while (i < image->width * image->height)
+	printf("image->width = %d\n", data.image->width);
+	printf("image->height = %d\n", data.image->height);
+	printf("total amount of pixels is %d\n", (data.image->width * 2) * (data.image->height * 2));
+	printf("this is pixel 0: %d\n", data.image->pixels[0]);
+	data.pixel_data = malloc(sizeof(uint8_t) * (data.image->width * 2) * (data.image->height * 2));
+	if (!data.pixel_data)
 	{
-		printf("image->pixels[%d] = %d\n", i, image->pixels[i]);
-		i++;
-	}*/
-	pixel_data = malloc(sizeof(uint8_t) * image->width * image->height);
-	if (!pixel_data)
-	{
-		mlx_close_window(mlx);
+		mlx_close_window(data.mlx);
 		printf("Failed to allocate memory for pixel_data\n");
 		return (1);
 	}
-	memcpy(pixel_data, image->pixels, sizeof(uint8_t) * image->width * image->height);
+	memcpy(data.pixel_data, data.image->pixels, sizeof(uint8_t) * (data.image->width * 2) * (data.image->height * 2));
 	/*i = 0;
 	j = 0;
 	while (i < (image->width * 4) + (4 * image->height))
 	{
-		pixel_data[j] = ft_pixel(image->pixels[i], image->pixels[i + 1], image->pixels[i + 2], image->pixels[i + 3]);
 		i += 4;
 		printf("pixel_data[%d] = %d\n", j, pixel_data[j]);
 		j++;
 	}*/
-	if (mlx_image_to_window(mlx, image, 0, 0))
+	if (mlx_image_to_window(data.mlx, data.image, 0, 0))
 	{
-		mlx_close_window(mlx);
+		mlx_close_window(data.mlx);
 		printf("Failed to put image to window\n");
 		return (1);
 	}
-	mlx_loop(mlx);
-	mlx_terminate(mlx);
+	mlx_key_hook(data.mlx, my_keyhook, &data);
+	mlx_loop(data.mlx);
+	mlx_terminate(data.mlx);
 	return (0);
 }
