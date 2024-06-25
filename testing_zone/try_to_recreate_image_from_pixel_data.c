@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 17:37:03 by akuburas          #+#    #+#             */
-/*   Updated: 2024/06/22 20:58:16 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/06/25 15:03:32 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,6 @@ void	my_keyhook(mlx_key_data_t keydata, void *param)
 		i = 0;
 		int j;
 		j = 0;
-		while (i < (data->image->width * 2) * (data->image->height * 2))
-		{
-			if (data->image->pixels[i] != data->image->pixels[i + 4])
-			{
-				j = i + 4;
-				break ;
-			}
-			i += 4;
-		}
-		printf("first different pixel is at index %d\n", j);
-		printf("original pixel colour is r = %d g = %d b = %d a = %d\n", data->image->pixels[0], data->image->pixels[1], data->image->pixels[2], data->image->pixels[3]);
-		printf("first different pixel is r = %d g = %d b = %d a = %d\n", data->image->pixels[j], data->image->pixels[j + 1], data->image->pixels[j + 2], data->image->pixels[j + 3]); 
-		i = 0;
 		while (i < (data->image->width * 2) * (data->image->height * 2))
 		{
 			data->image->pixels[i] = data->pixel_data[j];
