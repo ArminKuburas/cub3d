@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/06/27 15:54:12 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/06/28 11:19:56 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@
 #define SCALE 5
 #define WIDTH 320
 #define HEIGHT 200
+#define PI 3.14159265358979323846
 //One degree is 0.0174533 radians
 #define RADIAN 0.0174533
 #define FOV 60 * RADIAN
-
-
 
 int	main(void)
 {
@@ -90,7 +89,6 @@ int	main(void)
 		if (i != 0 && i != 8)
 		{
 			map[i][0] = '1';
-
 			j = 1;
 			while (j < 9)
 			{
@@ -162,11 +160,13 @@ int	main(void)
 		i++;
 	}
 	i = 0;
-	while (i < 9 * 64)
+	/*while (i < 9 * 64)
 	{
 		printf("map2[%d] = %s\n", i ,map2[i]);
 		i++;
-	}
+	}*/
+	//testing tan with 270 degrees
+	printf("tan(270) = %f\n", tan(270 * RADIAN));
 	mlx_loop(mlx);
 	mlx_terminate(mlx);
 }
