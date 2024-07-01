@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/06/28 11:19:56 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/01 11:50:53 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(void)
 	}
 	i = 0;
 	distance_from_projection_plane = (WIDTH / 2) / tan(FOV / 2);
-	angle_between_rays = FOV / WIDTH;
+	angle_between_rays = 60 / WIDTH;
 	player_position[0] = 4;
 	player_position[1] = 4;
 	player_position[2] = 0;
