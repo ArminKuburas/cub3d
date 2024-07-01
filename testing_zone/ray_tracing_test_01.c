@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/01 11:50:53 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/01 17:32:20 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,36 @@
 //One degree is 0.0174533 radians
 #define RADIAN 0.0174533
 #define FOV 60 * RADIAN
+
+void	ray_calculation(int player_x, int player_y, double ray_angle)
+{
+	int	turn_positive;
+	int	a_y;
+	int	a_x;
+	int	xa;
+	int	ya;
+
+	turn_positive = 1;
+	if (ray_angle == 90 || ray_angle == 180
+		|| ray_angle == 0 || ray_angle == 270)
+	{
+		return ;
+	}
+	if (ray_angle > 180 || ray_angle < 0)
+		turn_positive = -1;
+	if (ray_angle > 0 && ray_angle < 180)
+	{
+		a_y = (player_y / 64) * 64 - 1;
+		ya = -64;
+	}
+	else
+	{
+		a_y = (player_y / 64) * 64 + 64;
+		ya = 64;
+	}
+	a_x = player_x + (player_y - a_y) / tan(ray_angle) * 1;
+	xa = 64 / tan(ray_angle) * turn_positive;
+}
 
 int	main(void)
 {
@@ -51,8 +81,8 @@ int	main(void)
 	i = 0;
 	distance_from_projection_plane = (WIDTH / 2) / tan(FOV / 2);
 	angle_between_rays = 60 / WIDTH;
-	player_position[0] = 4;
-	player_position[1] = 4;
+	player_position[0] = 3 * 64 + 32;
+	player_position[1] = 3 * 64 + 32;
 	player_position[2] = 0;
 	printf("width = %d\n", WIDTH);
 	printf("height = %d\n", HEIGHT);
