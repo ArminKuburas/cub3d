@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/02 10:59:31 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/03 09:32:27 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,62 @@ typedef struct s_ray
 	int		ya;
 }				t_ray;
 
+void	vertical_ray(t_data *data, double ray_angle, int turn_positive)
+{
+	t_ray	ray;
+	int		next_x;
+	int		next_y;
+
+	ray = (t_ray){};
+	if (ray_angle > 90 && ray_angle < 270)
+	{
+		ray.a_x = (data->player_x / 64) * 64 - 1;
+		ray.xa = -64;
+	}
+	else
+	{
+		ray.a_x = (data->player_x / 64) * 64 + 64;
+		ray.xa = 64;
+	}
+	ray.ya = 64 * tan(ray_angle) * turn_positive;
+}
+
+void	horizontal_ray(t_data *data, double ray_angle, int turn_positive)
+{
+	t_ray	ray;
+	int		next_x;
+	int		next_y;
+
+	ray = (t_ray){};
+	if (ray_angle > 0 && ray_angle < 180)
+	{
+		ray.a_y = (data->player_y / 64) * 64 - 1;
+		ray.ya = -64;
+	}
+	else
+	{
+		ray.a_y = (data->player_y / 64) * 64 + 64;
+		ray.ya = 64;
+	}
+	ray.a_x = data->player_x + (data->player_y - ray.a_y)
+		/ tan(ray_angle) * turn_positive;
+	ray.xa = 64 / tan(ray_angle) * turn_positive;
+	while (1)
+	{
+		next_x = ray.a_x + ray.xa;
+		next_y = ray.a_y + ray.ya;
+		if (next_x < 0 || next_x / 64 > 9 || next_y < 0 || next_y / 64 > 9)
+			break ;
+		if (data->map[next_y / 64][next_x / 64] == '1')
+			break ;
+		ray.a_x = next_x;
+		ray.a_y = next_y;
+	}
+}
+
 void	ray_calculation( t_data *data, double ray_angle)
 {
-	int	turn_positive;
+	int		turn_positive;
 
 	turn_positive = 1;
 	if (ray_angle == 90 || ray_angle == 180
@@ -66,41 +119,7 @@ void	ray_calculation( t_data *data, double ray_angle)
 		turn_positive = -1;
 	horizontal_ray(data, ray_angle, turn_positive);
 	vertical_ray(data, ray_angle, turn_positive);
-	if (ray_angle > 0 && ray_angle < 180)
-	{
-		a_y = (data->player_y / 64) * 64 - 1;
-		ya = -64;
-	}
-	else
-	{
-		a_y = (data->player_y / 64) * 64 + 64;
-		ya = 64;
-	}
 	printf("a_y = %d\n", a_y);
-	a_x = data->player_x + (data->player_y - a_y) / tan(ray_angle);
-	printf("a_x = %d\n", a_x);
-	xa = 64 / tan(ray_angle) * turn_positive;
-	printf("xa = %d\n", xa);
-	while (1)
-	{
-		next_x = a_x + xa;
-		next_y = a_y + ya;
-		printf("next_x = %d\n", next_x);
-		printf("next_y = %d\n", next_y);
-		if (next_x < 0 || next_x > 64 * 9 || next_y < 0 || next_y > 64 * 9)
-		{
-			printf("wall hit but not in horizontal axis\n");
-			break ;
-		}
-		if (data->map[next_y / 64][next_x / 64] == '1')
-		{
-			printf("wall hit\n");
-			printf("wall is [%d][%d]\n", next_y / 64, next_x / 64);
-			break ;
-		}
-		a_x = next_x;
-		a_y = next_y;
-	}
 }
 
 int	main(void)
