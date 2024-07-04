@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/03 09:32:27 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/04 16:55:58 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_ray
 	int		ya;
 }				t_ray;
 
-void	vertical_ray(t_data *data, double ray_angle, int turn_positive)
+int	vertical_ray(t_data *data, double ray_angle, int turn_positive)
 {
 	t_ray	ray;
 	int		next_x;
@@ -68,9 +68,32 @@ void	vertical_ray(t_data *data, double ray_angle, int turn_positive)
 		ray.xa = 64;
 	}
 	ray.ya = 64 * tan(ray_angle) * turn_positive;
+	printf("ray.ya = %d\n", ray.ya);
+	printf("ray.xa = %d\n", ray.xa);
+	while (1)
+	{
+		next_x = ray.a_x + ray.xa;
+		next_y = ray.a_y + ray.ya;
+		if (next_x < 0 || next_x / 64 > 9 || next_y < 0 || next_y / 64 > 9)
+		{
+			printf("We hit a wall but not in the map\n");
+			break ;
+		}
+		printf("next_x = %d\n", next_x);
+		printf("next_y = %d\n", next_y);
+		if (data->map[next_y / 64][next_x / 64] == '1')
+		{
+			printf("We hit a wall at x %d, y %d\n", next_x, next_y);
+			break ;
+		}
+		ray.a_x = next_x;
+		ray.a_y = next_y;
+	}
+	return (sqrt(((data->player_x - ray.a_x) * (data->player_x - ray.a_x))
+			+ ((data->player_y - ray.a_y) * (data->player_y - ray.a_y))));
 }
 
-void	horizontal_ray(t_data *data, double ray_angle, int turn_positive)
+int	horizontal_ray(t_data *data, double ray_angle, int turn_positive)
 {
 	t_ray	ray;
 	int		next_x;
@@ -101,11 +124,15 @@ void	horizontal_ray(t_data *data, double ray_angle, int turn_positive)
 		ray.a_x = next_x;
 		ray.a_y = next_y;
 	}
+	return (sqrt(((data->player_x - ray.a_x) * (data->player_x - ray.a_x))
+			+ ((data->player_y - ray.a_y) * (data->player_y - ray.a_y))));
 }
 
 void	ray_calculation( t_data *data, double ray_angle)
 {
 	int		turn_positive;
+	int		horizontal_distance;
+	int		vertical_distance;
 
 	turn_positive = 1;
 	if (ray_angle == 90 || ray_angle == 180
@@ -117,9 +144,16 @@ void	ray_calculation( t_data *data, double ray_angle)
 	}
 	if (ray_angle > 180 || ray_angle < 0)
 		turn_positive = -1;
-	horizontal_ray(data, ray_angle, turn_positive);
-	vertical_ray(data, ray_angle, turn_positive);
-	printf("a_y = %d\n", a_y);
+	horizontal_distance = horizontal_ray(data, ray_angle, turn_positive);
+	vertical_distance = vertical_ray(data, ray_angle, turn_positive);
+	if (horizontal_distance < vertical_distance)
+	{
+		printf("horizontal_distance = %d\n", horizontal_distance);
+	}
+	else
+	{
+		printf("vertical_distance = %d\n", vertical_distance);
+	}
 }
 
 int	main(void)
