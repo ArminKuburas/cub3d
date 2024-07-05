@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/05 03:28:16 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/05 04:00:14 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,113 +48,128 @@ typedef struct s_ray
 	int		a_x;
 	int		xa;
 	int		ya;
-}				t_ray;
-
-int	vertical_ray(t_data *data, double ray_angle, int turn_positive)
-{
-	t_ray	ray;
 	int		next_x;
 	int		next_y;
+	char	**map;
+}				t_ray;
 
-	ray = (t_ray){};
+void	ft_vertical_ray(t_ray *ray, double ray_angle, int turn_positive)
+{
 	printf("calculating vertical_ray\n");
 	printf("ray angle is %f\n", ray_angle);
 	printf("turn_positive is %d\n", turn_positive);
 	if (ray_angle > 90 && ray_angle < 270)
 	{
-		ray.a_x = (data->player_x / 64) * 64 - 1;
-		ray.xa = -64;
+		ray->a_x = (ray->player_x / 64) * 64 - 1;
+		ray->xa = -64;
 	}
 	else
 	{
-		ray.a_x = (data->player_x / 64) * 64 + 64;
-		ray.xa = 64;
+		ray->a_x = (ray->player_x / 64) * 64 + 64;
+		ray->xa = 64;
 	}
-	ray.a_y = data->player_y + ((data->player_x - ray.a_x)
+	ray->a_y = ray->player_y + ((ray->player_x - ray->a_x)
 			* tan(ray_angle * RADIAN));
-	ray.ya = 64 * tan(ray_angle * RADIAN) * turn_positive;
-	printf("ray.ya = %d\n", ray.ya);
-	printf("ray.xa = %d\n", ray.xa);
-	printf("ray.a_x = %d\n", ray.a_x);
-	printf("ray.a_y = %d\n", ray.a_y);
+	ray->ya = 64 * tan(ray_angle * RADIAN) * turn_positive;
+	printf("ray->ya = %d\n", ray->ya);
+	printf("ray->xa = %d\n", ray->xa);
+	printf("ray->a_x = %d\n", ray->a_x);
+	printf("ray->a_y = %d\n", ray->a_y);
+	ray->next_x = ray->a_x;
+	ray->next_y = ray->a_y;
 	while (1)
 	{
-		next_x = ray.a_x + ray.xa;
-		next_y = ray.a_y + ray.ya;
-		if (next_x < 0 || next_x / 64 > 9 || next_y < 0 || next_y / 64 > 9)
+		if (ray->next_x < 0 || ray->next_x / 64 > 9
+			|| ray->next_y < 0 || ray->next_y / 64 > 9)
 		{
 			printf("We hit a wall but not in the map\n");
 			break ;
 		}
-		printf("next_x = %d\n", next_x);
-		printf("next_y = %d\n", next_y);
-		if (data->map[next_y / 64][next_x / 64] == '1')
+		printf("next_x = %d\n", ray->next_x);
+		printf("next_y = %d\n", ray->next_y);
+		if (ray->map[ray->next_y / 64][ray->next_x / 64] == '1')
 		{
-			printf("We hit a wall at x %d, y %d\n", next_x, next_y);
-			printf("next_x / 64 = %d\n", next_x / 64);
-			printf("next_y / 64 = %d\n", next_y / 64);
+			printf("We hit a wall at x %d, y %d\n", ray->next_x, ray->next_y);
+			printf("next_x / 64 = %d\n", ray->next_x / 64);
+			printf("next_y / 64 = %d\n", ray->next_y / 64);
 			break ;
 		}
-		ray.a_x = next_x;
-		ray.a_y = next_y;
+		ray->next_x = ray->next_x + ray->xa;
+		ray->next_y = ray->next_y + ray->ya;
 	}
-	return (sqrt(((data->player_x - ray.a_x) * (data->player_x - ray.a_x))
-			+ ((data->player_y - ray.a_y) * (data->player_y - ray.a_y))));
+	ray->distance = sqrt(((ray->player_x - ray->a_x) * (ray->player_x - ray->a_x))
+			+ ((ray->player_y - ray->a_y) * (ray->player_y - ray->a_y)));
 }
 
-int	horizontal_ray(t_data *data, double ray_angle, int turn_positive)
+void	ft_horizontal_ray(t_ray *ray, double ray_angle, int turn_positive)
 {
-	t_ray	ray;
-	int		next_x;
-	int		next_y;
-
 	printf("calculating horizontal_ray\n");
 	printf("ray angle is %f\n", ray_angle);
 	printf("turn_positive is %d\n", turn_positive);
-	ray = (t_ray){};
 	if (ray_angle > 0 && ray_angle < 180)
 	{
-		ray.a_y = (data->player_y / 64) * 64 - 1;
-		ray.ya = -64;
+		ray->a_y = (ray->player_y / 64) * 64 - 1;
+		ray->ya = -64;
 	}
 	else
 	{
-		ray.a_y = (data->player_y / 64) * 64 + 64;
-		ray.ya = 64;
+		ray->a_y = (ray->player_y / 64) * 64 + 64;
+		ray->ya = 64;
 	}
 	printf("this is tan(ray_angle * RADIAN) = %f\n", tan(ray_angle * RADIAN));
-	ray.a_x = data->player_x + ((data->player_y - ray.a_y)
+	ray->a_x = ray->player_x + ((ray->player_y - ray->a_y)
 			/ tan(ray_angle * RADIAN));
-	ray.xa = 64 / tan(ray_angle * RADIAN) * turn_positive;
-	printf("ray.ya = %d\n", ray.ya);
-	printf("ray.xa = %d\n", ray.xa);
-	printf("ray.a_x = %d\n", ray.a_x);
-	printf("ray.a_y = %d\n", ray.a_y);
-	next_x = ray.a_x;
-	next_y = ray.a_y;
+	ray->xa = 64 / tan(ray_angle * RADIAN) * turn_positive;
+	printf("ray->ya = %d\n", ray->ya);
+	printf("ray->xa = %d\n", ray->xa);
+	printf("ray->a_x = %d\n", ray->a_x);
+	printf("ray->a_y = %d\n", ray->a_y);
+	ray->next_x = ray->a_x;
+	ray->next_y = ray->a_y;
 	while (1)
 	{
-		printf("next_x = %d\n", next_x);
-		printf("next_y = %d\n", next_y);
-		if (next_x < 0 || next_x / 64 > 9 || next_y < 0 || next_y / 64 > 9)
+		printf("next_x = %d\n", ray->next_x);
+		printf("next_y = %d\n", ray->next_y);
+		if (ray->next_x < 0 || ray->next_x / 64 > 9
+			|| ray->next_y < 0 || ray->next_y / 64 > 9)
 		{
 			printf("We hit a wall but not in the map\n");
 			break ;
 		}
-		if (data->map[next_y / 64][next_x / 64] == '1')
+		if (ray->map[ray->next_y / 64][ray->next_x / 64] == '1')
 		{
-			printf("We hit a wall at x %d, y %d\n", next_x, next_y);
-			printf("next_x / 64 = %d\n", next_x / 64);
-			printf("next_y / 64 = %d\n", next_y / 64);
+			printf("We hit a wall at x %d, y %d\n", ray->next_x, ray->next_y);
+			printf("next_x / 64 = %d\n", ray->next_x / 64);
+			printf("next_y / 64 = %d\n", ray->next_y / 64);
 			break ;
 		}
-		next_x = ray.a_x + ray.xa;
-		next_y = ray.a_y + ray.ya;
-		ray.a_x = next_x;
-		ray.a_y = next_y;
+		ray->next_x = ray->next_x + ray->xa;
+		ray->next_y = ray->next_y + ray->ya;
 	}
-	return (sqrt(((data->player_x - ray.a_x) * (data->player_x - ray.a_x))
-			+ ((data->player_y - ray.a_y) * (data->player_y - ray.a_y))));
+	ray->distance = sqrt(((ray->player_x - ray->a_x)
+				* (ray->player_x - ray->a_x)) + ((ray->player_y - ray->a_y)
+				* (ray->player_y - ray->a_y)));
+}
+
+void	draw_ray(t_data *data, t_ray ray)
+{
+	int		x;
+	int		y;
+	int		k;
+
+	x = ray.player_x;
+	y = ray.player_y;
+	k = 0;
+	while (k < ray.distance)
+	{
+		data->img->pixels[y * data->img->width * 4 + x * 4] = 0;
+		data->img->pixels[y * data->img->width * 4 + x * 4 + 1] = 200;
+		data->img->pixels[y * data->img->width * 4 + x * 4 + 2] = 200;
+		data->img->pixels[y * data->img->width * 4 + x * 4 + 3] = 200;
+		x = x + (ray.next_x - ray.a_x) / ray.distance;
+		y = y + (ray.next_y - ray.a_y) / ray.distance;
+		k++;
+	}
 }
 
 void	ray_calculation( t_data *data, double ray_angle)
@@ -164,6 +179,14 @@ void	ray_calculation( t_data *data, double ray_angle)
 	t_ray	vertical_ray;
 
 	turn_positive = 1;
+	horizontal_ray = (t_ray){};
+	vertical_ray = (t_ray){};
+	horizontal_ray.player_x = data->player_x;
+	horizontal_ray.player_y = data->player_y;
+	vertical_ray.player_x = data->player_x;
+	vertical_ray.player_y = data->player_y;
+	horizontal_ray.map = data->map;
+	vertical_ray.map = data->map;
 	if (ray_angle == 90 || ray_angle == 180
 		|| ray_angle == 0 || ray_angle == 270)
 	{
@@ -177,15 +200,24 @@ void	ray_calculation( t_data *data, double ray_angle)
 	printf("player x = %d which is %d\n", data->player_x, data->player_x / 64);
 	printf("player y = %d which is %d\n", data->player_y, data->player_y / 64);
 	printf("player angle is %d\n", data->player_angle);
-	printf("------------------------------------\n");
-	horizontal_distance = horizontal_ray(data, ray_angle, turn_positive);
+	ft_horizontal_ray(&horizontal_ray, ray_angle, turn_positive);
 	turn_positive = 1;
 	printf("------------------------------------\n");
 	if (ray_angle < 90 || ray_angle > 270)
 		turn_positive = -1;
-	vertical_distance = vertical_ray(data, ray_angle, turn_positive);
-	printf("horizontal_distance = %d\n", horizontal_distance);
-	printf("vertical_distance = %d\n", vertical_distance);
+	ft_vertical_ray(&vertical_ray, ray_angle, turn_positive);
+	printf("horizontal_distance = %d\n", horizontal_ray.distance);
+	printf("vertical_distance = %d\n", vertical_ray.distance);
+	if (horizontal_ray.distance < vertical_ray.distance)
+	{
+		printf("horizontal_distance is smaller\n");
+		draw_ray(data, horizontal_ray);
+	}
+	else
+	{
+		draw_ray(data, vertical_ray);
+		printf("vertical_distance is smaller\n");
+	}
 }
 
 //to explain. each pixel is 4 bytes. 1 byte for red, 1 byte for green, 1 byte for blue and 1 byte for alpha
@@ -261,7 +293,7 @@ int	main(void)
 	data.angle_between_rays = (double)60 / WIDTH;
 	data.player_y = 4 * 64 + 32;
 	data.player_x = 4 * 64 + 32;
-	data.player_angle = 240;
+	data.player_angle = 60;
 	data.mlx = mlx_init(WIDTH * SCALE, HEIGHT * SCALE, "Ray Tracing Test 01", true);
 	data.img = mlx_new_image(data.mlx, WIDTH * SCALE, HEIGHT * SCALE);
 	data.map = calloc(10, sizeof(char *));
@@ -323,7 +355,7 @@ int	main(void)
 	double ray_angle = data.player_angle - 30;
 	i = 0;
 	paint_tool(&data);
-	while (i < 1)
+	while (i < WIDTH)
 	{
 		ray_calculation(&data, ray_angle);
 		ray_angle += data.angle_between_rays;
