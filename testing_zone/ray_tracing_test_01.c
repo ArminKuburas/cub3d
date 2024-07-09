@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/05 04:00:14 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/09 08:12:29 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,24 +151,57 @@ void	ft_horizontal_ray(t_ray *ray, double ray_angle, int turn_positive)
 				* (ray->player_y - ray->a_y)));
 }
 
-void	draw_ray(t_data *data, t_ray ray)
+void	draw_ray(t_data *data, t_ray ray, double ray_angle)
 {
-	int		x;
-	int		y;
-	int		k;
+	int		i;
+	int		j;
+	int		x_direction;
+	int		y_direction;
+	int		length;
+	int		height;
 
-	x = ray.player_x;
-	y = ray.player_y;
-	k = 0;
-	while (k < ray.distance)
+	i = 0;
+	if (ray_angle > 180 || ray_angle < 0)
+		x_direction = -1;
+	else
+		x_direction = 1;
+	if (ray_angle < 90 || ray_angle > 270)
+		y_direction = -1;
+	else
+		y_direction = 1;
+	length = abs(ray.next_x - ray.player_x);
+	height = abs(ray.next_y - ray.player_y);
+	if (length > height)
 	{
-		data->img->pixels[y * data->img->width * 4 + x * 4] = 0;
-		data->img->pixels[y * data->img->width * 4 + x * 4 + 1] = 200;
-		data->img->pixels[y * data->img->width * 4 + x * 4 + 2] = 200;
-		data->img->pixels[y * data->img->width * 4 + x * 4 + 3] = 200;
-		x = x + (ray.next_x - ray.a_x) / ray.distance;
-		y = y + (ray.next_y - ray.a_y) / ray.distance;
-		k++;
+		while (i < length + 1)
+		{
+			while (j < length / height + 1)
+			{
+				data->img->pixels[(ray.player_y + (j * y_direction)) * data->img->width * 4 + (ray.player_x + (i * x_direction)) * 4] = 0;
+				data->img->pixels[(ray.player_y + (j * y_direction)) * data->img->width * 4 + (ray.player_x + (i * x_direction)) * 4 + 1] = 0;
+				data->img->pixels[(ray.player_y + (j * y_direction)) * data->img->width * 4 + (ray.player_x + (i * x_direction)) * 4 + 2] = 255;
+				data->img->pixels[(ray.player_y + (j * y_direction)) * data->img->width * 4 + (ray.player_x + (i * x_direction)) * 4 + 3] = 200;
+				j++;
+			}
+			j = 0;
+			i++;
+		}
+	}
+	else
+	{
+		while (i < height + 1)
+		{
+			while (j < height / length + 1)
+			{
+				data->img->pixels[(ray.player_y + (i * y_direction)) * data->img->width * 4 + (ray.player_x + (j * x_direction)) * 4] = 0;
+				data->img->pixels[(ray.player_y + (i * y_direction)) * data->img->width * 4 + (ray.player_x + (j * x_direction)) * 4 + 1] = 0;
+				data->img->pixels[(ray.player_y + (i * y_direction)) * data->img->width * 4 + (ray.player_x + (j * x_direction)) * 4 + 2] = 255;
+				data->img->pixels[(ray.player_y + (i * y_direction)) * data->img->width * 4 + (ray.player_x + (j * x_direction)) * 4 + 3] = 200;
+				j++;
+			}
+			j = 0;
+			i++;
+		}
 	}
 }
 
@@ -211,11 +244,11 @@ void	ray_calculation( t_data *data, double ray_angle)
 	if (horizontal_ray.distance < vertical_ray.distance)
 	{
 		printf("horizontal_distance is smaller\n");
-		draw_ray(data, horizontal_ray);
+		draw_ray(data, horizontal_ray, ray_angle);
 	}
 	else
 	{
-		draw_ray(data, vertical_ray);
+		draw_ray(data, vertical_ray, ray_angle);
 		printf("vertical_distance is smaller\n");
 	}
 }
