@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/16 07:18:33 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/16 08:29:35 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,7 +160,7 @@ void	draw_ray(t_data *data, t_ray ray, double ray_angle)
 	int		length;
 	int		height;
 
-	i = 0;
+	i = 1;
 	if (ray_angle > 180 || ray_angle < 0)
 		x_direction = -1;
 	else
@@ -171,7 +171,7 @@ void	draw_ray(t_data *data, t_ray ray, double ray_angle)
 		y_direction = 1;
 	length = abs(ray.next_x - ray.player_x);
 	height = abs(ray.next_y - ray.player_y);
-	j = 0;
+	j = 1;
 	printf("This is height and this is length %d %d\n", height, length);
 	printf("this is next x and next y %d %d\n", ray.next_x, ray.next_y);
 	printf("this is player x and player y %d %d\n", ray.player_x, ray.player_y);
@@ -187,7 +187,7 @@ void	draw_ray(t_data *data, t_ray ray, double ray_angle)
 				data->img->pixels[(ray.player_y + (j * y_direction)) * data->img->width * 4 + (ray.player_x + (i * x_direction)) * 4 + 3] = 200;
 				j++;
 			}
-			j = 0;
+			j = 1;
 			i++;
 		}
 	}
@@ -203,7 +203,7 @@ void	draw_ray(t_data *data, t_ray ray, double ray_angle)
 				data->img->pixels[(ray.player_y + (i * y_direction)) * data->img->width * 4 + (ray.player_x + (j * x_direction)) * 4 + 3] = 200;
 				j++;
 			}
-			j = 0;
+			j = 1;
 			i++;
 		}
 	}
@@ -245,6 +245,7 @@ void	ray_calculation( t_data *data, double ray_angle)
 	ft_vertical_ray(&vertical_ray, ray_angle, turn_positive);
 	printf("horizontal_distance = %d\n", horizontal_ray.distance);
 	printf("vertical_distance = %d\n", vertical_ray.distance);
+	printf("DRAWING RAY\n");
 	if (horizontal_ray.distance < vertical_ray.distance)
 	{
 		printf("horizontal_distance is smaller\n");
@@ -255,6 +256,12 @@ void	ray_calculation( t_data *data, double ray_angle)
 		draw_ray(data, vertical_ray, ray_angle);
 		printf("vertical_distance is smaller\n");
 	}
+}
+
+// 'Encodes' four individual bytes into an int.
+int get_rgba(int r, int g, int b, int a)
+{
+    return (r << 24 | g << 16 | b << 8 | a);
 }
 
 //to explain. each pixel is 4 bytes. 1 byte for red, 1 byte for green, 1 byte for blue and 1 byte for alpha
@@ -316,6 +323,17 @@ void	paint_tool(t_data *data)
 		}
 		i++;
 	}
+	i = 0;
+	while (i < 5)
+	{
+		j = 0;
+		while (j < 5)
+		{
+			mlx_put_pixel(data->img, i, j, get_rgba(255, 0, 255, 255));
+			j++;
+		}
+		i++;
+	}
 }
 
 int	main(void)
@@ -330,7 +348,7 @@ int	main(void)
 	data.angle_between_rays = (double)60 / WIDTH;
 	data.player_y = 4 * 64 + 32;
 	data.player_x = 4 * 64 + 32;
-	data.player_angle = 60;
+	data.player_angle = 45;
 	data.mlx = mlx_init(WIDTH * SCALE, HEIGHT * SCALE, "Ray Tracing Test 01", true);
 	data.img = mlx_new_image(data.mlx, WIDTH * SCALE, HEIGHT * SCALE);
 	data.map = calloc(10, sizeof(char *));
@@ -340,15 +358,6 @@ int	main(void)
 		data.map[i] = calloc(10, sizeof(char));
 		data.map[i][9] = '\0';
 		i++;
-	}
-	i = 0;
-	while (i < (unsigned int)data.img->height * data.img->width * 4)
-	{
-		data.img->pixels[i] = 255;
-		data.img->pixels[i + 1] = 0;
-		data.img->pixels[i + 2] = 0;
-		data.img->pixels[i + 3] = 150;
-		i += 4;
 	}
 	mlx_image_to_window(data.mlx, data.img, 0, 0);
 	printf("distance_from_projection_plane = %d\n", data.distance_from_projection_plane);
