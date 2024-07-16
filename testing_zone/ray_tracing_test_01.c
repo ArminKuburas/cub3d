@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 13:39:06 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/09 08:12:29 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/16 07:18:33 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,6 +171,10 @@ void	draw_ray(t_data *data, t_ray ray, double ray_angle)
 		y_direction = 1;
 	length = abs(ray.next_x - ray.player_x);
 	height = abs(ray.next_y - ray.player_y);
+	j = 0;
+	printf("This is height and this is length %d %d\n", height, length);
+	printf("this is next x and next y %d %d\n", ray.next_x, ray.next_y);
+	printf("this is player x and player y %d %d\n", ray.player_x, ray.player_y);
 	if (length > height)
 	{
 		while (i < length + 1)
