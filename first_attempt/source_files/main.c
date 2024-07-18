@@ -6,11 +6,11 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/17 02:04:08 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/18 13:41:38 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "../headers/cub3d.h"
 #include "../other_libraries/libft/libft.h"
 
 #define FAILURE 1
@@ -28,6 +28,8 @@ int	check_map_name(char *str)
 	char	*find_last_slash;
 	char	*find_dot;
 
+	if (str == "")
+		return (FAILURE);
 	find_last_slash = ft_strchr(str, '/');
 	if (!find_last_slash)
 		find_dot = ft_strchr(str, '.');
@@ -41,6 +43,20 @@ int	check_map_name(char *str)
 	if (ft_strcmp(find_dot, ".cub") != 0)
 		return (FAILURE);
 	return (SUCCESS);
+}
+
+void	validate_map(char *filename, t_data *data)
+{
+	t_parsing_data	parse;
+
+	parse = (t_parsing_data){};
+	parse.fd = open(filename, O_RDONLY);
+	if (parse.fd == -1)
+	{
+		perror("error\n");
+		exit (FAILURE);
+	}
+	
 }
 
 int	initial_checks(int argc, char **argv)
