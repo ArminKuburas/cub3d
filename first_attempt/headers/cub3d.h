@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/18 13:17:41 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/19 11:34:03 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,25 @@
 # include <math.h>
 # include <stdio.h>
 
+# define WIDTH 320
+# define HEIGHT 200
+# define RADIAN 0.0174533
+# define FOV 60 * 0.0174533
+
+typedef struct s_ray
+{
+	int		player_x;
+	int		player_y;
+	int		distance;
+	int		a_y;
+	int		a_x;
+	int		xa;
+	int		ya;
+	int		next_x;
+	int		next_y;
+	char	**map;
+}
+
 typedef struct s_data
 {
 	mlx_t			*mlx;
@@ -28,6 +47,10 @@ typedef struct s_data
 	mlx_texture_t	*south_texture;
 	mlx_texture_t	*west_texture;
 	mlx_texture_t	*east_texture;
+	int				floor_colour;
+	int				ceiling_colour;
+	char			**map;
+	int				player_position[3];
 }	t_data;
 
 typedef struct s_parsing_data
