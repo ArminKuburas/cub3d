@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
+#    By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 08:04:40 by akuburas          #+#    #+#              #
-#    Updated: 2024/05/30 13:05:13 by akuburas         ###   ########.fr        #
+#    Updated: 2024/07/19 15:54:32 by akovalev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRCS = 	ft_atoi.c \
 		ft_free_substrings.c \
 		get_next_line.c \
 		get_next_line_utils.c \
+		vector.c
 
 
 OBJS = ${SRCS:.c=.o}

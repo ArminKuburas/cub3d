@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 07:40:02 by akuburas          #+#    #+#             */
-/*   Updated: 2024/05/30 13:35:29 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:46:34 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include "vector.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
