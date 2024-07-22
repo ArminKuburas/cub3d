@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/22 13:49:48 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/22 15:28:02 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ typedef struct s_data
 	char			**map;
 	int				player_position[3];
 	t_map			parse_data;
-	t_ray			*ray;
+	t_ray			*rays;
 }	t_data;
 
 typedef struct s_parsing_data
