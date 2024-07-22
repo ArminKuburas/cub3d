@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/22 13:07:16 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:49:48 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@
 
 # define WIDTH 320
 # define HEIGHT 200
-# define RADIAN 0.0174533
-# define FOV 60 * 0.0174533
+# define FOV 60
 
 typedef struct s_ray
 {
@@ -38,32 +37,7 @@ typedef struct s_ray
 	int		next_x;
 	int		next_y;
 	char	**map;
-}
-
-typedef struct s_data
-{
-	mlx_t			*mlx;
-	mlx_image_t		*image;
-	mlx_texture_t	*north_texture;
-	mlx_texture_t	*south_texture;
-	mlx_texture_t	*west_texture;
-	mlx_texture_t	*east_texture;
-	int				floor_colour;
-	int				ceiling_colour;
-	char			**map;
-	int				player_position[3];
-}	t_data;
-
-typedef struct s_parsing_data
-{
-	int		fd;
-	char	*north_file;
-	char	*south_file;
-	char	*west_file;
-	char	*east_file;
-	char	*floor_colour;
-	char	*ceiling_colour;
-}	t_parsing_data;
+}	t_ray;
 
 typedef struct s_map
 {
@@ -82,5 +56,32 @@ typedef struct s_map
 	char		**floor;
 	int			start_pos;
 }	t_map;
+
+typedef struct s_data
+{
+	mlx_t			*mlx;
+	mlx_image_t		*image;
+	mlx_texture_t	*north_texture;
+	mlx_texture_t	*south_texture;
+	mlx_texture_t	*west_texture;
+	mlx_texture_t	*east_texture;
+	int				floor_colour[4];
+	int				ceiling_colour[4];
+	char			**map;
+	int				player_position[3];
+	t_map			parse_data;
+	t_ray			*ray;
+}	t_data;
+
+typedef struct s_parsing_data
+{
+	int		fd;
+	char	*north_file;
+	char	*south_file;
+	char	*west_file;
+	char	*east_file;
+	char	*floor_colour;
+	char	*ceiling_colour;
+}	t_parsing_data;
 
 #endif

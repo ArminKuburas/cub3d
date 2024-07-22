@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/18 13:41:38 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:45:23 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	validate_map(char *filename, t_data *data)
 		perror("error\n");
 		exit (FAILURE);
 	}
-	
 }
 
 int	initial_checks(int argc, char **argv)
@@ -74,8 +73,13 @@ int	initial_checks(int argc, char **argv)
  */
 int	main(int argc, char **argv)
 {
+	t_data	data;
+
+	data = (t_data){};
 	if (initial_checks(argc, argv) == FAILURE)
 		return (FAILURE);
+	validate_map(argv[1], &data);
+	init_mlx(&data);
 	(void)argc;
 	(void)argv;
 	return (0);
