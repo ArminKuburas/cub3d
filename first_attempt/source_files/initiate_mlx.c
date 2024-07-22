@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/22 15:29:21 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/22 16:38:48 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,9 @@ int	init_mlx(t_data *data)
 	data->rays = ft_calloc(WIDTH, sizeof(t_ray));
 	if (!data->rays)
 		free_all_and_exit(data);
+}
+
+void	mlx_looping(t_data *data)
+{
 	
 }
