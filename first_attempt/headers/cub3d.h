@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/22 15:28:02 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:12:28 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@
 # define WIDTH 320
 # define HEIGHT 200
 # define FOV 60
+
+# define FAILURE 1
+# define SUCCESS 0
 
 typedef struct s_ray
 {
@@ -83,5 +86,7 @@ typedef struct s_parsing_data
 	char	*floor_colour;
 	char	*ceiling_colour;
 }	t_parsing_data;
+
+int	ft_err(char *str);
 
 #endif

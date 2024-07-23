@@ -6,7 +6,7 @@
 #    By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:56:21 by akovalev          #+#    #+#              #
-#    Updated: 2024/07/19 16:07:14 by akovalev         ###   ########.fr        #
+#    Updated: 2024/07/22 15:55:34 by akovalev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEADERS	:= -I $(LIBMLX)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm -L/Users/$(USER)/.brew/Cellar/glfw/3.3.8/lib -lglfw
 
 #SRCS	:=	ray_tracing_test_01.c
-SRCS	:=	./source_files/parsing/akovalev_parsing.c
+SRCS	:=	./source_files/parsing/akovalev_parsing.c ./source_files/main.c
 #SRCS	:=	image_to_screen_test.c
 			
 OBJS	:= ${SRCS:.c=.o} ./other_libraries/libft/libft.a

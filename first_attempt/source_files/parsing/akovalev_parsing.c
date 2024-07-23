@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/07/19 15:55:24 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:06:54 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,22 +47,13 @@ void	free_map_info(t_map *map)
 int	check_arguments(int argc, char **argv, t_map *map)
 {
 	if (argc < 2)
-	{
-		ft_putstr_fd("Error:\nPlease provide a map file\n", 2);
-		return (1);
-	}
+		return(ft_err("Please provide a map file\n"));
 	else if (argc > 2)
-	{
-		ft_putstr_fd("Error:\nPlease provide only one map file\n", 2);
-		return (1);
-	}
+		return(ft_err("Please provide only one map file\n"));
 	map->filename = argv[1];
 	map->name_length = ft_strlen(map->filename);
 	if (ft_strncmp(&map->filename[map->name_length - 4], ".cub", 4))
-	{
-		ft_putstr_fd("Error:\nIncorrect map format\n", 2);
-		return (1);
-	}
+		return(ft_err("Incorrect map format\n"));
 	map->fd = open(map->filename, O_RDONLY);
 	if (map->fd == -1)
 	{
@@ -83,28 +74,19 @@ int split_floor(t_map *map)
 	while (map->floor[i] != NULL)
 	{
 		if (ft_atoi(map->floor[i]) > 255)
-		{
-				ft_putstr_fd("Error:\nColor format > 255\n", 2);
-				return (1);
-		}
+			return(ft_err("Color format > 255\n"));
 		j = 0;
 		while (map->floor[i][j])
 		{
 			if (map->floor[i][j] >= '0' &&  map->floor[i][j] <= '9')
 				j++;
 			else
-			{
-				ft_putstr_fd("Error:\nNon-numeric characters in the color format\n", 2);
-				return (1);
-			}
+				return(ft_err("Non-numeric characters in the color format\n"));
 		}
 		i++;
 	}
 	if (i != 3)
-	{
-		ft_putstr_fd("Error:\nIncorrect floor color format: exactly three numbers required\n", 2);
-		return (1);
-	}
+		return(ft_err("Incorrect floor color format: exactly three numbers required\n"));
 	return (0);
 }
 int	validate_floor(t_map *map)
@@ -113,20 +95,14 @@ int	validate_floor(t_map *map)
 
 	f = map->f;
 	if (*f == ',')
-	{
-		ft_putstr_fd("Error:\nIncorrect floor color format\n", 2);
-		return (1);
-	}
+		return(ft_err("Incorrect floor color format\n"));
 	while (*f)
 	{
 		if (*f == ',')
 		{	
 			f++;
 			if (*f == ',' || *f == '\0')
-			{
-				ft_putstr_fd("Error:\nIncorrect floor color format\n", 2);
-				return (1);
-			}
+				return(ft_err("Incorrect floor color format\n"));
 		}
 		else
 			f++;
@@ -145,28 +121,19 @@ int split_ceiling(t_map *map)
 	while (map->ceiling[i] != NULL)
 	{
 		if (ft_atoi(map->ceiling[i]) > 255)
-		{
-				ft_putstr_fd("Error:\nColor format > 255\n", 2);
-				return (1);
-		}
+			return(ft_err("Color format > 255\n"));
 		j = 0;
 		while (map->ceiling[i][j])
 		{
 			if (map->ceiling[i][j] >= '0' &&  map->ceiling[i][j] <= '9')
 				j++;
 			else
-			{
-				ft_putstr_fd("Error:\nNon-numeric characters in the color format\n", 2);
-				return (1);
-			}
+				return(ft_err("Non-numeric characters in the color format\n"));
 		}
 		i++;
 	}
 	if (i != 3)
-	{
-		ft_putstr_fd("Error:\nIncorrect ceiling color format: exactly three numbers required\n", 2);
-		return (1);
-	}
+		return(ft_err("Incorrect ceiling color format: exactly three numbers required\n"));
 	return (0);
 }
 
@@ -176,20 +143,14 @@ int	validate_ceiling(t_map *map)
 
 	c = map->c;
 	if (*c == ',')
-	{
-		ft_putstr_fd("Error:\nIncorrect ceiling color format\n", 2);
-		return (1);
-	}
+		return(ft_err("Incorrect ceiling color format\n"));
 	while (*c)
 	{
 		if (*c == ',')
 		{	
 			c++;
 			if (*c == ',' || *c == '\0')
-			{
-				ft_putstr_fd("Error:\nIncorrect ceiling color format\n", 2);
-				return (1);
-			}
+				return(ft_err("Incorrect ceiling color format\n"));
 		}
 		else
 			c++;
@@ -207,10 +168,7 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	nxt_str = NULL;
 	pr_str = NULL;
 	if (str[x] != 'N' && str[x] != 'S' && str[x] != 'E' && str[x] != 'W' && str[x] != '1' && str[x] != ' ' && str[x] != '0' && str[x] != '\n')
-	{
-		printf("Disallowed characters in the map\n");
-		return (1);
-	}
+		return(ft_err("Disallowed characters in the map\n"));
 	// if (str[x] == ' ')
 	// {
 	// 	if ((str[x - 1] != '1' && str[x - 1] != ' ') || (str[x + 1] != '1' && str[x + 1] != ' ' && str[x + 1] != '\0' && str[x + 1] != '\n'))
@@ -220,10 +178,7 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	{
 		map->start_pos++;
 		if (map->start_pos > 1)
-		{
-			printf("Only one starting position marker allowed\n");
-			return (1);
-		}
+			return(ft_err("Only one starting position marker allowed\n"));
 	}
 	if (str[x] == '0' || str[x] == 'N' || str[x] == 'S' || str[x] == 'E' || str[x] == 'W')
 	{
@@ -318,9 +273,8 @@ int	validate_map(t_map *map)
 		{
 			if (map->no)
 			{
-				ft_putstr_fd("Error\nMultiple lines referring to one texture\n", 2);
 				free (line);
-				return (1);
+				return(ft_err("Multiple lines referring to one texture\n"));
 			}
 			ptr++;
 			ptr++;
@@ -334,9 +288,8 @@ int	validate_map(t_map *map)
 		{
 			if (map->so)
 			{
-				ft_putstr_fd("Error\nMultiple lines referring to one texture\n", 2);
 				free (line);
-				return (1);
+				return(ft_err("Multiple lines referring to one texture\n"));
 			}
 			ptr++;
 			ptr++;
@@ -350,9 +303,8 @@ int	validate_map(t_map *map)
 		{
 			if (map->we)
 			{
-				ft_putstr_fd("Error\nMultiple lines referring to one texture\n", 2);
 				free (line);
-				return (1);
+				return(ft_err("Multiple lines referring to one texture\n"));
 			}
 			ptr++;
 			ptr++;
@@ -366,9 +318,8 @@ int	validate_map(t_map *map)
 		{
 			if (map->ea)
 			{
-				ft_putstr_fd("Error\nMultiple lines referring to one texture\n", 2);
 				free (line);
-				return (1);
+				return(ft_err("Multiple lines referring to one texture\n"));
 			}
 			ptr++;
 			ptr++;
@@ -382,9 +333,8 @@ int	validate_map(t_map *map)
 		{
 			if (map->f)
 			{
-				ft_putstr_fd("Error\nMultiple lines referring to one texture\n", 2);
 				free (line);
-				return (1);
+				return(ft_err("Multiple lines referring to one texture\n"));
 			}
 			ptr++;
 			while (*ptr == ' ')
@@ -397,9 +347,8 @@ int	validate_map(t_map *map)
 		{
 			if (map->c)
 			{
-				ft_putstr_fd("Error\nMultiple lines referring to one texture\n", 2);
 				free (line);
-				return (1);
+				return(ft_err("Multiple lines referring to one texture\n"));
 			}
 			ptr++;
 			while (*ptr == ' ')
@@ -410,9 +359,8 @@ int	validate_map(t_map *map)
 		}
 		else if (strncmp(line, "\n", 1) && count != 6)
 		{
-			ft_putstr_fd("Error\nIncorrect or missing map lines\n", 2);
 			free (line);
-			return (1);
+			return(ft_err("Incorrect or missing map lines\n"));
 		}
 		if (count == 6)
 		{
@@ -423,13 +371,10 @@ int	validate_map(t_map *map)
 		n++;
 	}
 	if (count != 6)
-	{
-		ft_putstr_fd("Error\nIncorrect or missing map lines\n", 2);
-		return (1);
-	}
+		return(ft_err("Incorrect or missing map lines\n"));
 	// if (!map->no || !map->so ||!map->we ||!map->ea || !map->f || !map->c)
 	// {
-	// 	ft_putstr_fd("Error\nMap file missing necessary data\n", 2);
+	// 	ft_putstr_fd("Map file missing necessary data\n", 2);
 	// 	return (1);
 	// }
 	printf("Path to NO texture is %s\n", map->no);
@@ -440,20 +385,14 @@ int	validate_map(t_map *map)
 	printf("Ceiling color is %s\n", map->c);
 	line = get_next_line(map->fd);
 	if (!line)
-	{
-		ft_putstr_fd("Error\nIncorrect or missing map lines\n", 2);
-		return(1);
-	}
+		return(ft_err("Incorrect or missing map lines\n"));
 	while (line && !ft_strncmp(line, "\n", 1))
 	{
 		free(line);
 		line = get_next_line(map->fd);
 	}
 	if (!line)
-	{
-		ft_putstr_fd("Error\nIncorrect or missing map lines\n", 2);
-		return(1);
-	}
+		return(ft_err("Incorrect or missing map lines\n"));
 	while (line)
 	{
 		printf("copied line is %s", line);
@@ -468,52 +407,49 @@ int	validate_map(t_map *map)
 	if (validate_floor(map) || validate_ceiling(map))
 		return (1);
 	if (map->start_pos != 1)
-	{
-		ft_putstr_fd("Error\nExactly one starting position marker required\n", 2);
-		return (1);
-	}
+		return(ft_err("Exactly one starting position marker required\n"));
 	printf("\nColors checked successfully\n");
 	printf("\nMap size is %d lines\n", map->line_count);
 	printf("\nDone reading file\n");
 	return (0);
 }
 
-void	initialize_map_values(t_map *map)
-{
-	map->no = NULL;
-	map->so = NULL;
-	map->ea = NULL;
-	map->we = NULL;
-	map->f = NULL;
-	map->c = NULL;
-	map->floor = NULL;
-	map->ceiling = NULL;
-	vec_new(&map->map_copy, 0, sizeof(char *));
-	map->line_count = 0;
-	map->start_pos = 0;
-}
+// void	initialize_map_values(t_map *map)
+// {
+// 	map->no = NULL;
+// 	map->so = NULL;
+// 	map->ea = NULL;
+// 	map->we = NULL;
+// 	map->f = NULL;
+// 	map->c = NULL;
+// 	map->floor = NULL;
+// 	map->ceiling = NULL;
+// 	vec_new(&map->map_copy, 0, sizeof(char *));
+// 	map->line_count = 0;
+// 	map->start_pos = 0;
+// }
 
-int	main(int argc, char **argv)
-{
-	t_map	map;
+// int	main(int argc, char **argv)
+// {
+// 	t_map	map;
 
-	initialize_map_values(&map);
-	if (check_arguments (argc, argv, &map))
-	{
-		//exit (EXIT_FAILURE);
-		free_map_info(&map);
-		return (1);
-	}
-	if (validate_map(&map))
-	{
-		//exit (EXIT_FAILURE);
-		close(map.fd);
-		free_map_info(&map);
-		return (1);
-	}
-	printf("Map validated successfully\n");
-	close(map.fd);
-	free_map_info(&map);
-	return (0);
-	//exit(EXIT_SUCCESS);
-}
+// 	initialize_map_values(&map);
+// 	if (check_arguments (argc, argv, &map))
+// 	{
+// 		//exit (EXIT_FAILURE);
+// 		free_map_info(&map);
+// 		return (1);
+// 	}
+// 	if (validate_map(&map))
+// 	{
+// 		//exit (EXIT_FAILURE);
+// 		close(map.fd);
+// 		free_map_info(&map);
+// 		return (1);
+// 	}
+// 	printf("Map validated successfully\n");
+// 	close(map.fd);
+// 	free_map_info(&map);
+// 	return (0);
+// 	//exit(EXIT_SUCCESS);
+// }
