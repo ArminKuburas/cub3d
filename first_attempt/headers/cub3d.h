@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/22 18:12:28 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/25 00:12:07 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,10 @@
 
 typedef struct s_ray
 {
-	int		player_x;
-	int		player_y;
-	int		distance;
-	int		a_y;
-	int		a_x;
-	int		xa;
-	int		ya;
-	int		next_x;
-	int		next_y;
-	char	**map;
+	float	angle;
+	float	distance;
+	float	x;
+	float	y;
 }	t_ray;
 
 typedef struct s_map
@@ -60,6 +54,15 @@ typedef struct s_map
 	int			start_pos;
 }	t_map;
 
+typedef struct s_player
+{
+	float	x;
+	float	y;
+	float	rotation_angle;
+	float	move_speed;
+	float	rotation_speed;
+}	t_player;
+
 typedef struct s_data
 {
 	mlx_t			*mlx;
@@ -71,7 +74,7 @@ typedef struct s_data
 	int				floor_colour[4];
 	int				ceiling_colour[4];
 	char			**map;
-	int				player_position[3];
+	t_player		player;
 	t_map			parse_data;
 	t_ray			*rays;
 }	t_data;
@@ -87,6 +90,7 @@ typedef struct s_parsing_data
 	char	*ceiling_colour;
 }	t_parsing_data;
 
-int	ft_err(char *str);
+int		ft_err(char *str);
+double	radian_converter(double degrees);
 
 #endif
