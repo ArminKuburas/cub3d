@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 17:17:11 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/26 01:49:33 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,26 @@ void	calculate_ray(t_ray *ray, t_data *data)
 	}
 }
 
+void	figure_out_texture(int *texture_height, t_ray *ray, t_data *data)
+{
+	if (ray->texture == data->east_texture)
+		ray->x = (int)ray->y % data->east_texture->width;
+	else
+		ray->x = (int)ray->x % data->south_texture->width;
+	if (ray->texture == data->east_texture && ray->angle > NORTH
+		&& ray->angle < SOUTH)
+		ray->texture = data->west_texture;
+	else if (ray->texture == data->south_texture && ray->angle > WEST)
+		ray->texture = data->north_texture;
+	ray->y = 0;
+	ray->distance = (float)ray->texture->width / *texture_height;
+	if (*texture_height > HEIGHT)
+	{
+		ray->y = (float)(*texture_height - HEIGHT) / 2 * ray->distance;
+		*texture_height = HEIGHT;
+	}
+}
+
 /*This should be the general frame of reference we can use
 To render frames. Very similar to the testing I did
 Next step is to actually code all the elements of it.*/
@@ -132,7 +152,7 @@ void	render_next_frame(void *main_data)
 		calculate_ray(&ray, data);
 		fix_fish_eye(&ray, data);
 		texture_height = 64 / HEIGHT / ray.distance;
-		calculate_texture(&texture_height, &ray, data);
+		figure_out_texture(&texture_height, &ray, data);
 		draw_ray(&ray, texture_height, amount_of_rays, data);
 		amount_of_rays++;
 		angle += FOV / WIDTH;
