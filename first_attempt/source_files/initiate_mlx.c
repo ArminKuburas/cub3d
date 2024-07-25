@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 10:31:40 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/25 13:03:46 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,29 @@ float	horizontal_ray(t_ray *ray, float angle, t_data *data)
 			+ powf((ray->y - data->player.y), 2)));
 }
 
+float	vertical_ray(t_ray *ray, float angle, t_data *data)
+{
+	float	x_travel;
+	float	y_travel;
+	float	number_fixer;
+
+	number_fixer = -tan(radian_converter(angle));
+	if (angle < NORTH || angle > SOUTH)
+	{
+		ray->x = (int)data->player.x / 64 * 64 + 64;
+		x_travel = 64;
+	}
+	else
+	{
+		ray->x = (int)data->player.x / 64 * 64 - 0.0001f;
+		x_travel = -64;
+	}
+	ray->y = (data->player.x - ray->x) * number_fixer + data->player.y;
+	y_travel = -x_travel * number_fixer;
+	find_collision(ray, x_travel, y_travel, data);
+	return (sqrtf(powf((ray->x - data->player.x), 2)
+			+ powf((ray->y - data->player.y), 2)));
+}
 
 void	calculate_ray(t_ray *ray, t_data *data)
 {
