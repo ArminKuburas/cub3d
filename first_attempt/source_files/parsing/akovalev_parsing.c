@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/07/25 17:02:40 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:59:12 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,11 +248,11 @@ int	check_lines(t_map *map)
 		}
 		y++;
 	}
-	if (access(map->no, O_RDONLY) || access(map->so, O_RDONLY) || access(map->we, O_RDONLY) || access(map->ea, O_RDONLY)) //access not allowed, so later check with the MLX mlx_load_png
-	{
-		printf("Can't access texture file\n");
-		return (1);
-	}
+	// if (access(map->no, O_RDONLY) || access(map->so, O_RDONLY) || access(map->we, O_RDONLY) || access(map->ea, O_RDONLY)) //access not allowed, so later check with the MLX mlx_load_png
+	// {
+	// 	printf("Can't access texture file\n");
+	// 	return (1);
+	// }
 	return (0);
 }
 

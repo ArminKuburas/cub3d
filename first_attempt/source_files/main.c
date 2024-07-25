@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 17:50:14 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:07:37 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ int	populate_data(t_map *map, t_data *data)
 		i++;
 	}
 	data->map[i] = NULL;
+	data->parse_data = map;
 	return (0);
 }
 
@@ -175,6 +176,24 @@ int	reformat_map(t_data *data)
 	return (0);
 }
 
+//mlx_delete_texture in case of errors needs to be added
+int	load_textures(t_data *data)
+{
+	data->north_texture = mlx_load_png(data->parse_data->no);
+	if (!data->north_texture)
+		return(ft_err("Can't load north texture file\n"));
+	data->south_texture = mlx_load_png(data->parse_data->so);
+	if (!data->south_texture)
+		return(ft_err("Can't load south texture file\n"));
+	data->east_texture = mlx_load_png(data->parse_data->ea);
+	if (!data->east_texture)
+		return(ft_err("Can't load east texture file\n"));
+	data->west_texture = mlx_load_png(data->parse_data->we);
+	if (!data->west_texture)
+		return(ft_err("Can't load west texture file\n"));
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_map	map;
@@ -205,7 +224,7 @@ int	main(int argc, char **argv)
 		free_map_info(&map);
 		return (FAILURE);
 	}
-	if (reformat_map(&data))
+	if (reformat_map(&data) || load_textures(&data))
 	{
 		//exit (EXIT_FAILURE);
 		close(map.fd);
@@ -218,6 +237,10 @@ int	main(int argc, char **argv)
 	free_map_info(&map);
 	//free(data.map);
 	free_array(data.map);
+	mlx_delete_texture(data.north_texture);
+	mlx_delete_texture(data.east_texture);
+	mlx_delete_texture(data.west_texture);
+	mlx_delete_texture(data.south_texture);
 	return (SUCCESS);
 	//exit(EXIT_SUCCESS);
 }

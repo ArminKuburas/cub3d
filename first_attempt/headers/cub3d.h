@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 16:57:39 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:57:41 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ typedef struct s_data
 	int				ceiling_colour[4];
 	char			**map;
 	int				player_position[3];
-	t_map			parse_data;
+	t_map			*parse_data;
 	t_ray			*rays;
 }	t_data;
 
