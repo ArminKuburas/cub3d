@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/23 17:23:41 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/25 16:57:39 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ int		ft_err(char *str);
 int		check_arguments(int argc, char **argv, t_map *map);
 void	free_map_info(t_map *map);
 int		validate_map(t_map *map);
+void	free_array(char **arr);
 
 #endif
