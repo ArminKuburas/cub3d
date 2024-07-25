@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 00:12:07 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:25:29 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,18 @@
 
 # define FAILURE 1
 # define SUCCESS 0
+# define WEST 180
+# define NORTH 90
+# define EAST 0
+# define SOUTH 270
 
 typedef struct s_ray
 {
-	float	angle;
-	float	distance;
-	float	x;
-	float	y;
+	float			angle;
+	float			distance;
+	float			x;
+	float			y;
+	mlx_texture_t	*texture;
 }	t_ray;
 
 typedef struct s_map
@@ -74,9 +79,10 @@ typedef struct s_data
 	int				floor_colour[4];
 	int				ceiling_colour[4];
 	char			**map;
+	int				map_height;
+	int				map_width;
 	t_player		player;
 	t_map			parse_data;
-	t_ray			*rays;
 }	t_data;
 
 typedef struct s_parsing_data

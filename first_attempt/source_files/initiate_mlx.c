@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 02:40:53 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/25 10:31:40 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,70 @@ int	init_mlx(t_data *data)
 		free_all_and_exit(data);
 	if (mlx_image_to_window(data->mlx, data->image, 0, 0) < 0)
 		free_all_and_exit(data);
-	data->rays = ft_calloc(WIDTH, sizeof(t_ray));
-	if (!data->rays)
-		free_all_and_exit(data);
+}
+
+void	find_collision(t_ray *ray, float x_travel, float y_travel, t_data *data)
+{
+	while (true)
+	{
+		if (ray->x < 0 || ray->x >= data->map_width || ray->y < 0
+			|| ray->y >= data->map_height
+			|| !ft_strchr("0", data->map[(int)ray->y / 64][(int)ray->x / 64]))
+			break ;
+		ray->x += x_travel;
+		ray->y += y_travel;
+	}
+}
+
+
+float	horizontal_ray(t_ray *ray, float angle, t_data *data)
+{
+	float	y_travel;
+	float	x_travel;
+	float	number_fixer;
+
+	number_fixer = 1 / -tan(radian_converter(angle));
+	if (angle > WEST)
+	{
+		ray->y = (int)data->player.y / 64 * 64 - 0.0001f;
+		y_travel = -64;
+	}
+	else
+	{
+		ray->y = (int)data->player.y / 64 * 64 + 64;
+		y_travel = 64;
+	}
+	ray->x = (data->player.y - ray->y) * number_fixer + data->player.x;
+	x_travel = -y_travel * number_fixer;
+	find_collision(ray, x_travel, y_travel, data);
+	return (sqrtf(powf((ray->x - data->player.x), 2)
+			+ powf((ray->y - data->player.y), 2)));
+}
+
+
+void	calculate_ray(t_ray *ray, t_data *data)
+{
+	t_ray	horizontal;
+	t_ray	vertical;
+	float	horizontal_distance;
+	float	vertical_distance;
+
+	horizontal_distance = horizontal_ray(&horizontal, ray->angle, data);
+	vertical_distance = vertical_ray(&vertical, ray->angle, data);
+	if (horizontal_distance < vertical_distance)
+	{
+		ray->distance = horizontal_distance;
+		ray->x = horizontal.x;
+		ray->y = horizontal.y;
+		ray->texture = data->south_texture;
+	}
+	else
+	{
+		ray->distance = vertical_distance;
+		ray->x = vertical.x;
+		ray->y = vertical.y;
+		ray->texture = data->east_texture;
+	}
 }
 
 /*This should be the general frame of reference we can use
