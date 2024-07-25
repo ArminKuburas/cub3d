@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 13:03:46 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:26:23 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,15 @@ void	render_next_frame(void *main_data)
 		if (angle >= 360)
 			angle -= 360;
 	}
+}
+
+void	*key_press(mlx_key_data_t key_data, void *param)
+{
+	t_data	*data;
+
+	data = param;
+	if (key_data.action == MLX_PRESS && key_data.key == MLX_KEY_ESCAPE)
+		delete_everything_exit(data);
 }
 
 // For now we will render every frame. 
