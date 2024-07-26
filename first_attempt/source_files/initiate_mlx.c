@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/26 01:49:33 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/26 10:53:46 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,32 @@ void	figure_out_texture(int *texture_height, t_ray *ray, t_data *data)
 		*texture_height = HEIGHT;
 	}
 }
+
+void	draw_ray(t_ray *ray, int texture_height, int amount_of_rays, t_data *data)
+{
+	int32_t	color;
+	int		start_point;
+	int		end_point;
+	int		floor;
+	int		roof;
+
+	start_point = HEIGHT / 2 - texture_height / 2;
+	end_point = HEIGHT / 2 + texture_height / 2;
+	roof = -1;
+	while (++roof < start_point)
+		modify_pixel(amount_of_rays, roof, data->ceiling_colour, data);
+	floor = HEIGHT + 1;
+	while (--floor > end_point)
+		modify_pixel(amount_of_rays, floor, data->floor_colour, data);
+	while (start_point < end_point)
+	{
+		color = get_pixel_color(ray->texture, ray->x, ray->y);
+		modify_pixel(amount_of_rays, start_point, color, data);
+		ray->y += ray->distance;
+		start_point++;
+	}
+}
+
 
 /*This should be the general frame of reference we can use
 To render frames. Very similar to the testing I did
