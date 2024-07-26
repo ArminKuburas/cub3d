@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/22 18:12:28 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:57:41 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ typedef struct s_map
 	char		**ceiling;
 	char		**floor;
 	int			start_pos;
+	char		*pr_str;
+	char		*nxt_str;
 }	t_map;
 
 typedef struct s_data
@@ -72,7 +74,7 @@ typedef struct s_data
 	int				ceiling_colour[4];
 	char			**map;
 	int				player_position[3];
-	t_map			parse_data;
+	t_map			*parse_data;
 	t_ray			*rays;
 }	t_data;
 
@@ -87,6 +89,10 @@ typedef struct s_parsing_data
 	char	*ceiling_colour;
 }	t_parsing_data;
 
-int	ft_err(char *str);
+int		ft_err(char *str);
+int		check_arguments(int argc, char **argv, t_map *map);
+void	free_map_info(t_map *map);
+int		validate_map(t_map *map);
+void	free_array(char **arr);
 
 #endif
