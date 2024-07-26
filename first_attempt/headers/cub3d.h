@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 10:25:29 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/26 12:48:12 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define NORTH 90
 # define EAST 0
 # define SOUTH 270
+# define DEFAULT_COLOUR 0xFF000000
 
 typedef struct s_ray
 {

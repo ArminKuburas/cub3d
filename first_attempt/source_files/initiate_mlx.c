@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/26 10:53:46 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:04:39 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,32 @@ void	figure_out_texture(int *texture_height, t_ray *ray, t_data *data)
 		ray->y = (float)(*texture_height - HEIGHT) / 2 * ray->distance;
 		*texture_height = HEIGHT;
 	}
+}
+
+int32_t	ft_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
+{
+	return (r << 24 | g << 16 | b << 8 | a);
+}
+
+//each pixel is 4 uint8_ts. 
+int32_t pixel_colour(mlx_image_t *image, int x, int y)
+{
+	int	start;
+
+	if (x >= image->width || x < 0 || y >= image->height
+		|| y < 0)
+		return (DEFAULT_COLOUR);
+	start = (y * image->width + x) * 4;
+	return (ft_pixel(image->pixels[start], image->pixels[start + 1]	
+			, image->pixels[start + 2], image->pixels[start + 3]));
+}
+
+void	modify_pixel(int x, int y, int32_t colour, t_data *data)
+{
+	if (x >= data->image->width || x < 0 || y >= data->image->height
+		|| y < 0 || pixel_colour(data->image, x, y) == colour)
+		return ;
+	mlx_put_pixel(data->image, x, y, colour);
 }
 
 void	draw_ray(t_ray *ray, int texture_height, int amount_of_rays, t_data *data)
