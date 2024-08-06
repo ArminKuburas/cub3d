@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/26 13:04:39 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/06 17:05:14 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -230,12 +230,32 @@ void	*key_press(mlx_key_data_t key_data, void *param)
 		delete_everything_exit(data);
 }
 
+void	*player_controller(void *param)
+{
+	t_data	*data;
+
+	data = param;
+
+	if (mlx_is_key_down(data->mlx, MLX_KEY_W))
+		move_player(data, GO_FORWARD);
+	if (mlx_is_key_down(data->mlx, MLX_KEY_A))
+		move_player(data, STRAFE_LEFT);
+	if (mlx_is_key_down(data->mlx, MLX_KEY_S))
+		move_player(data, GO_BACKWARDS);
+	if (mlx_is_key_down(data->mlx, MLX_KEY_D))
+		move_player(data, STRAFE_RIGHT);
+	if (mlx_is_key_down(data->mlx, MLX_KEY_LEFT))
+		turn_player(data, TURN_LEFT);
+	if (mlx_is_key_down(data->mlx, MLX_KEY_RIGHT))
+		turn_player(data, TURN_RIGHT);
+}
+
 // For now we will render every frame. 
 // If thats too slow we can render per movement.
 void	mlx_looping(t_data *data)
 {
 	mlx_loop_hook(data->mlx, render_next_frame, data);
-	mlx_loop_hook(data->mlx, move_player, data);
+	mlx_loop_hook(data->mlx, player_controller, data);
 	mlx_key_hook(data->mlx, key_press, data);
 	mlx_close_hook(data->mlx, close_window, data);
 	mlx_loop(data->mlx);
