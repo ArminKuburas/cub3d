@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/06 17:05:14 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/09 00:16:41 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ float	horizontal_ray(t_ray *ray, float angle, t_data *data)
 	float	x_travel;
 	float	number_fixer;
 
-	number_fixer = 1 / -tan(radian_converter(angle));
+	number_fixer = 1 / -tan(rad_convert(angle));
 	if (angle > WEST)
 	{
 		ray->y = (int)data->player.y / 64 * 64 - 0.0001f;
@@ -67,7 +67,7 @@ float	vertical_ray(t_ray *ray, float angle, t_data *data)
 	float	y_travel;
 	float	number_fixer;
 
-	number_fixer = -tan(radian_converter(angle));
+	number_fixer = -tan(rad_convert(angle));
 	if (angle < NORTH || angle > SOUTH)
 	{
 		ray->x = (int)data->player.x / 64 * 64 + 64;
@@ -230,6 +230,51 @@ void	*key_press(mlx_key_data_t key_data, void *param)
 		delete_everything_exit(data);
 }
 
+void	move_player(t_data *data, enum e_direction direction)
+{
+	float	y_movement;
+	float	x_movement;
+
+	y_movement = sin(rad_convert(data->player.rotation_angle)) * MOVE_SPEED;
+	x_movement = cos(rad_convert(data->player.rotation_angle)) * MOVE_SPEED;
+	if (direction == GO_FORWARDS)
+	{
+		data->player.y += y_movement;
+		data->player.x += x_movement;
+	}
+	else if (direction == GO_BACKWARDS)
+	{
+		data->player.y -= y_movement;
+		data->player.x -= x_movement;
+	}
+	else if (direction == STRAFE_LEFT)
+	{
+		data->player.y -= x_movement;
+		data->player.x += y_movement;
+	}
+	else
+	{
+		data->player.y += x_movement;
+		data->player.x -= y_movement;
+	}
+}
+
+void	turn_player(t_data *data, enum e_direction direction)
+{
+	if (direction == TURN_LEFT)
+	{
+		data->player.rotation_angle -= ROTATE_SPEED;
+		if (data->player.rotation_angle < 0)
+			data->player.rotation_angle += 360;
+		else if (direction == TURN_RIGHT)
+		{
+			data->player.rotation_angle += ROTATE_SPEED;
+			if (data->player.rotation_angle >= 360)
+				data->player.rotation_angle -= 360;
+		}
+	}
+}
+
 void	*player_controller(void *param)
 {
 	t_data	*data;
@@ -237,7 +282,7 @@ void	*player_controller(void *param)
 	data = param;
 
 	if (mlx_is_key_down(data->mlx, MLX_KEY_W))
-		move_player(data, GO_FORWARD);
+		move_player(data, GO_FORWARDS);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_A))
 		move_player(data, STRAFE_LEFT);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_S))

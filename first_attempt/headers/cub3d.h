@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/26 12:48:12 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/09 00:16:26 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 # define NORTH 90
 # define EAST 0
 # define SOUTH 270
+# define MOVE_SPEED 5.0f
+# define ROTATE_SPEED 0.5f
 # define DEFAULT_COLOUR 0xFF000000
 
 typedef struct s_ray
@@ -97,7 +99,17 @@ typedef struct s_parsing_data
 	char	*ceiling_colour;
 }	t_parsing_data;
 
+enum e_direction
+{
+	GO_FORWARDS,
+	GO_BACKWARDS,
+	STRAFE_LEFT,
+	STRAFE_RIGHT,
+	TURN_LEFT,
+	TURN_RIGHT
+};
+
 int		ft_err(char *str);
-double	radian_converter(double degrees);
+double	rad_convert(double degrees);
 
 #endif
