@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/09 00:16:41 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/10 11:28:18 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,6 +181,16 @@ void	draw_ray(t_ray *ray, int texture_height, int amount_of_rays, t_data *data)
 	}
 }
 
+void	fix_fish_eye(t_ray *ray, t_data *data)
+{
+	float	angle;
+
+	angle = data->player.rotation_angle;
+	angle -= ray->angle;
+	if (angle < 0)
+		angle += 360;
+	ray->distance *= cos(rad_convert(angle));
+}
 
 /*This should be the general frame of reference we can use
 To render frames. Very similar to the testing I did
