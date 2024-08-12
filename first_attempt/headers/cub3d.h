@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 17:57:41 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/13 01:30:50 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,5 +119,6 @@ enum e_direction
 
 int		ft_err(char *str);
 double	rad_convert(double degrees);
+void	mlx_looping(t_data *data);
 
 #endif
