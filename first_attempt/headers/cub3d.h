@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/09 00:16:26 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/07/25 17:57:41 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ typedef struct s_map
 	char		**ceiling;
 	char		**floor;
 	int			start_pos;
+	char		*pr_str;
+	char		*nxt_str;
 }	t_map;
 
 typedef struct s_player
@@ -82,6 +84,7 @@ typedef struct s_data
 	int				floor_colour[4];
 	int				ceiling_colour[4];
 	char			**map;
+	int				player_position[3];
 	int				map_height;
 	int				map_width;
 	t_player		player;
@@ -99,6 +102,11 @@ typedef struct s_parsing_data
 	char	*ceiling_colour;
 }	t_parsing_data;
 
+int		ft_err(char *str);
+int		check_arguments(int argc, char **argv, t_map *map);
+void	free_map_info(t_map *map);
+int		validate_map(t_map *map);
+void	free_array(char **arr);
 enum e_direction
 {
 	GO_FORWARDS,

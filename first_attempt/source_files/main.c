@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/22 18:15:10 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/07/25 18:07:37 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,29 +81,117 @@ int	ft_err(char *str)
 // 	(void)argv;
 // 	return (0);
 // }
-void	populate_data(t_map *map, t_data *data)
+int	populate_data(t_map *map, t_data *data)
 {
-	int i;
-	
+	int	i;
+
 	data->ceiling_colour[0] = ft_atoi(map->ceiling[0]);
 	data->ceiling_colour[1] = ft_atoi(map->ceiling[1]);
 	data->ceiling_colour[2] = ft_atoi(map->ceiling[2]);
 	data->ceiling_colour[3] = 255;
-
 	data->floor_colour[0] = ft_atoi(map->floor[0]);
 	data->floor_colour[1] = ft_atoi(map->floor[1]);
 	data->floor_colour[2] = ft_atoi(map->floor[2]);
 	data->floor_colour[3] = 255;
-	
 	data->map = malloc((map->line_count + 1) * sizeof(char *));
+	if (!data->map)
+		return (1);
 	i = 0;
 	while (i < map->line_count)
 	{
-		data->map[i] = *(char **)vec_get(&map->map_copy, i);
-		//printf("map line %d is %s", i, data->map[i]);
+		data->map[i] = ft_strdup(*(char **)vec_get(&map->map_copy, i));
 		i++;
 	}
 	data->map[i] = NULL;
+	data->parse_data = map;
+	return (0);
+}
+
+int	realloc_line(t_data *data, char **ptr, int max_len)
+{
+	char	*temp;
+	char	*parking;
+	char	*ptr1;
+	int		len;
+
+	temp = *ptr;
+	parking = *ptr;
+	*ptr = ft_calloc(max_len + 1, sizeof(char));
+	if (!*ptr)
+		return (1);
+	ptr1 = *ptr;
+	len = 0;
+	while (*temp)
+	{
+		if (*temp == '\n' && len != max_len - 1)
+			*ptr1 = ' ';
+		else
+			*ptr1 = *temp;
+		temp++;
+		ptr1++;
+		len++;
+	}
+	while (len < max_len - 1)
+	{
+		*ptr1 = ' ';
+		ptr1++;
+		len++;
+	}
+	if (len == max_len - 1)
+		*ptr1 = '\n';
+	if (*ptr1 != '\0')
+	{
+		ptr1++;
+		*ptr1 = '\0';
+	}
+	free (parking);
+	parking = NULL;
+	ft_printf("reallocated line len is %d and it is %s", ft_strlen(*ptr), *ptr);
+	return (0);
+}
+
+int	reformat_map(t_data *data)
+{
+	char	**ptr;
+	char	**ptr1;
+	int		max_len;
+
+	max_len = 0;
+	ptr = data->map;
+	ptr1 = ptr;
+	while (*ptr)
+	{
+		if (ft_strlen(*ptr) > max_len)
+			max_len = ft_strlen(*ptr);
+		ptr++;
+	}
+	//ft_printf("\nmax len is found to be %d\n", max_len);
+	while (*ptr1)
+	{
+		//if (ft_strlen(*ptr) < max_len)
+		if (realloc_line(data, ptr1, max_len))
+			return (1);
+		ptr1++;
+	}
+	return (0);
+}
+
+//mlx_delete_texture in case of errors needs to be added
+int	load_textures(t_data *data)
+{
+	data->north_texture = mlx_load_png(data->parse_data->no);
+	if (!data->north_texture)
+		return(ft_err("Can't load north texture file\n"));
+	data->south_texture = mlx_load_png(data->parse_data->so);
+	if (!data->south_texture)
+		return(ft_err("Can't load south texture file\n"));
+	data->east_texture = mlx_load_png(data->parse_data->ea);
+	if (!data->east_texture)
+		return(ft_err("Can't load east texture file\n"));
+	data->west_texture = mlx_load_png(data->parse_data->we);
+	if (!data->west_texture)
+		return(ft_err("Can't load west texture file\n"));
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -112,9 +200,7 @@ int	main(int argc, char **argv)
 	t_data	data;
 
 	data = (t_data){};
-	map  = (t_map){};
-
-	//initialize_map_values(&map);
+	map = (t_map){};
 	if (vec_new(&map.map_copy, 0, sizeof(char *)) == -1)
 		return (FAILURE);
 	if (check_arguments (argc, argv, &map))
@@ -130,11 +216,31 @@ int	main(int argc, char **argv)
 		free_map_info(&map);
 		return (FAILURE);
 	}
-	populate_data(&map, &data);
+	if (populate_data(&map, &data))
+	{
+		//exit (EXIT_FAILURE);
+		free(data.map);
+		close(map.fd);
+		free_map_info(&map);
+		return (FAILURE);
+	}
+	if (reformat_map(&data) || load_textures(&data))
+	{
+		//exit (EXIT_FAILURE);
+		close(map.fd);
+		free_map_info(&map);
+		free_array(data.map);
+		return (FAILURE);
+	}
 	printf("Map validated successfully\n");
 	close(map.fd);
 	free_map_info(&map);
-	free(data.map);
+	//free(data.map);
+	free_array(data.map);
+	mlx_delete_texture(data.north_texture);
+	mlx_delete_texture(data.east_texture);
+	mlx_delete_texture(data.west_texture);
+	mlx_delete_texture(data.south_texture);
 	return (SUCCESS);
 	//exit(EXIT_SUCCESS);
 }
