@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/07/25 17:59:12 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/06 19:48:00 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,6 +165,7 @@ int	validate_ceiling(t_map *map)
 		return (1);
 	return (0);
 }
+
 int	check_around_pos(t_map *map, char *str, size_t x, size_t y)
 {
 	if (y)
@@ -234,8 +235,8 @@ int	check_lines(t_map *map)
 		str = *(char **)vec_get(&map->map_copy, y);
 		if (!strncmp(str, "\n", 1))
 		{
-			printf("Empty lines in the map\n");
-			return (1);
+			//printf("Empty lines in the map\n");
+			return (ft_err("Empty lines in the map\n"));
 		}			
 		x = 0;
 		if (str[x] == ' ')
@@ -256,132 +257,184 @@ int	check_lines(t_map *map)
 	return (0);
 }
 
-int	validate_map(t_map *map)
+int	parse_no(t_map *map, char *line, int *count)
 {
-	char	*line;
-	char	*line_copy;
 	char	*ptr;
-	int		n;
-	int		count;
 
-	n = 0;
-	count = 0;
-	line = ft_strdup("");
-	while (line != NULL)
+	ptr = line;
+	if (map->no)
 	{
-		free(line);
-		line = get_next_line(map->fd);
-		if (!line)
-			break ;
-		ptr = line;
-		if (!strncmp(line, "NO", 2))
-		{
-			if (map->no)
-			{
-				free (line);
-				return (ft_err("Multiple lines referring to one texture\n"));
-			}
-			ptr++;
-			ptr++;
-			while (*ptr == ' ')
-				ptr++;
-			map->no = ft_strdup(ptr);
-			map->no[ft_strlen(map->no) - 1] = '\0';
-			count++;
-		}
-		else if (!strncmp(line, "SO", 2))
-		{
-			if (map->so)
-			{
-				free (line);
-				return (ft_err("Multiple lines referring to one texture\n"));
-			}
-			ptr++;
-			ptr++;
-			while (*ptr == ' ')
-				ptr++;
-			map->so = ft_strdup(ptr);
-			map->so[ft_strlen(map->so) - 1] = '\0';
-			count++;
-		}
-		else if (!strncmp(line, "WE", 2))
-		{
-			if (map->we)
-			{
-				free (line);
-				return (ft_err("Multiple lines referring to one texture\n"));
-			}
-			ptr++;
-			ptr++;
-			while (*ptr == ' ')
-				ptr++;
-			map->we = ft_strdup(ptr);
-			map->we[ft_strlen(map->we) - 1] = '\0';
-			count++;
-		}
-		else if (!strncmp(line, "EA", 2))
-		{
-			if (map->ea)
-			{
-				free (line);
-				return (ft_err("Multiple lines referring to one texture\n"));
-			}
-			ptr++;
-			ptr++;
-			while (*ptr == ' ')
-				ptr++;
-			map->ea = ft_strdup(ptr);
-			map->ea[ft_strlen(map->ea) - 1] = '\0';
-			count++;
-		}
-		else if (!strncmp(line, "F", 1))
-		{
-			if (map->f)
-			{
-				free (line);
-				return (ft_err("Multiple lines referring to one texture\n"));
-			}
-			ptr++;
-			while (*ptr == ' ')
-				ptr++;
-			map->f = ft_strdup(ptr);
-			map->f[ft_strlen(map->f) - 1] = '\0';
-			count++;
-		}
-		else if (!strncmp(line, "C", 1))
-		{
-			if (map->c)
-			{
-				free (line);
-				return (ft_err("Multiple lines referring to one texture\n"));
-			}
-			ptr++;
-			while (*ptr == ' ')
-				ptr++;
-			map->c = ft_strdup(ptr);
-			map->c[ft_strlen(map->c) - 1] = '\0';
-			count++;
-		}
-		else if (strncmp(line, "\n", 1) && count != 6)
-		{
-			free (line);
-			return (ft_err("Incorrect or missing map lines\n"));
-		}
-		if (count == 6)
-		{
-			free(line);
-			break ;
-		}
-		n++;
+		//free (line);
+		//return (1);
+		return (ft_err("Multiple lines referring to one texture\n"));
 	}
-	if (count != 6)
+	ptr++;
+	ptr++;
+	while (*ptr == ' ')
+		ptr++;
+	map->no = ft_strdup(ptr);
+	map->no[ft_strlen(map->no) - 1] = '\0';
+	(*count)++;
+	return (0);
+}
+
+int	parse_so(t_map *map, char *line, int *count)
+{
+	char	*ptr;
+
+	ptr = line;
+	if (map->so)
+	{
+		//free (line);
+		//return (1);
+		return (ft_err("Multiple lines referring to one texture\n"));
+	}
+	ptr++;
+	ptr++;
+	while (*ptr == ' ')
+		ptr++;
+	map->so = ft_strdup(ptr);
+	map->so[ft_strlen(map->so) - 1] = '\0';
+	(*count)++;
+	return (0);
+}
+
+int	parse_we(t_map *map, char *line, int *count)
+{
+	char	*ptr;
+
+	ptr = line;
+	if (map->we)
+	{
+		//free (line);
+		//return (1);
+		return (ft_err("Multiple lines referring to one texture\n"));
+	}
+	ptr++;
+	ptr++;
+	while (*ptr == ' ')
+		ptr++;
+	map->we = ft_strdup(ptr);
+	map->we[ft_strlen(map->we) - 1] = '\0';
+	(*count)++;
+	return (0);
+}
+
+int	parse_ea(t_map *map, char *line, int *count)
+{
+	char	*ptr;
+
+	ptr = line;
+	if (map->ea)
+	{
+		//free (line);
+		//return (1);
+		return (ft_err("Multiple lines referring to one texture\n"));
+	}
+	ptr++;
+	ptr++;
+	while (*ptr == ' ')
+		ptr++;
+	map->ea = ft_strdup(ptr);
+	map->ea[ft_strlen(map->ea) - 1] = '\0';
+	(*count)++;
+	return (0);
+}
+
+int	parse_f(t_map *map, char *line, int *count)
+{
+	char	*ptr;
+
+	ptr = line;
+	if (map->f)
+	{
+		//free (line);
+		//return (1);
+		return (ft_err("Multiple lines referring to one texture\n"));
+	}
+	ptr++;
+	while (*ptr == ' ')
+		ptr++;
+	map->f = ft_strdup(ptr);
+	map->f[ft_strlen(map->f) - 1] = '\0';
+	(*count)++;
+	return (0);
+}
+
+int	parse_c(t_map *map, char *line, int *count)
+{
+	char	*ptr;
+
+	ptr = line;
+	if (map->c)
+	{
+		//free (line);
+		//return (1);
+		return (ft_err("Multiple lines referring to one texture\n"));
+	}
+	ptr++;
+	while (*ptr == ' ')
+		ptr++;
+	map->c = ft_strdup(ptr);
+	map->c[ft_strlen(map->c) - 1] = '\0';
+	(*count)++;
+	return (0);
+}
+
+int	parse_directions(t_map *map, char *line, int *count)
+{
+	if (!strncmp(line, "NO", 2))
+	{
+		if (parse_no(map, line, count))
+			return (1);
+	}
+	else if (!strncmp(line, "SO", 2))
+	{
+		if (parse_so(map, line, count))
+			return (1);
+	}
+	else if (!strncmp(line, "WE", 2))
+	{
+		if (parse_we(map, line, count))
+			return (1);
+	}
+	else if (!strncmp(line, "EA", 2))
+	{
+		if (parse_ea(map, line, count))
+			return (1);
+	}
+	return (0);
+}
+
+int	parse_map_data_lines(t_map *map, char *line, int *count)
+{
+	if (!strncmp(line, "NO", 2) || !strncmp(line, "SO", 2) || !strncmp(line, "EA", 2) || !strncmp(line, "WE", 2))
+	{
+		if (parse_directions(map, line, count))
+			return (1);
+	}
+	else if (!strncmp(line, "F", 1))
+	{
+		if (parse_f(map, line, count))
+			return (1);
+	}
+	else if (!strncmp(line, "C", 1))
+	{
+		if (parse_c(map, line, count))
+			return (1);
+	}
+	else if (strncmp(line, "\n", 1) && *count != 6)
+	{
+		//free (line);
 		return (ft_err("Incorrect or missing map lines\n"));
-	printf("Path to NO texture is %s\n", map->no);
-	printf("Path to SO texture is %s\n", map->so);
-	printf("Path to WE texture is %s\n", map->we);
-	printf("Path to EA texture is %s\n", map->ea);
-	printf("Floor color is %s\n", map->f);
-	printf("Ceiling color is %s\n", map->c);
+	}
+	if (*count == 6)
+		free(line);
+	return (0);
+}
+
+int	parse_map_lines(t_map *map, char *line)
+{
 	line = get_next_line(map->fd);
 	if (!line)
 		return (ft_err("Incorrect or missing map lines\n"));
@@ -400,6 +453,44 @@ int	validate_map(t_map *map)
 		map->line_count++;
 	}
 	if (check_lines(map))
+		return (1);
+	return (0);
+}
+
+int	validate_map(t_map *map)
+{
+	char	*line;
+	int		n;
+	int		count;
+
+	n = 0;
+	count = 0;
+	line = ft_strdup("");
+	while (line != NULL && count != 6)
+	{
+		free(line);
+		line = get_next_line(map->fd);
+		if (!line)
+			break ;
+		if (parse_map_data_lines(map, line, &count))
+		{
+			free (line);
+			return (1);
+		}
+		n++;
+	}
+	if (count != 6)
+	{
+		free(line);
+		return (ft_err("Incorrect or missing map lines\n"));
+	}
+	printf("Path to NO texture is %s\n", map->no);
+	printf("Path to SO texture is %s\n", map->so);
+	printf("Path to WE texture is %s\n", map->we);
+	printf("Path to EA texture is %s\n", map->ea);
+	printf("Floor color is %s\n", map->f);
+	printf("Ceiling color is %s\n", map->c);
+	if (parse_map_lines(map, line))
 		return (1);
 	printf("\nLines checked successfully\n");
 	if (validate_floor(map) || validate_ceiling(map))
