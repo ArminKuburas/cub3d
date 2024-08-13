@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 17:57:41 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/13 01:30:50 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,21 @@
 
 # define FAILURE 1
 # define SUCCESS 0
+# define WEST 180
+# define NORTH 90
+# define EAST 0
+# define SOUTH 270
+# define MOVE_SPEED 5.0f
+# define ROTATE_SPEED 0.5f
+# define DEFAULT_COLOUR 0xFF000000
 
 typedef struct s_ray
 {
-	int		player_x;
-	int		player_y;
-	int		distance;
-	int		a_y;
-	int		a_x;
-	int		xa;
-	int		ya;
-	int		next_x;
-	int		next_y;
-	char	**map;
+	float			angle;
+	float			distance;
+	float			x;
+	float			y;
+	mlx_texture_t	*texture;
 }	t_ray;
 
 typedef struct s_map
@@ -62,6 +64,15 @@ typedef struct s_map
 	char		*nxt_str;
 }	t_map;
 
+typedef struct s_player
+{
+	float	x;
+	float	y;
+	float	rotation_angle;
+	float	move_speed;
+	float	rotation_speed;
+}	t_player;
+
 typedef struct s_data
 {
 	mlx_t			*mlx;
@@ -74,8 +85,10 @@ typedef struct s_data
 	int				ceiling_colour[4];
 	char			**map;
 	int				player_position[3];
-	t_map			*parse_data;
-	t_ray			*rays;
+	int				map_height;
+	int				map_width;
+	t_player		player;
+	t_map			parse_data;
 }	t_data;
 
 typedef struct s_parsing_data
@@ -94,5 +107,18 @@ int		check_arguments(int argc, char **argv, t_map *map);
 void	free_map_info(t_map *map);
 int		validate_map(t_map *map);
 void	free_array(char **arr);
+enum e_direction
+{
+	GO_FORWARDS,
+	GO_BACKWARDS,
+	STRAFE_LEFT,
+	STRAFE_RIGHT,
+	TURN_LEFT,
+	TURN_RIGHT
+};
+
+int		ft_err(char *str);
+double	rad_convert(double degrees);
+void	mlx_looping(t_data *data);
 
 #endif
