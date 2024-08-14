@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/14 11:37:07 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/14 13:08:17 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,6 @@ int	ft_err(char *str)
 int	populate_data(t_map *map, t_data *data)
 {
 	int	i;
-
-	data->ceiling_colour[0] = ft_atoi(map->ceiling[0]);
-	data->ceiling_colour[1] = ft_atoi(map->ceiling[1]);
-	data->ceiling_colour[2] = ft_atoi(map->ceiling[2]);
-	data->ceiling_colour[3] = 255;
-	data->floor_colour[0] = ft_atoi(map->floor[0]);
-	data->floor_colour[1] = ft_atoi(map->floor[1]);
-	data->floor_colour[2] = ft_atoi(map->floor[2]);
-	data->floor_colour[3] = 255;
 	data->map = malloc((map->line_count + 1) * sizeof(char *));
 	if (!data->map)
 		return (1);
