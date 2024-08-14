@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/14 13:08:17 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/14 15:24:57 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,16 +171,17 @@ int	reformat_map(t_data *data)
 //mlx_delete_texture in case of errors needs to be added
 int	load_textures(t_data *data)
 {
-	data->north_texture = mlx_load_png(data->parse_data.no);
+	printf("This is north texture %s\n", data->parse_data->no);
+	data->north_texture = mlx_load_png(data->parse_data->no);
 	if (!data->north_texture)
 		return(ft_err("Can't load north texture file\n"));
-	data->south_texture = mlx_load_png(data->parse_data.so);
+	data->south_texture = mlx_load_png(data->parse_data->so);
 	if (!data->south_texture)
 		return(ft_err("Can't load south texture file\n"));
-	data->east_texture = mlx_load_png(data->parse_data.ea);
+	data->east_texture = mlx_load_png(data->parse_data->ea);
 	if (!data->east_texture)
 		return(ft_err("Can't load east texture file\n"));
-	data->west_texture = mlx_load_png(data->parse_data.we);
+	data->west_texture = mlx_load_png(data->parse_data->we);
 	if (!data->west_texture)
 		return(ft_err("Can't load west texture file\n"));
 	return (0);
@@ -193,6 +194,7 @@ int	main(int argc, char **argv)
 
 	data = (t_data){};
 	map = (t_map){};
+	data.parse_data = &map;
 	if (vec_new(&map.map_copy, 0, sizeof(char *)) == -1)
 		return (FAILURE);
 	if (check_arguments (argc, argv, &map))
@@ -225,7 +227,6 @@ int	main(int argc, char **argv)
 		return (FAILURE);
 	}
 	printf("Map validated successfully\n");
-	data.parse_data = map;
 	mlx_looping(&data);
 	close(map.fd);
 	free_map_info(&map);
