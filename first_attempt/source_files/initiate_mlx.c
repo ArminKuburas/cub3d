@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/14 11:57:04 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/14 17:04:18 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -327,6 +327,7 @@ void	player_controller(void *param)
 // If thats too slow we can render per movement.
 void	mlx_looping(t_data *data)
 {
+	init_mlx(data);
 	mlx_loop_hook(data->mlx, render_next_frame, data);
 	mlx_loop_hook(data->mlx, player_controller, data);
 	mlx_key_hook(data->mlx, key_press, data);
