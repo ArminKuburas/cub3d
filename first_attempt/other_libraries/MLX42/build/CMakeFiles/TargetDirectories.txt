@@ -1,0 +1,7 @@
+/home/akuburas/cub3d/first_attempt/other_libraries/MLX42/build/CMakeFiles/mlx42.dir
+/home/akuburas/cub3d/first_attempt/other_libraries/MLX42/build/CMakeFiles/edit_cache.dir
+/home/akuburas/cub3d/first_attempt/other_libraries/MLX42/build/CMakeFiles/rebuild_cache.dir
+/home/akuburas/cub3d/first_attempt/other_libraries/MLX42/build/CMakeFiles/list_install_components.dir
+/home/akuburas/cub3d/first_attempt/other_libraries/MLX42/build/CMakeFiles/install.dir
+/home/akuburas/cub3d/first_attempt/other_libraries/MLX42/build/CMakeFiles/install/local.dir
+/home/akuburas/cub3d/first_attempt/other_libraries/MLX42/build/CMakeFiles/install/strip.dir

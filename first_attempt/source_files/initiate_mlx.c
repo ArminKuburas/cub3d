@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/13 01:28:30 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/14 11:57:04 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	free_all_and_exit(t_data *data)
 {
+	(void)data;
 	exit(0);
 }
 
-int	init_mlx(t_data *data)
+void	init_mlx(t_data *data)
 {
 	data->mlx = mlx_init(WIDTH, HEIGHT, "Cub3D", FALSE);
 	if (!data->mlx)
@@ -145,17 +146,29 @@ int32_t pixel_colour(mlx_image_t *image, int x, int y)
 {
 	int	start;
 
-	if (x >= image->width || x < 0 || y >= image->height
+	if (x >= (int)image->width || x < 0 || y >= (int)image->height
 		|| y < 0)
 		return (DEFAULT_COLOUR);
 	start = (y * image->width + x) * 4;
-	return (ft_pixel(image->pixels[start], image->pixels[start + 1]	
+	return (ft_pixel(image->pixels[start], image->pixels[start + 1]
+			, image->pixels[start + 2], image->pixels[start + 3]));
+}
+
+int32_t texture_pixel_colour(mlx_texture_t *image, int x, int y)
+{
+	int	start;
+
+	if (x >= (int)image->width || x < 0 || y >= (int)image->height
+		|| y < 0)
+		return (DEFAULT_COLOUR);
+	start = (y * image->width + x) * 4;
+	return (ft_pixel(image->pixels[start], image->pixels[start + 1]
 			, image->pixels[start + 2], image->pixels[start + 3]));
 }
 
 void	modify_pixel(int x, int y, int32_t colour, t_data *data)
 {
-	if (x >= data->image->width || x < 0 || y >= data->image->height
+	if (x >= (int)data->image->width || x < 0 || y >= (int)data->image->height
 		|| y < 0 || pixel_colour(data->image, x, y) == colour)
 		return ;
 	mlx_put_pixel(data->image, x, y, colour);
@@ -179,7 +192,7 @@ void	draw_ray(t_ray *ray, int texture_height, int amount_of_rays, t_data *data)
 		modify_pixel(amount_of_rays, floor, data->floor_colour, data);
 	while (start_point < end_point)
 	{
-		color = get_pixel_color(ray->texture, ray->x, ray->y);
+		color = texture_pixel_colour(ray->texture, ray->x, ray->y);
 		modify_pixel(amount_of_rays, start_point, color, data);
 		ray->y += ray->distance;
 		start_point++;
@@ -228,15 +241,15 @@ void	render_next_frame(void *main_data)
 	}
 }
 
-void	*close_window(void *param)
+void	close_window(void *param)
 {
 	t_data	*data;
 
 	data = param;
-	delete_everything_exit(data);
+	free_all_and_exit(data);
 }
 
-void	*key_press(mlx_key_data_t key_data, void *param)
+void	key_press(mlx_key_data_t key_data, void *param)
 {
 	t_data	*data;
 
@@ -290,7 +303,7 @@ void	turn_player(t_data *data, enum e_direction direction)
 	}
 }
 
-void	*player_controller(void *param)
+void	player_controller(void *param)
 {
 	t_data	*data;
 

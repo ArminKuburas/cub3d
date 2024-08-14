@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 18:07:37 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/14 11:37:07 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int	ft_err(char *str)
 {
-	write(2, "Error\n", 6);
-	write(2, str, ft_strlen(str));
+	ssize_t __attribute__	((unused)) result;
+
+	result = write(2, "Error\n", 6);
+	result = write(2, str, ft_strlen(str));
 	return (FAILURE);
 }
 
@@ -103,11 +105,10 @@ int	populate_data(t_map *map, t_data *data)
 		i++;
 	}
 	data->map[i] = NULL;
-	data->parse_data = map;
 	return (0);
 }
 
-int	realloc_line(t_data *data, char **ptr, int max_len)
+int	realloc_line(char **ptr, int max_len)
 {
 	char	*temp;
 	char	*parking;
@@ -161,7 +162,7 @@ int	reformat_map(t_data *data)
 	ptr1 = ptr;
 	while (*ptr)
 	{
-		if (ft_strlen(*ptr) > max_len)
+		if ((int)ft_strlen(*ptr) > max_len)
 			max_len = ft_strlen(*ptr);
 		ptr++;
 	}
@@ -169,7 +170,7 @@ int	reformat_map(t_data *data)
 	while (*ptr1)
 	{
 		//if (ft_strlen(*ptr) < max_len)
-		if (realloc_line(data, ptr1, max_len))
+		if (realloc_line(ptr1, max_len))
 			return (1);
 		ptr1++;
 	}
@@ -179,16 +180,16 @@ int	reformat_map(t_data *data)
 //mlx_delete_texture in case of errors needs to be added
 int	load_textures(t_data *data)
 {
-	data->north_texture = mlx_load_png(data->parse_data->no);
+	data->north_texture = mlx_load_png(data->parse_data.no);
 	if (!data->north_texture)
 		return(ft_err("Can't load north texture file\n"));
-	data->south_texture = mlx_load_png(data->parse_data->so);
+	data->south_texture = mlx_load_png(data->parse_data.so);
 	if (!data->south_texture)
 		return(ft_err("Can't load south texture file\n"));
-	data->east_texture = mlx_load_png(data->parse_data->ea);
+	data->east_texture = mlx_load_png(data->parse_data.ea);
 	if (!data->east_texture)
 		return(ft_err("Can't load east texture file\n"));
-	data->west_texture = mlx_load_png(data->parse_data->we);
+	data->west_texture = mlx_load_png(data->parse_data.we);
 	if (!data->west_texture)
 		return(ft_err("Can't load west texture file\n"));
 	return (0);
@@ -233,6 +234,8 @@ int	main(int argc, char **argv)
 		return (FAILURE);
 	}
 	printf("Map validated successfully\n");
+	data.parse_data = map;
+	mlx_looping(&data);
 	close(map.fd);
 	free_map_info(&map);
 	//free(data.map);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 07:40:02 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/19 15:46:34 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/14 11:24:47 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ char			*ft_strndup(const char *s, size_t n);
 char			*gnl_strchr(char *s, int c);
 size_t			gnl_strlen(const char *s);
 char			*gnl_strjoin(char *s1, char *s2);
+char			*get_next_line(int fd);
 
 //hash struct functionality
 typedef struct s_hash_table

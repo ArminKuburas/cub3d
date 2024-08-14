@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/13 01:30:50 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/14 11:58:16 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ typedef struct s_player
 	float	x;
 	float	y;
 	float	rotation_angle;
-	float	move_speed;
-	float	rotation_speed;
 }	t_player;
 
 typedef struct s_data
@@ -81,10 +79,9 @@ typedef struct s_data
 	mlx_texture_t	*south_texture;
 	mlx_texture_t	*west_texture;
 	mlx_texture_t	*east_texture;
-	int				floor_colour[4];
-	int				ceiling_colour[4];
+	int32_t			floor_colour;
+	int32_t			ceiling_colour;
 	char			**map;
-	int				player_position[3];
 	int				map_height;
 	int				map_width;
 	t_player		player;
@@ -102,7 +99,6 @@ typedef struct s_parsing_data
 	char	*ceiling_colour;
 }	t_parsing_data;
 
-int		ft_err(char *str);
 int		check_arguments(int argc, char **argv, t_map *map);
 void	free_map_info(t_map *map);
 int		validate_map(t_map *map);
