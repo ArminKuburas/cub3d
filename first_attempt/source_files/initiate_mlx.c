@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 11:15:08 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 15:00:36 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,9 +222,9 @@ void	render_next_frame(void *main_data)
 	int		texture_height;
 
 	data = (t_data *)main_data;
-	angle = data->player.rotation_angle - (FOV / 2);
+	angle = rad_convert(data->player.rotation_angle) - (rad_convert(FOV) / 2);
 	if (angle < 0)
-		angle += 360;
+		angle += 2 * M_PI;
 	amount_of_rays = 0;
 	while (amount_of_rays < WIDTH)
 	{
