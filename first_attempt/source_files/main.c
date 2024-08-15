@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 17:40:09 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:11:19 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,8 @@ int	reformat_map(t_data *data)
 			return (1);
 		ptr1++;
 	}
+	data->map_width = max_len;
+	data->map_height = data->parse_data->line_count;
 	return (0);
 }
 
