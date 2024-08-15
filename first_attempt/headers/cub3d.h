@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/14 15:23:42 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 11:36:28 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <stdio.h>
 # include "../other_libraries/libft/libft.h"
 
-# define WIDTH 320
-# define HEIGHT 200
+# define WIDTH 1920
+# define HEIGHT 1080
 # define FOV 60
 
 # define FAILURE 1

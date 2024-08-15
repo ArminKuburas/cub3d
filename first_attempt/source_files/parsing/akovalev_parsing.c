@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   akovalev_parsing.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/08/06 19:48:00 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 11:31:50 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,12 +216,12 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	return (0);
 }
 
-// if ((str[x + 1] == ' ' || str[x + 1] == '\n') || ((pr_str && x >= ft_strlen (pr_str)) || (y && (pr_str[x] == ' ' || pr_str[x] == '\n')) || y == 0) || ((x && str[x - 1] == ' ') || x == 0) || \
-// 			((nxt_str && x >= ft_strlen (nxt_str)) || (y < map->map_copy.len - 1 && (nxt_str [x] == ' ' || nxt_str [x] == '\n' || nxt_str [x] == '\0')) || y == map->map_copy.len - 1))
-// 		{
-// 			printf("Wrong character near %s\n", &str[x]);
-// 			return (1);
-// 		}
+/*if ((str[x + 1] == ' ' || str[x + 1] == '\n') || ((pr_str && x >= ft_strlen (pr_str)) || (y && (pr_str[x] == ' ' || pr_str[x] == '\n')) || y == 0) || ((x && str[x - 1] == ' ') || x == 0) || \
+			((nxt_str && x >= ft_strlen (nxt_str)) || (y < map->map_copy.len - 1 && (nxt_str [x] == ' ' || nxt_str [x] == '\n' || nxt_str [x] == '\0')) || y == map->map_copy.len - 1))
+	{
+		printf("Wrong character near %s\n", &str[x]);
+			return (1);
+	}*/
 
 int	check_lines(t_map *map)
 {

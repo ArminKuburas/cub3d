@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/14 17:04:18 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 11:15:08 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,7 +231,7 @@ void	render_next_frame(void *main_data)
 		ray.angle = angle;
 		calculate_ray(&ray, data);
 		fix_fish_eye(&ray, data);
-		texture_height = 64 / HEIGHT / ray.distance;
+		texture_height = 64 * HEIGHT / ray.distance;
 		figure_out_texture(&texture_height, &ray, data);
 		draw_ray(&ray, texture_height, amount_of_rays, data);
 		amount_of_rays++;
@@ -294,12 +294,12 @@ void	turn_player(t_data *data, enum e_direction direction)
 		data->player.rotation_angle -= ROTATE_SPEED;
 		if (data->player.rotation_angle < 0)
 			data->player.rotation_angle += 360;
-		else if (direction == TURN_RIGHT)
-		{
-			data->player.rotation_angle += ROTATE_SPEED;
-			if (data->player.rotation_angle >= 360)
-				data->player.rotation_angle -= 360;
-		}
+	}
+	else if (direction == TURN_RIGHT)
+	{
+		data->player.rotation_angle += ROTATE_SPEED;
+		if (data->player.rotation_angle >= 360)
+			data->player.rotation_angle -= 360;
 	}
 }
 
@@ -308,7 +308,6 @@ void	player_controller(void *param)
 	t_data	*data;
 
 	data = param;
-
 	if (mlx_is_key_down(data->mlx, MLX_KEY_W))
 		move_player(data, GO_FORWARDS);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_A))
