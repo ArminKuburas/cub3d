@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+first_attempt/other_libraries/MLX42/build
+first_attempt/cub3d
