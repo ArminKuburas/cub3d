@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/08/15 16:52:39 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:05:29 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,8 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	{
 		map->start_pos++;
 		map->start_dir = str[x];
+		map->start_x = x;
+		map->start_y = y;
 		if (map->start_pos > 1)
 			return (ft_err("Only one starting position marker allowed\n"));
 	}
