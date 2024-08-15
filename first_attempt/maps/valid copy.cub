@@ -1,16 +1,16 @@
 
 
-NO /home/akuburas/cub3d/first_attempt/source_files/tile007.png
+NO /home/akuburas/cub3d/tilesets/cub3d_new_pngs/north.png
 
 
-SO /home/akuburas/cub3d/first_attempt/source_files/tile007.png
-WE /home/akuburas/cub3d/first_attempt/source_files/tile007.png
+SO /home/akuburas/cub3d/tilesets/cub3d_new_pngs/south.png
+WE /home/akuburas/cub3d/tilesets/cub3d_new_pngs/west.png
 
 
-EA /home/akuburas/cub3d/first_attempt/source_files/tile007.png
-F 255,100,255
+EA /home/akuburas/cub3d/tilesets/cub3d_new_pngs/east.png
+F 255,204,10
 
-C 255,30,000255
+C 150,150,150
 
 
 
