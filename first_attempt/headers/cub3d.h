@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 18:16:07 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:35:50 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@
 # define NORTH 1.57079632679f
 # define EAST 0
 # define SOUTH 4.71238898038f
-# define MOVE_SPEED 0.5f
-# define ROTATE_SPEED 0.1f
+# define MOVE_SPEED 3.0f
+# define ROTATE_SPEED 0.2f
 # define DEFAULT_COLOUR 0xFF000000
 
 typedef struct s_ray

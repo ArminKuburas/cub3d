@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 18:23:37 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:40:49 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -265,8 +265,8 @@ void	move_player(t_data *data, enum e_direction direction)
 	float	y_movement;
 	float	x_movement;
 
-	y_movement = sin(rad_convert(data->player.rotation_angle)) * MOVE_SPEED;
-	x_movement = cos(rad_convert(data->player.rotation_angle)) * MOVE_SPEED;
+	y_movement = sin(data->player.rotation_angle) * MOVE_SPEED;
+	x_movement = cos(data->player.rotation_angle) * MOVE_SPEED;
 	if (direction == GO_FORWARDS)
 	{
 		data->player.y += y_movement;
