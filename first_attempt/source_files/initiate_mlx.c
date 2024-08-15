@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 18:14:59 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 18:23:37 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ void	find_collision(t_ray *ray, float x_travel, float y_travel, t_data *data)
 	while (true)
 	{
 		//printf("ray x is %5f and ray y is %5f map width is %d and map height is %d\n",ray->x, ray->y, data->map_width, data->map_height);
-		if (ray->x < 0 || ray->x >= data->map_width || ray->y < 0
-			|| ray->y >= data->map_height
+		if (ray->x < 0 || ray->x >= (data->map_width * 64) || ray->y < 0
+			|| ray->y >= (data->map_height * 64)
 			|| !ft_strchr("0", data->map[(int)ray->y / 64][(int)ray->x / 64]))
 			break ;
 		ray->x += x_travel;
 		ray->y += y_travel;
+		//printf("AAAAAAAAAAAAAAAAAAA\n");
 	}
 }
 
