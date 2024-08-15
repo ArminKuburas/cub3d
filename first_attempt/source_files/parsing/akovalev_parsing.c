@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   akovalev_parsing.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/08/15 11:31:50 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 16:52:39 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,6 +204,7 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	else if (str[x] == 'N' || str[x] == 'S' || str[x] == 'E' || str[x] == 'W')
 	{
 		map->start_pos++;
+		map->start_dir = str[x];
 		if (map->start_pos > 1)
 			return (ft_err("Only one starting position marker allowed\n"));
 	}
