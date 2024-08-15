@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 19:03:01 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:13:01 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <stdio.h>
 # include "../other_libraries/libft/libft.h"
 
-# define WIDTH 1080
+# define WIDTH 1920
 # define HEIGHT 1080
 # define FOV 1.0471975512f
 # define PI 3.1415926535898f
