@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/13 01:30:50 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 16:01:15 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@
 # include <stdio.h>
 # include "../other_libraries/libft/libft.h"
 
-# define WIDTH 320
-# define HEIGHT 200
-# define FOV 60
-
+# define WIDTH 1920
+# define HEIGHT 1080
+# define FOV 1.0471975512f
+# define PI 3.1415926535898f
 # define FAILURE 1
 # define SUCCESS 0
-# define WEST 180
-# define NORTH 90
+# define WEST 3.1415926535898f
+# define NORTH 1.57079632679f
 # define EAST 0
-# define SOUTH 270
-# define MOVE_SPEED 5.0f
-# define ROTATE_SPEED 0.5f
+# define SOUTH 4.71238898038f
+# define MOVE_SPEED 0.5f
+# define ROTATE_SPEED 0.1f
 # define DEFAULT_COLOUR 0xFF000000
 
 typedef struct s_ray
@@ -69,8 +69,6 @@ typedef struct s_player
 	float	x;
 	float	y;
 	float	rotation_angle;
-	float	move_speed;
-	float	rotation_speed;
 }	t_player;
 
 typedef struct s_data
@@ -81,14 +79,13 @@ typedef struct s_data
 	mlx_texture_t	*south_texture;
 	mlx_texture_t	*west_texture;
 	mlx_texture_t	*east_texture;
-	int				floor_colour[4];
-	int				ceiling_colour[4];
+	int32_t			floor_colour;
+	int32_t			ceiling_colour;
 	char			**map;
-	int				player_position[3];
 	int				map_height;
 	int				map_width;
 	t_player		player;
-	t_map			parse_data;
+	t_map			*parse_data;
 }	t_data;
 
 typedef struct s_parsing_data
@@ -102,7 +99,6 @@ typedef struct s_parsing_data
 	char	*ceiling_colour;
 }	t_parsing_data;
 
-int		ft_err(char *str);
 int		check_arguments(int argc, char **argv, t_map *map);
 void	free_map_info(t_map *map);
 int		validate_map(t_map *map);
@@ -120,5 +116,7 @@ enum e_direction
 int		ft_err(char *str);
 double	rad_convert(double degrees);
 void	mlx_looping(t_data *data);
+int32_t	ft_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+
 
 #endif

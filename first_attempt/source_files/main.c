@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/07/25 18:07:37 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/14 15:24:57 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 int	ft_err(char *str)
 {
-	write(2, "Error\n", 6);
-	write(2, str, ft_strlen(str));
+	ssize_t __attribute__	((unused)) result;
+
+	result = write(2, "Error\n", 6);
+	result = write(2, str, ft_strlen(str));
 	return (FAILURE);
 }
 
@@ -84,15 +86,6 @@ int	ft_err(char *str)
 int	populate_data(t_map *map, t_data *data)
 {
 	int	i;
-
-	data->ceiling_colour[0] = ft_atoi(map->ceiling[0]);
-	data->ceiling_colour[1] = ft_atoi(map->ceiling[1]);
-	data->ceiling_colour[2] = ft_atoi(map->ceiling[2]);
-	data->ceiling_colour[3] = 255;
-	data->floor_colour[0] = ft_atoi(map->floor[0]);
-	data->floor_colour[1] = ft_atoi(map->floor[1]);
-	data->floor_colour[2] = ft_atoi(map->floor[2]);
-	data->floor_colour[3] = 255;
 	data->map = malloc((map->line_count + 1) * sizeof(char *));
 	if (!data->map)
 		return (1);
@@ -103,11 +96,10 @@ int	populate_data(t_map *map, t_data *data)
 		i++;
 	}
 	data->map[i] = NULL;
-	data->parse_data = map;
 	return (0);
 }
 
-int	realloc_line(t_data *data, char **ptr, int max_len)
+int	realloc_line(char **ptr, int max_len)
 {
 	char	*temp;
 	char	*parking;
@@ -161,7 +153,7 @@ int	reformat_map(t_data *data)
 	ptr1 = ptr;
 	while (*ptr)
 	{
-		if (ft_strlen(*ptr) > max_len)
+		if ((int)ft_strlen(*ptr) > max_len)
 			max_len = ft_strlen(*ptr);
 		ptr++;
 	}
@@ -169,7 +161,7 @@ int	reformat_map(t_data *data)
 	while (*ptr1)
 	{
 		//if (ft_strlen(*ptr) < max_len)
-		if (realloc_line(data, ptr1, max_len))
+		if (realloc_line(ptr1, max_len))
 			return (1);
 		ptr1++;
 	}
@@ -179,6 +171,7 @@ int	reformat_map(t_data *data)
 //mlx_delete_texture in case of errors needs to be added
 int	load_textures(t_data *data)
 {
+	printf("This is north texture %s\n", data->parse_data->no);
 	data->north_texture = mlx_load_png(data->parse_data->no);
 	if (!data->north_texture)
 		return(ft_err("Can't load north texture file\n"));
@@ -201,6 +194,7 @@ int	main(int argc, char **argv)
 
 	data = (t_data){};
 	map = (t_map){};
+	data.parse_data = &map;
 	if (vec_new(&map.map_copy, 0, sizeof(char *)) == -1)
 		return (FAILURE);
 	if (check_arguments (argc, argv, &map))
@@ -233,6 +227,7 @@ int	main(int argc, char **argv)
 		return (FAILURE);
 	}
 	printf("Map validated successfully\n");
+	mlx_looping(&data);
 	close(map.fd);
 	free_map_info(&map);
 	//free(data.map);

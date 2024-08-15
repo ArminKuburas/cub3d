@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/13 01:28:30 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 16:06:04 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	free_all_and_exit(t_data *data)
 {
+	(void)data;
 	exit(0);
 }
 
-int	init_mlx(t_data *data)
+void	init_mlx(t_data *data)
 {
 	data->mlx = mlx_init(WIDTH, HEIGHT, "Cub3D", FALSE);
 	if (!data->mlx)
@@ -48,7 +49,7 @@ float	horizontal_ray(t_ray *ray, float angle, t_data *data)
 	float	x_travel;
 	float	number_fixer;
 
-	number_fixer = 1 / -tan(rad_convert(angle));
+	number_fixer = 1 / -tan(angle);
 	if (angle > WEST)
 	{
 		ray->y = (int)data->player.y / 64 * 64 - 0.0001f;
@@ -72,7 +73,7 @@ float	vertical_ray(t_ray *ray, float angle, t_data *data)
 	float	y_travel;
 	float	number_fixer;
 
-	number_fixer = -tan(rad_convert(angle));
+	number_fixer = -tan(angle);
 	if (angle < NORTH || angle > SOUTH)
 	{
 		ray->x = (int)data->player.x / 64 * 64 + 64;
@@ -145,17 +146,29 @@ int32_t pixel_colour(mlx_image_t *image, int x, int y)
 {
 	int	start;
 
-	if (x >= image->width || x < 0 || y >= image->height
+	if (x >= (int)image->width || x < 0 || y >= (int)image->height
 		|| y < 0)
 		return (DEFAULT_COLOUR);
 	start = (y * image->width + x) * 4;
-	return (ft_pixel(image->pixels[start], image->pixels[start + 1]	
+	return (ft_pixel(image->pixels[start], image->pixels[start + 1]
+			, image->pixels[start + 2], image->pixels[start + 3]));
+}
+
+int32_t texture_pixel_colour(mlx_texture_t *image, int x, int y)
+{
+	int	start;
+
+	if (x >= (int)image->width || x < 0 || y >= (int)image->height
+		|| y < 0)
+		return (DEFAULT_COLOUR);
+	start = (y * image->width + x) * 4;
+	return (ft_pixel(image->pixels[start], image->pixels[start + 1]
 			, image->pixels[start + 2], image->pixels[start + 3]));
 }
 
 void	modify_pixel(int x, int y, int32_t colour, t_data *data)
 {
-	if (x >= data->image->width || x < 0 || y >= data->image->height
+	if (x >= (int)data->image->width || x < 0 || y >= (int)data->image->height
 		|| y < 0 || pixel_colour(data->image, x, y) == colour)
 		return ;
 	mlx_put_pixel(data->image, x, y, colour);
@@ -179,7 +192,7 @@ void	draw_ray(t_ray *ray, int texture_height, int amount_of_rays, t_data *data)
 		modify_pixel(amount_of_rays, floor, data->floor_colour, data);
 	while (start_point < end_point)
 	{
-		color = get_pixel_color(ray->texture, ray->x, ray->y);
+		color = texture_pixel_colour(ray->texture, ray->x, ray->y);
 		modify_pixel(amount_of_rays, start_point, color, data);
 		ray->y += ray->distance;
 		start_point++;
@@ -193,8 +206,8 @@ void	fix_fish_eye(t_ray *ray, t_data *data)
 	angle = data->player.rotation_angle;
 	angle -= ray->angle;
 	if (angle < 0)
-		angle += 360;
-	ray->distance *= cos(rad_convert(angle));
+		angle += 2 * M_PI;
+	ray->distance *= cos(angle);
 }
 
 /*This should be the general frame of reference we can use
@@ -211,32 +224,32 @@ void	render_next_frame(void *main_data)
 	data = (t_data *)main_data;
 	angle = data->player.rotation_angle - (FOV / 2);
 	if (angle < 0)
-		angle += 360;
+		angle += 2 * M_PI;
 	amount_of_rays = 0;
 	while (amount_of_rays < WIDTH)
 	{
 		ray.angle = angle;
 		calculate_ray(&ray, data);
 		fix_fish_eye(&ray, data);
-		texture_height = 64 / HEIGHT / ray.distance;
+		texture_height = 64 * HEIGHT / ray.distance;
 		figure_out_texture(&texture_height, &ray, data);
 		draw_ray(&ray, texture_height, amount_of_rays, data);
 		amount_of_rays++;
 		angle += FOV / WIDTH;
-		if (angle >= 360)
-			angle -= 360;
+		if (angle >= 2 * M_PI)
+			angle -= 2 * M_PI;
 	}
 }
 
-void	*close_window(void *param)
+void	close_window(void *param)
 {
 	t_data	*data;
 
 	data = param;
-	delete_everything_exit(data);
+	free_all_and_exit(data);
 }
 
-void	*key_press(mlx_key_data_t key_data, void *param)
+void	key_press(mlx_key_data_t key_data, void *param)
 {
 	t_data	*data;
 
@@ -280,22 +293,21 @@ void	turn_player(t_data *data, enum e_direction direction)
 	{
 		data->player.rotation_angle -= ROTATE_SPEED;
 		if (data->player.rotation_angle < 0)
-			data->player.rotation_angle += 360;
-		else if (direction == TURN_RIGHT)
-		{
-			data->player.rotation_angle += ROTATE_SPEED;
-			if (data->player.rotation_angle >= 360)
-				data->player.rotation_angle -= 360;
-		}
+			data->player.rotation_angle += 2 * M_PI;
+	}
+	else if (direction == TURN_RIGHT)
+	{
+		data->player.rotation_angle += ROTATE_SPEED;
+		if (data->player.rotation_angle >= 360)
+			data->player.rotation_angle -= 2 * M_PI;
 	}
 }
 
-void	*player_controller(void *param)
+void	player_controller(void *param)
 {
 	t_data	*data;
 
 	data = param;
-
 	if (mlx_is_key_down(data->mlx, MLX_KEY_W))
 		move_player(data, GO_FORWARDS);
 	if (mlx_is_key_down(data->mlx, MLX_KEY_A))
@@ -314,6 +326,7 @@ void	*player_controller(void *param)
 // If thats too slow we can render per movement.
 void	mlx_looping(t_data *data)
 {
+	init_mlx(data);
 	mlx_loop_hook(data->mlx, render_next_frame, data);
 	mlx_loop_hook(data->mlx, player_controller, data);
 	mlx_key_hook(data->mlx, key_press, data);
