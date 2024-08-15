@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 18:11:19 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:06:24 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ int	populate_data(t_map *map, t_data *data)
 		data->player.rotation_angle = NORTH;
 	if(map->start_dir == 'E')
 		data->player.rotation_angle = EAST	;
-	data->player.x = 32;
-	data->player.y = 32;
+	data->player.x = (64 * map->start_x) + 32;
+	data->player.y = (64 * map->start_y) + 32;
 	data->ceiling_colour = ft_pixel(ft_atoi(map->ceiling[0]), ft_atoi(map->ceiling[1]), ft_atoi(map->ceiling[2]), 255);
 	data->floor_colour = ft_pixel(ft_atoi(map->floor[0]), ft_atoi(map->floor[1]), ft_atoi(map->floor[2]), 255);
 	return (0);

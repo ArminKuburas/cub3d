@@ -6,7 +6,7 @@
 /*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 18:35:50 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/15 19:13:01 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ typedef struct s_map
 	char		**floor;
 	int			start_pos;
 	char		start_dir;
+	int			start_x;
+	int			start_y;
 	char		*pr_str;
 	char		*nxt_str;
 }	t_map;
