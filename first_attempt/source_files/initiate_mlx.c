@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 15:00:36 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 15:45:42 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,7 +222,7 @@ void	render_next_frame(void *main_data)
 	int		texture_height;
 
 	data = (t_data *)main_data;
-	angle = rad_convert(data->player.rotation_angle) - (rad_convert(FOV) / 2);
+	angle = rad_convert(data->player.rotation_angle) - (FOV / 2);
 	if (angle < 0)
 		angle += 2 * M_PI;
 	amount_of_rays = 0;
@@ -236,8 +236,8 @@ void	render_next_frame(void *main_data)
 		draw_ray(&ray, texture_height, amount_of_rays, data);
 		amount_of_rays++;
 		angle += FOV / WIDTH;
-		if (angle >= 360)
-			angle -= 360;
+		if (angle >= 2 * M_PI)
+			angle -= 2 * M_PI;
 	}
 }
 
@@ -293,13 +293,13 @@ void	turn_player(t_data *data, enum e_direction direction)
 	{
 		data->player.rotation_angle -= ROTATE_SPEED;
 		if (data->player.rotation_angle < 0)
-			data->player.rotation_angle += 360;
+			data->player.rotation_angle += 2 * M_PI;
 	}
 	else if (direction == TURN_RIGHT)
 	{
 		data->player.rotation_angle += ROTATE_SPEED;
 		if (data->player.rotation_angle >= 360)
-			data->player.rotation_angle -= 360;
+			data->player.rotation_angle -= 2 * M_PI;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 11:36:28 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 15:44:07 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@
 
 # define WIDTH 1920
 # define HEIGHT 1080
-# define FOV 60
-
+# define FOV 1.0471975512f
+# define PI 3.1415926535898f
 # define FAILURE 1
 # define SUCCESS 0
-# define WEST 180
-# define NORTH 90
+# define WEST 3.1415926535898f
+# define NORTH 1.57079632679f
 # define EAST 0
-# define SOUTH 270
+# define SOUTH 4.71238898038f
 # define MOVE_SPEED 5.0f
 # define ROTATE_SPEED 0.5f
 # define DEFAULT_COLOUR 0xFF000000
