@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 15:44:07 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 16:01:15 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@
 # define NORTH 1.57079632679f
 # define EAST 0
 # define SOUTH 4.71238898038f
-# define MOVE_SPEED 5.0f
-# define ROTATE_SPEED 0.5f
+# define MOVE_SPEED 0.5f
+# define ROTATE_SPEED 0.1f
 # define DEFAULT_COLOUR 0xFF000000
 
 typedef struct s_ray
@@ -116,5 +116,7 @@ enum e_direction
 int		ft_err(char *str);
 double	rad_convert(double degrees);
 void	mlx_looping(t_data *data);
+int32_t	ft_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+
 
 #endif

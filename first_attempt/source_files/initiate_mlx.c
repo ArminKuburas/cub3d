@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 15:45:42 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/15 16:06:04 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ float	horizontal_ray(t_ray *ray, float angle, t_data *data)
 	float	x_travel;
 	float	number_fixer;
 
-	number_fixer = 1 / -tan(rad_convert(angle));
+	number_fixer = 1 / -tan(angle);
 	if (angle > WEST)
 	{
 		ray->y = (int)data->player.y / 64 * 64 - 0.0001f;
@@ -73,7 +73,7 @@ float	vertical_ray(t_ray *ray, float angle, t_data *data)
 	float	y_travel;
 	float	number_fixer;
 
-	number_fixer = -tan(rad_convert(angle));
+	number_fixer = -tan(angle);
 	if (angle < NORTH || angle > SOUTH)
 	{
 		ray->x = (int)data->player.x / 64 * 64 + 64;
@@ -206,8 +206,8 @@ void	fix_fish_eye(t_ray *ray, t_data *data)
 	angle = data->player.rotation_angle;
 	angle -= ray->angle;
 	if (angle < 0)
-		angle += 360;
-	ray->distance *= cos(rad_convert(angle));
+		angle += 2 * M_PI;
+	ray->distance *= cos(angle);
 }
 
 /*This should be the general frame of reference we can use
@@ -222,7 +222,7 @@ void	render_next_frame(void *main_data)
 	int		texture_height;
 
 	data = (t_data *)main_data;
-	angle = rad_convert(data->player.rotation_angle) - (FOV / 2);
+	angle = data->player.rotation_angle - (FOV / 2);
 	if (angle < 0)
 		angle += 2 * M_PI;
 	amount_of_rays = 0;
