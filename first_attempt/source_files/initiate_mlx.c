@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 23:06:55 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/16 10:19:11 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,11 @@ void	init_mlx(t_data *data)
 
 void	find_collision(t_ray *ray, float x_travel, float y_travel, t_data *data)
 {
-	int x;
-	int y;
-
-
 	while (true)
 	{
-		x = ray->x / 64;
-		y = ray->y / 64;
-		if (x < 0 || x >= (data->map_width) || y < 0
-			|| y >= (data->map_height)
-			|| !ft_strchr("0", data->map[y][x]))
+		if (ray->x < 0 || ray->x >= (data->map_width * 64) || ray->y < 0
+			|| ray->y >= (data->map_height * 64)
+			|| !ft_strchr("0", data->map[(int)ray->y / 64][(int)ray->x / 64]))
 			break ;
 		ray->x += x_travel;
 		ray->y += y_travel;
@@ -228,8 +222,6 @@ void	render_next_frame(void *main_data)
 	int		texture_height;
 
 	data = (t_data *)main_data;
-	printf("Rendering next frame\n");
-	printf("player angle is %f\n", data->player.rotation_angle);
 	angle = data->player.rotation_angle - (FOV / 2);
 	if (angle < 0)
 		angle += 2 * M_PI;
@@ -306,7 +298,7 @@ void	turn_player(t_data *data, enum e_direction direction)
 	else if (direction == TURN_RIGHT)
 	{
 		data->player.rotation_angle += ROTATE_SPEED;
-		if (data->player.rotation_angle >= 360)
+		if (data->player.rotation_angle >= 2 * M_PI)
 			data->player.rotation_angle -= 2 * M_PI;
 	}
 }
@@ -335,6 +327,12 @@ void	player_controller(void *param)
 void	mlx_looping(t_data *data)
 {
 	init_mlx(data);
+	int i = 0;
+	while (data->map[i])
+	{
+		printf("%s\n", data->map[i]);
+		i++;
+	}
 	mlx_loop_hook(data->mlx, render_next_frame, data);
 	mlx_loop_hook(data->mlx, player_controller, data);
 	mlx_key_hook(data->mlx, key_press, data);

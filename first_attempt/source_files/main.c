@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 19:06:24 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/16 08:23:01 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,11 @@ int	populate_data(t_map *map, t_data *data)
 	}
 	data->map[i] = NULL;
 	if(map->start_dir == 'S')
-		data->player.rotation_angle = SOUTH;
+		data->player.rotation_angle = NORTH;
 	if(map->start_dir == 'W')
 		data->player.rotation_angle = WEST;
 	if(map->start_dir == 'N')
-		data->player.rotation_angle = NORTH;
+		data->player.rotation_angle = SOUTH;
 	if(map->start_dir == 'E')
 		data->player.rotation_angle = EAST	;
 	data->player.x = (64 * map->start_x) + 32;
