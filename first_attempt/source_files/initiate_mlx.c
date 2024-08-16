@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/16 10:19:11 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/16 16:42:01 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,10 @@ void	figure_out_texture(int *texture_height, t_ray *ray, t_data *data)
 		ray->texture = data->west_texture;
 	else if (ray->texture == data->south_texture && ray->angle > WEST)
 		ray->texture = data->north_texture;
+	if (ray->texture == data->west_texture)
+		ray->x = data->west_texture->width - ray->x - 1;
+	else if (ray->texture == data->south_texture)
+		ray->x = data->south_texture->width - ray->x - 1;
 	ray->y = 0;
 	ray->distance = (float)ray->texture->width / *texture_height;
 	if (*texture_height > HEIGHT)
@@ -222,6 +226,8 @@ void	render_next_frame(void *main_data)
 	int		texture_height;
 
 	data = (t_data *)main_data;
+	printf("Rendering next frame\n");
+	printf("player angle is %f\n", data->player.rotation_angle);
 	angle = data->player.rotation_angle - (FOV / 2);
 	if (angle < 0)
 		angle += 2 * M_PI;
@@ -327,12 +333,6 @@ void	player_controller(void *param)
 void	mlx_looping(t_data *data)
 {
 	init_mlx(data);
-	int i = 0;
-	while (data->map[i])
-	{
-		printf("%s\n", data->map[i]);
-		i++;
-	}
 	mlx_loop_hook(data->mlx, render_next_frame, data);
 	mlx_loop_hook(data->mlx, player_controller, data);
 	mlx_key_hook(data->mlx, key_press, data);
