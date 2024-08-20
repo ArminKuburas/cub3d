@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/20 17:44:31 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:01:13 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ void	key_press(mlx_key_data_t key_data, void *param);
 void	close_window(void *param);
 void	fix_fish_eye(t_ray *ray, t_data *data);
 void	free_all_and_exit(t_data *data);
-
+int32_t	texture_pixel_colour(mlx_texture_t *image, int x, int y);
+void	modify_pixel(int x, int y, int32_t colour, t_data *data);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   akovalev_parsing.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/08/15 19:05:29 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:53:57 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,7 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	{
 		map->start_pos++;
 		map->start_dir = str[x];
+		str[x] = '0';
 		map->start_x = x;
 		map->start_y = y;
 		if (map->start_pos > 1)
