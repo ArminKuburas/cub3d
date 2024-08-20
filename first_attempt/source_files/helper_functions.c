@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.c                                             :+:      :+:    :+:   */
+/*   helper_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 11:45:19 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/09 00:09:50 by akuburas         ###   ########.fr       */
+/*   Created: 2024/08/20 17:37:16 by akuburas          #+#    #+#             */
+/*   Updated: 2024/08/20 17:38:14 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
-double	rad_convert(double degrees)
+void	free_all_and_exit(t_data *data)
 {
-	return (degrees * (M_PI / 180));
+	(void)data;
+	exit(0);
+}
+
+void	fix_fish_eye(t_ray *ray, t_data *data)
+{
+	float	angle;
+
+	angle = data->player.rotation_angle;
+	angle -= ray->angle;
+	if (angle < 0)
+		angle += 2 * M_PI;
+	ray->distance *= cos(angle);
 }

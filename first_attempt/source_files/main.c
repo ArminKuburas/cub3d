@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/16 08:23:01 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/19 16:55:40 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,16 +186,16 @@ int	reformat_map(t_data *data)
 int	load_textures(t_data *data)
 {
 	printf("This is north texture %s\n", data->parse_data->no);
-	data->north_texture = mlx_load_png(data->parse_data->no);
+	data->north_texture = mlx_load_png(data->parse_data->so);
 	if (!data->north_texture)
 		return(ft_err("Can't load north texture file\n"));
-	data->south_texture = mlx_load_png(data->parse_data->so);
+	data->south_texture = mlx_load_png(data->parse_data->no);
 	if (!data->south_texture)
 		return(ft_err("Can't load south texture file\n"));
-	data->east_texture = mlx_load_png(data->parse_data->ea);
+	data->east_texture = mlx_load_png(data->parse_data->we);
 	if (!data->east_texture)
 		return(ft_err("Can't load east texture file\n"));
-	data->west_texture = mlx_load_png(data->parse_data->we);
+	data->west_texture = mlx_load_png(data->parse_data->ea);
 	if (!data->west_texture)
 		return(ft_err("Can't load west texture file\n"));
 	return (0);

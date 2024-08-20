@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/15 19:13:01 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/20 17:44:31 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@
 # define WIDTH 1920
 # define HEIGHT 1080
 # define FOV 1.0471975512f
-# define PI 3.1415926535898f
 # define FAILURE 1
 # define SUCCESS 0
 # define WEST 3.1415926535898f
@@ -120,6 +119,12 @@ int		ft_err(char *str);
 double	rad_convert(double degrees);
 void	mlx_looping(t_data *data);
 int32_t	ft_pixel(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
+void	calculate_ray(t_ray *ray, t_data *data);
+void	player_controller(void *param);
+void	key_press(mlx_key_data_t key_data, void *param);
+void	close_window(void *param);
+void	fix_fish_eye(t_ray *ray, t_data *data);
+void	free_all_and_exit(t_data *data);
 
 
 #endif
