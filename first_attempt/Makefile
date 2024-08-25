@@ -6,12 +6,12 @@
 #    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:56:21 by akovalev          #+#    #+#              #
-#    Updated: 2024/08/20 17:43:22 by akuburas         ###   ########.fr        #
+#    Updated: 2024/08/25 16:33:07 by akuburas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= cub3d
-CFLAGS	:= -Wunreachable-code -Ofast -Wall -Wextra -Werror 
+CFLAGS	:= -Wunreachable-code -Ofast -g -Wall -Wextra -Werror 
 LIBMLX	:= ./other_libraries/MLX42
 
 HEADERS	:= -I $(LIBMLX)/include

@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/08/20 18:29:55 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/25 19:02:26 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,53 @@ void	free_array(char **arr)
 
 void	free_map_info(t_map *map)
 {
-	printf("About to free everything\n");
-	free(map->no);
-	free(map->ea);
-	free(map->we);
-	free(map->so);
-	free(map->f);
-	free(map->c);
+	if (map->fd > 0)
+		close(map->fd);
+	if (map->no)
+	{
+		free(map->no);
+		map->no = NULL;
+	}
+	if (map->ea)
+	{
+		free(map->ea);
+		map->ea = NULL;
+	}
+	if (map->we)
+	{
+		free(map->we);
+		map->we = NULL;
+	}
+	if (map->so)
+	{
+		free(map->so);
+		map->so = NULL;
+	}
+	if (map->f)
+	{
+		free(map->f);
+		map->f = NULL;
+	}
+	if (map->c)
+	{
+		free(map->c);
+		map->c = NULL;
+	}
 	if (map->ceiling)
+	{
 		free_array(map->ceiling);
+		map->ceiling = NULL;
+	}
 	if (map->floor)
+	{
 		free_array(map->floor);
+		map->floor = NULL;
+	}
 	while (map->line_count--)
-		free(*(char **)(vec_get(&map->map_copy, map->line_count)));
+	{
+		free(vec_get(&map->map_copy, map->line_count));
+	}
 	vec_free(&map->map_copy);
-	printf("Freeing done\n");
 }
 
 int	check_arguments(int argc, char **argv, t_map *map)
@@ -59,8 +91,7 @@ int	check_arguments(int argc, char **argv, t_map *map)
 	map->fd = open(map->filename, O_RDONLY);
 	if (map->fd == -1)
 	{
-		perror("Error\n");
-		close(map->fd);
+		perror("Error\nError Type");
 		return (1);
 	}
 	return (0);
@@ -72,6 +103,8 @@ int	split_floor(t_map *map)
 	int		j;
 
 	map->floor = ft_split(map->f, ',');
+	if (!map->floor)
+		return (ft_err("Memory allocation error\n"));
 	i = 0;
 	while (map->floor[i] != NULL)
 	{
@@ -174,24 +207,20 @@ int	check_around_pos(t_map *map, char *str, size_t x, size_t y)
 		map->nxt_str = *(char **)vec_get(&map->map_copy, y + 1);
 	if (str[x + 1] == ' ' || str[x + 1] == '\n')
 	{
-		printf("\nWrong character after %s\n", &str[x]);
-		return (1);
+		return (ft_err("Incorrectly formatted map lines\n"));
 	}
 	if ((map->pr_str && x >= ft_strlen (map->pr_str)) || \
 		(y && (map->pr_str[x] == ' ' || map->pr_str[x] == '\n')) || y == 0)
 	{
-		printf("\nWrong character above %s\n", &str[x]);
-		return (1);
+		return (ft_err("Incorrectly formatted map lines\n"));
 	}
 	if ((x && str[x - 1] == ' ') || x == 0)
 	{
-		printf("\nWrong character before %s\n", &str[x]);
-		return (1);
+		return (ft_err("Incorrectly formatted map lines\n"));
 	}
 	if ((map->nxt_str && x >= ft_strlen (map->nxt_str)) || (y < map->map_copy.len - 1 && (map->nxt_str [x] == ' ' || map->nxt_str [x] == '\n' || map->nxt_str [x] == '\0')) || y == map->map_copy.len - 1)
 	{
-		printf("\nWrong character below %s\n", &str[x]);
-		return (1);
+		return (ft_err("Incorrectly formatted map lines\n"));
 	}
 	return (0);
 }
@@ -220,13 +249,6 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	return (0);
 }
 
-/*if ((str[x + 1] == ' ' || str[x + 1] == '\n') || ((pr_str && x >= ft_strlen (pr_str)) || (y && (pr_str[x] == ' ' || pr_str[x] == '\n')) || y == 0) || ((x && str[x - 1] == ' ') || x == 0) || \
-			((nxt_str && x >= ft_strlen (nxt_str)) || (y < map->map_copy.len - 1 && (nxt_str [x] == ' ' || nxt_str [x] == '\n' || nxt_str [x] == '\0')) || y == map->map_copy.len - 1))
-	{
-		printf("Wrong character near %s\n", &str[x]);
-			return (1);
-	}*/
-
 int	check_lines(t_map *map)
 {
 	size_t	y;
@@ -237,9 +259,8 @@ int	check_lines(t_map *map)
 	while (y < map->map_copy.len)
 	{
 		str = *(char **)vec_get(&map->map_copy, y);
-		if (!strncmp(str, "\n", 1))
+		if (!ft_strncmp(str, "\n", 1))
 		{
-			//printf("Empty lines in the map\n");
 			return (ft_err("Empty lines in the map\n"));
 		}			
 		x = 0;
@@ -253,11 +274,6 @@ int	check_lines(t_map *map)
 		}
 		y++;
 	}
-	// if (access(map->no, O_RDONLY) || access(map->so, O_RDONLY) || access(map->we, O_RDONLY) || access(map->ea, O_RDONLY)) //access not allowed, so later check with the MLX mlx_load_png
-	// {
-	// 	printf("Can't access texture file\n");
-	// 	return (1);
-	// }
 	return (0);
 }
 
@@ -268,8 +284,6 @@ int	parse_no(t_map *map, char *line, int *count)
 	ptr = line;
 	if (map->no)
 	{
-		//free (line);
-		//return (1);
 		return (ft_err("Multiple lines referring to one texture\n"));
 	}
 	ptr++;
@@ -277,6 +291,8 @@ int	parse_no(t_map *map, char *line, int *count)
 	while (*ptr == ' ')
 		ptr++;
 	map->no = ft_strdup(ptr);
+	if (!map->no)
+		return (ft_err("Memory allocation error\n"));
 	map->no[ft_strlen(map->no) - 1] = '\0';
 	(*count)++;
 	return (0);
@@ -289,8 +305,6 @@ int	parse_so(t_map *map, char *line, int *count)
 	ptr = line;
 	if (map->so)
 	{
-		//free (line);
-		//return (1);
 		return (ft_err("Multiple lines referring to one texture\n"));
 	}
 	ptr++;
@@ -298,6 +312,8 @@ int	parse_so(t_map *map, char *line, int *count)
 	while (*ptr == ' ')
 		ptr++;
 	map->so = ft_strdup(ptr);
+	if (!map->so)
+		return (ft_err("Memory allocation error\n"));
 	map->so[ft_strlen(map->so) - 1] = '\0';
 	(*count)++;
 	return (0);
@@ -310,8 +326,6 @@ int	parse_we(t_map *map, char *line, int *count)
 	ptr = line;
 	if (map->we)
 	{
-		//free (line);
-		//return (1);
 		return (ft_err("Multiple lines referring to one texture\n"));
 	}
 	ptr++;
@@ -319,6 +333,8 @@ int	parse_we(t_map *map, char *line, int *count)
 	while (*ptr == ' ')
 		ptr++;
 	map->we = ft_strdup(ptr);
+	if (!map->we)
+		return (ft_err("Memory allocation error\n"));
 	map->we[ft_strlen(map->we) - 1] = '\0';
 	(*count)++;
 	return (0);
@@ -331,8 +347,6 @@ int	parse_ea(t_map *map, char *line, int *count)
 	ptr = line;
 	if (map->ea)
 	{
-		//free (line);
-		//return (1);
 		return (ft_err("Multiple lines referring to one texture\n"));
 	}
 	ptr++;
@@ -340,6 +354,8 @@ int	parse_ea(t_map *map, char *line, int *count)
 	while (*ptr == ' ')
 		ptr++;
 	map->ea = ft_strdup(ptr);
+	if (!map->ea)
+		return (ft_err("Memory allocation error\n"));
 	map->ea[ft_strlen(map->ea) - 1] = '\0';
 	(*count)++;
 	return (0);
@@ -352,14 +368,14 @@ int	parse_f(t_map *map, char *line, int *count)
 	ptr = line;
 	if (map->f)
 	{
-		//free (line);
-		//return (1);
 		return (ft_err("Multiple lines referring to one texture\n"));
 	}
 	ptr++;
 	while (*ptr == ' ')
 		ptr++;
 	map->f = ft_strdup(ptr);
+	if (!map->f)
+		return (ft_err("Memory allocation error\n"));
 	map->f[ft_strlen(map->f) - 1] = '\0';
 	(*count)++;
 	return (0);
@@ -372,14 +388,14 @@ int	parse_c(t_map *map, char *line, int *count)
 	ptr = line;
 	if (map->c)
 	{
-		//free (line);
-		//return (1);
 		return (ft_err("Multiple lines referring to one texture\n"));
 	}
 	ptr++;
 	while (*ptr == ' ')
 		ptr++;
 	map->c = ft_strdup(ptr);
+	if (!map->c)
+		return (ft_err("Memory allocation error\n"));
 	map->c[ft_strlen(map->c) - 1] = '\0';
 	(*count)++;
 	return (0);
@@ -429,7 +445,6 @@ int	parse_map_data_lines(t_map *map, char *line, int *count)
 	}
 	else if (strncmp(line, "\n", 1) && *count != 6)
 	{
-		//free (line);
 		return (ft_err("Incorrect or missing map lines\n"));
 	}
 	if (*count == 6)
@@ -451,8 +466,8 @@ int	parse_map_lines(t_map *map, char *line)
 		return (ft_err("Incorrect or missing map lines\n"));
 	while (line)
 	{
-		printf("copied line is %s", line);
-		vec_push(&map->map_copy, &line);
+		if (vec_push(&map->map_copy, &line) == -1)
+			return (ft_err("Memory allocation error\n"));
 		line = get_next_line(map->fd);
 		map->line_count++;
 	}
@@ -470,6 +485,8 @@ int	validate_map(t_map *map)
 	n = 0;
 	count = 0;
 	line = ft_strdup("");
+	if (!line)
+		return (ft_err("Memory allocation error\n"));
 	while (line != NULL && count != 6)
 	{
 		free(line);
@@ -485,24 +502,15 @@ int	validate_map(t_map *map)
 	}
 	if (count != 6)
 	{
-		free(line);
+		if (line)
+			free(line);
 		return (ft_err("Incorrect or missing map lines\n"));
 	}
-	printf("Path to NO texture is %s\n", map->no);
-	printf("Path to SO texture is %s\n", map->so);
-	printf("Path to WE texture is %s\n", map->we);
-	printf("Path to EA texture is %s\n", map->ea);
-	printf("Floor color is %s\n", map->f);
-	printf("Ceiling color is %s\n", map->c);
 	if (parse_map_lines(map, line))
 		return (1);
-	printf("\nLines checked successfully\n");
 	if (validate_floor(map) || validate_ceiling(map))
 		return (1);
 	if (map->start_pos != 1)
 		return (ft_err("Exactly one starting position marker required\n"));
-	printf("\nColors checked successfully\n");
-	printf("\nMap size is %d lines\n", map->line_count);
-	printf("\nDone reading file\n");
 	return (0);
 }

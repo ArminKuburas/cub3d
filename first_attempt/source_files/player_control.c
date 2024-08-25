@@ -6,19 +6,11 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:26:42 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/20 17:59:40 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/25 18:47:30 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
-
-void	close_window(void *param)
-{
-	t_data	*data;
-
-	data = param;
-	free_all_and_exit(data);
-}
 
 void	key_press(mlx_key_data_t key_data, void *param)
 {
@@ -26,7 +18,7 @@ void	key_press(mlx_key_data_t key_data, void *param)
 
 	data = param;
 	if (key_data.action == MLX_PRESS && key_data.key == MLX_KEY_ESCAPE)
-		free_all_and_exit(data);
+		mlx_close_window(data->mlx);
 }
 
 void	move_player(t_data *data, enum e_direction direction)
