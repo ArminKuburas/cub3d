@@ -6,20 +6,30 @@
 #    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:56:21 by akovalev          #+#    #+#              #
-#    Updated: 2024/08/14 11:57:38 by akuburas         ###   ########.fr        #
+#    Updated: 2024/08/26 14:17:17 by akuburas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	:= cub3d
-CFLAGS	:= -Wunreachable-code -Ofast -Wall -Wextra -Werror 
+CFLAGS	:= -Wunreachable-code -Ofast -g -Wall -Wextra -Werror 
 LIBMLX	:= ./other_libraries/MLX42
 
 HEADERS	:= -I $(LIBMLX)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm -L/Users/$(USER)/.brew/Cellar/glfw/3.3.8/lib -lglfw
 
-#SRCS	:=	ray_tracing_test_01.c
-SRCS	:=	./source_files/parsing/akovalev_parsing.c ./source_files/main.c ./source_files/initiate_mlx.c ./source_files/math.c
-#SRCS	:=	image_to_screen_test.c
+SRCS	:=	./source_files/parsing/akovalev_parsing.c \
+			./source_files/main.c \
+			./source_files/initiate_mlx.c \
+			./source_files/colour_helper_functions.c \
+			./source_files/helper_functions.c \
+			./source_files/player_control.c \
+			./source_files/ray_calculations.c \
+			./source_files/parsing/additional_parsers.c \
+			./source_files/parsing/floor_ceiling_validators.c \
+			./source_files/parsing/freeing_functions.c \
+			./source_files/parsing/parse_directions.c \
+			./source_files/load_data_functions.c
+			
 			
 OBJS	:= ${SRCS:.c=.o} ./other_libraries/libft/libft.a
 
