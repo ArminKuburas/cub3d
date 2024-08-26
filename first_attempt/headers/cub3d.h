@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/25 18:47:37 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:20:24 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,13 @@ void	free_all_and_exit(t_data *data);
 int32_t	texture_pixel_colour(mlx_texture_t *image, int x, int y);
 void	modify_pixel(int x, int y, int32_t colour, t_data *data);
 int		ft_err(char *str);
+int		parse_directions(t_map *map, char *line, int *count);
+int		parse_f(t_map *map, char *line, int *count);
+int		parse_c(t_map *map, char *line, int *count);
+int		check_lines(t_map *map);
+int		validate_floor(t_map *map);
+int		validate_ceiling(t_map *map);
+int		reformat_map(t_data *data);
+int		load_textures(t_data *data);
 
 #endif

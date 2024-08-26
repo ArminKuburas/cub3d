@@ -6,7 +6,7 @@
 #    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:56:21 by akovalev          #+#    #+#              #
-#    Updated: 2024/08/25 16:33:07 by akuburas         ###   ########.fr        #
+#    Updated: 2024/08/26 14:17:17 by akuburas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,13 @@ SRCS	:=	./source_files/parsing/akovalev_parsing.c \
 			./source_files/colour_helper_functions.c \
 			./source_files/helper_functions.c \
 			./source_files/player_control.c \
-			./source_files/ray_calculations.c
+			./source_files/ray_calculations.c \
+			./source_files/parsing/additional_parsers.c \
+			./source_files/parsing/floor_ceiling_validators.c \
+			./source_files/parsing/freeing_functions.c \
+			./source_files/parsing/parse_directions.c \
+			./source_files/load_data_functions.c
+			
 			
 OBJS	:= ${SRCS:.c=.o} ./other_libraries/libft/libft.a
 

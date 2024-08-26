@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/25 18:53:58 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:33:30 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,21 @@ void	init_mlx(t_data *data)
 {
 	data->mlx = mlx_init(WIDTH, HEIGHT, "Cub3D", FALSE);
 	if (!data->mlx)
+	{
+		ft_err("mlx initialization failed");
 		free_all_and_exit(data);
+	}
 	data->image = mlx_new_image(data->mlx, WIDTH, HEIGHT);
 	if (!data->image)
+	{
+		ft_err("mlx new image failed");
 		free_all_and_exit(data);
+	}
 	if (mlx_image_to_window(data->mlx, data->image, 0, 0) < 0)
+	{
+		ft_err("mlx image to window failed");
 		free_all_and_exit(data);
+	}
 }
 
 void	figure_out_texture(int *texture_height, t_ray *ray, t_data *data)
@@ -73,9 +82,6 @@ void	draw_ray(t_ray *ray, int texture_height, int rays_amount, t_data *data)
 	}
 }
 
-/*This should be the general frame of reference we can use
-To render frames. Very similar to the testing I did
-Next step is to actually code all the elements of it.*/
 void	render_next_frame(void *main_data)
 {
 	t_data	*data;
@@ -104,8 +110,6 @@ void	render_next_frame(void *main_data)
 	}
 }
 
-// For now we will render every frame. 
-// If thats too slow we can render per movement.
 void	mlx_looping(t_data *data)
 {
 	init_mlx(data);
@@ -113,20 +117,6 @@ void	mlx_looping(t_data *data)
 	mlx_loop_hook(data->mlx, player_controller, data);
 	mlx_key_hook(data->mlx, key_press, data);
 	mlx_loop(data->mlx);
-	printf("mlx loop has ended\n");
-	free_map_info(data->parse_data);
-	printf("map info has been freed\n");
-	free_array(data->map);
-	printf("array has been freed\n");
-	mlx_delete_image(data->mlx, data->image);
-	printf("image has been freed\n");
-	mlx_delete_texture(data->north_texture);
-	printf("north texture has been freed\n");
-	mlx_delete_texture(data->east_texture);
-	printf("east texture has been freed\n");
-	mlx_delete_texture(data->west_texture);
-	printf("west texture has been freed\n");
-	mlx_delete_texture(data->south_texture);
-	printf("south texture has been freed\n");
-	printf("textures have been freed\n");
+	mlx_terminate(data->mlx);
+	free_all_and_exit(data);
 }
