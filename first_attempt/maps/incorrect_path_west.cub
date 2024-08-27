@@ -4,7 +4,7 @@ NO ../tilesets/cub3d_new_pngs/north.png
 
 
 SO ../tilesets/cub3d_new_pngs/south.png
-WE ../tilesets/cub3d_new_pngs/west.png
+WE ../tilesets/cub3d_new_pngs/west.pn
 
 
 EA ../tilesets/cub3d_new_pngs/east.png
@@ -19,8 +19,8 @@ C 155,30,255
 
  111111111111111
 10000000000000001
-10001000000010001
+10000000000000001
 10000000N00000001
-10001000000010001
+10000000000000001
 10000000000000001
  111111111111111
