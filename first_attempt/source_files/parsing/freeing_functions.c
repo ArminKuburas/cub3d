@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:11:39 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/26 13:14:23 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/27 19:55:31 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,24 @@ void	map_info_helper(t_map *map)
 	}
 }
 
+void	free_gnl_buffer(t_map *map)
+{
+	char	*line;
+
+	if (map->fd <= 0)
+		return ;
+	line = get_next_line(map->fd);
+	while (line)
+	{
+		free(line);
+		line = get_next_line(map->fd);
+	}
+}
+
 void	free_map_info(t_map *map)
 {
 	map_info_helper(map);
+	free_gnl_buffer(map);
 	if (map->fd > 0)
 		close(map->fd);
 	if (map->c)
