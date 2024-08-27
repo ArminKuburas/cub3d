@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   floor_ceiling_validators.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:23:33 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/26 12:23:52 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/27 18:42:59 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,7 @@ int	split_ceiling(t_map *map)
 		i++;
 	}
 	if (i != 3)
-		return (ft_err("Incorrect ceiling color format: \
-			exactly three numbers required\n"));
+		return (ft_err("Incorrect ceiling color format\n"));
 	return (0);
 }
 

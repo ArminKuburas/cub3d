@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   additional_parsers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:19:15 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/26 12:29:09 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/27 18:41:12 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,20 @@ int	check_around_pos(t_map *map, char *str, size_t x, size_t y)
 	if (y < map->map_copy.len - 1)
 		map->nxt_str = *(char **)vec_get(&map->map_copy, y + 1);
 	if (str[x + 1] == ' ' || str[x + 1] == '\n')
-	{
-		return (ft_err("Incorrectly formatted map lines\n"));
-	}
+		return (1);
 	if ((map->pr_str && x >= ft_strlen (map->pr_str)) || \
 		(y && (map->pr_str[x] == ' ' || map->pr_str[x] == '\n')) || y == 0)
 	{
-		return (ft_err("Incorrectly formatted map lines\n"));
+		return (1);
 	}
 	if ((x && str[x - 1] == ' ') || x == 0)
-	{
-		return (ft_err("Incorrectly formatted map lines\n"));
-	}
+		return (1);
 	if ((map->nxt_str && x >= ft_strlen (map->nxt_str))
 		|| (y < map->map_copy.len - 1
 			&& (map->nxt_str [x] == ' ' || map->nxt_str [x] == '\n'
 				|| map->nxt_str [x] == '\0')) || y == map->map_copy.len - 1)
 	{
-		return (ft_err("Incorrectly formatted map lines\n"));
+		return (1);
 	}
 	return (0);
 }
