@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_data_functions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:17:10 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/27 15:20:27 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/28 18:32:59 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,13 @@ int	reformat_map(t_data *data)
 	while (*ptr1)
 	{
 		if (realloc_line(ptr1, max_len))
-			return (1);
+			return (ft_err("Map reallocation failed\n"));
 		ptr1++;
 	}
 	data->map_width = max_len;
 	data->map_height = data->parse_data->line_count;
+	if (check_islands(data))
+		return (ft_err("Islands in the map are not allowed\n"));
 	return (0);
 }
 
