@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:17:10 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/26 15:07:26 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/27 15:20:27 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,4 +111,27 @@ int	load_textures(t_data *data)
 		return (ft_err("Can't load west texture file\n"));
 	}
 	return (0);
+}
+
+int	open_load_textures(t_data *data)
+{
+	int	fd;
+
+	fd = open(data->parse_data->so, O_RDONLY);
+	if (fd == -1)
+		return (ft_err("Can't load south texture file\n"));
+	close(fd);
+	fd = open(data->parse_data->no, O_RDONLY);
+	if (fd == -1)
+		return (ft_err("Can't load north texture file\n"));
+	close(fd);
+	fd = open(data->parse_data->ea, O_RDONLY);
+	if (fd == -1)
+		return (ft_err("Can't load east texture file\n"));
+	close(fd);
+	fd = open(data->parse_data->we, O_RDONLY);
+	if (fd == -1)
+		return (ft_err("Can't load west texture file\n"));
+	close(fd);
+	return (load_textures(data));
 }

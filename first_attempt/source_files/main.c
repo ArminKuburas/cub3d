@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/26 14:28:43 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/27 19:52:22 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	initial_map_validation(t_data *data, char **argv, int argc)
 	}
 	if (validate_map(data->parse_data))
 	{
-		close(data->parse_data->fd);
 		free_map_info(data->parse_data);
 		return (FAILURE);
 	}
@@ -83,7 +82,7 @@ int	main(int argc, char **argv)
 		free_map_info(&map);
 		return (FAILURE);
 	}
-	if (reformat_map(&data) || load_textures(&data))
+	if (reformat_map(&data) || open_load_textures(&data))
 	{
 		close(map.fd);
 		free_map_info(&map);
