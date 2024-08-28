@@ -6,7 +6,7 @@
 #    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:56:21 by akovalev          #+#    #+#              #
-#    Updated: 2024/08/26 16:08:09 by akuburas         ###   ########.fr        #
+#    Updated: 2024/08/28 10:48:30 by akuburas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ OBJS	:= ${SRCS:.c=.o} ./other_libraries/libft/libft.a
 all: $(NAME)
 
 libmlx:
-	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
+	@if [ ! -d $(LIBMLX)/build ]; then \
+		cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4; \
+	fi
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
