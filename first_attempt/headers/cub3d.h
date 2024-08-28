@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 02:30:52 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/27 15:23:16 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/28 18:38:12 by akovalev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,6 @@ int		validate_floor(t_map *map);
 int		validate_ceiling(t_map *map);
 int		reformat_map(t_data *data);
 int		open_load_textures(t_data *data);
+int		check_islands(t_data *data);
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
+#    By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:56:21 by akovalev          #+#    #+#              #
-#    Updated: 2024/08/28 10:48:30 by akuburas         ###   ########.fr        #
+#    Updated: 2024/08/28 18:36:41 by akovalev         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS	:=	./source_files/parsing/akovalev_parsing.c \
 			./source_files/parsing/floor_ceiling_validators.c \
 			./source_files/parsing/freeing_functions.c \
 			./source_files/parsing/parse_directions.c \
+			./source_files/parsing/island_excluder.c \
 			./source_files/load_data_functions.c
 			
 			
