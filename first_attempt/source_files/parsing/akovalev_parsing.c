@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/08/26 14:18:40 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 14:14:57 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ int	parse_map_data_lines(t_map *map, char *line, int *count)
 	return (0);
 }
 
+/**
+ * @brief Parses the map lines.
+ * @param map Pointer to the map structure.
+ * @param line The current line in the map.
+ * @return int Returns 0 if the function runs successfully.
+ */
 int	parse_map_lines(t_map *map, char *line)
 {
 	line = get_next_line(map->fd);
@@ -82,6 +88,13 @@ int	parse_map_lines(t_map *map, char *line)
 	return (0);
 }
 
+/**
+ * @brief Validates the initial lines of the map.
+ * @param map Pointer to the map structure.
+ * @param line The current line in the map.
+ * @param count The count of the lines parsed.
+ * @return int Returns 0 if the function runs successfully.
+ */
 int	validate_initial_lines(t_map *map, char *line, int *count)
 {
 	int	n;
@@ -103,6 +116,11 @@ int	validate_initial_lines(t_map *map, char *line, int *count)
 	return (SUCCESS);
 }
 
+/**
+ * @brief Validates the map.
+ * @param map Pointer to the map structure.
+ * @return int Returns 0 if the map is valid.
+ */
 int	validate_map(t_map *map)
 {
 	char	*line;
