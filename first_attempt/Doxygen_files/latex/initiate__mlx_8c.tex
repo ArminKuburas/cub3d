@@ -1,0 +1,169 @@
+\hypertarget{initiate__mlx_8c}{}\doxysection{source\+\_\+files/initiate\+\_\+mlx.c File Reference}
+\label{initiate__mlx_8c}\index{source\_files/initiate\_mlx.c@{source\_files/initiate\_mlx.c}}
+{\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
+Include dependency graph for initiate\+\_\+mlx.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991}{init\+\_\+mlx}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+void \mbox{\hyperlink{initiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e}{figure\+\_\+out\+\_\+texture}} (int $\ast$texture\+\_\+height, \mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+void \mbox{\hyperlink{initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941}{draw\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, int texture\+\_\+height, int rays\+\_\+amount, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+void \mbox{\hyperlink{initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae}{render\+\_\+next\+\_\+frame}} (void $\ast$main\+\_\+data)
+\item 
+void \mbox{\hyperlink{initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016}{mlx\+\_\+looping}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941}\label{initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941}} 
+\index{initiate\_mlx.c@{initiate\_mlx.c}!draw\_ray@{draw\_ray}}
+\index{draw\_ray@{draw\_ray}!initiate\_mlx.c@{initiate\_mlx.c}}
+\doxysubsubsection{\texorpdfstring{draw\_ray()}{draw\_ray()}}
+{\footnotesize\ttfamily void draw\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{int}]{texture\+\_\+height,  }\item[{int}]{rays\+\_\+amount,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+data\+::ceiling\+\_\+colour, s\+\_\+ray\+::distance, s\+\_\+data\+::floor\+\_\+colour, HEIGHT, modify\+\_\+pixel(), s\+\_\+ray\+::texture, texture\+\_\+pixel\+\_\+colour(), s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
+
+
+
+Referenced by render\+\_\+next\+\_\+frame().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{initiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e}\label{initiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e}} 
+\index{initiate\_mlx.c@{initiate\_mlx.c}!figure\_out\_texture@{figure\_out\_texture}}
+\index{figure\_out\_texture@{figure\_out\_texture}!initiate\_mlx.c@{initiate\_mlx.c}}
+\doxysubsubsection{\texorpdfstring{figure\_out\_texture()}{figure\_out\_texture()}}
+{\footnotesize\ttfamily void figure\+\_\+out\+\_\+texture (\begin{DoxyParamCaption}\item[{int $\ast$}]{texture\+\_\+height,  }\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::east\+\_\+texture, HEIGHT, NORTH, s\+\_\+data\+::north\+\_\+texture, SOUTH, s\+\_\+data\+::south\+\_\+texture, s\+\_\+ray\+::texture, WEST, s\+\_\+data\+::west\+\_\+texture, s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
+
+
+
+Referenced by render\+\_\+next\+\_\+frame().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991}\label{initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991}} 
+\index{initiate\_mlx.c@{initiate\_mlx.c}!init\_mlx@{init\_mlx}}
+\index{init\_mlx@{init\_mlx}!initiate\_mlx.c@{initiate\_mlx.c}}
+\doxysubsubsection{\texorpdfstring{init\_mlx()}{init\_mlx()}}
+{\footnotesize\ttfamily void init\+\_\+mlx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References FALSE, free\+\_\+all\+\_\+and\+\_\+exit(), ft\+\_\+err(), HEIGHT, s\+\_\+data\+::image, s\+\_\+data\+::mlx, and WIDTH.
+
+
+
+Referenced by mlx\+\_\+looping().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016}\label{initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016}} 
+\index{initiate\_mlx.c@{initiate\_mlx.c}!mlx\_looping@{mlx\_looping}}
+\index{mlx\_looping@{mlx\_looping}!initiate\_mlx.c@{initiate\_mlx.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_looping()}{mlx\_looping()}}
+{\footnotesize\ttfamily void mlx\+\_\+looping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References free\+\_\+all\+\_\+and\+\_\+exit(), init\+\_\+mlx(), key\+\_\+press(), s\+\_\+data\+::mlx, player\+\_\+controller(), and render\+\_\+next\+\_\+frame().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae}\label{initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae}} 
+\index{initiate\_mlx.c@{initiate\_mlx.c}!render\_next\_frame@{render\_next\_frame}}
+\index{render\_next\_frame@{render\_next\_frame}!initiate\_mlx.c@{initiate\_mlx.c}}
+\doxysubsubsection{\texorpdfstring{render\_next\_frame()}{render\_next\_frame()}}
+{\footnotesize\ttfamily void render\+\_\+next\+\_\+frame (\begin{DoxyParamCaption}\item[{void $\ast$}]{main\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+ray\+::angle, calculate\+\_\+ray(), s\+\_\+ray\+::distance, draw\+\_\+ray(), figure\+\_\+out\+\_\+texture(), fix\+\_\+fish\+\_\+eye(), FOV, HEIGHT, s\+\_\+data\+::player, s\+\_\+player\+::rotation\+\_\+angle, and WIDTH.
+
+
+
+Referenced by mlx\+\_\+looping().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_icgraph}
+\end{center}
+\end{figure}

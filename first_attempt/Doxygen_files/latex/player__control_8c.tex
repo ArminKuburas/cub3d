@@ -1,0 +1,121 @@
+\hypertarget{player__control_8c}{}\doxysection{source\+\_\+files/player\+\_\+control.c File Reference}
+\label{player__control_8c}\index{source\_files/player\_control.c@{source\_files/player\_control.c}}
+{\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
+Include dependency graph for player\+\_\+control.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player__control_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{player__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2}{key\+\_\+press}} (mlx\+\_\+key\+\_\+data\+\_\+t key\+\_\+data, void $\ast$param)
+\item 
+void \mbox{\hyperlink{player__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed}{move\+\_\+player}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data, enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}} direction)
+\item 
+void \mbox{\hyperlink{player__control_8c_a584096c3ea3fc35a06612d7dc957bea4}{turn\+\_\+player}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data, enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}} direction)
+\item 
+void \mbox{\hyperlink{player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d}{player\+\_\+controller}} (void $\ast$param)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{player__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2}\label{player__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2}} 
+\index{player\_control.c@{player\_control.c}!key\_press@{key\_press}}
+\index{key\_press@{key\_press}!player\_control.c@{player\_control.c}}
+\doxysubsubsection{\texorpdfstring{key\_press()}{key\_press()}}
+{\footnotesize\ttfamily void key\+\_\+press (\begin{DoxyParamCaption}\item[{mlx\+\_\+key\+\_\+data\+\_\+t}]{key\+\_\+data,  }\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+data\+::mlx.
+
+
+
+Referenced by mlx\+\_\+looping().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{player__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed}\label{player__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed}} 
+\index{player\_control.c@{player\_control.c}!move\_player@{move\_player}}
+\index{move\_player@{move\_player}!player\_control.c@{player\_control.c}}
+\doxysubsubsection{\texorpdfstring{move\_player()}{move\_player()}}
+{\footnotesize\ttfamily void move\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data,  }\item[{enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+References GO\+\_\+\+BACKWARDS, GO\+\_\+\+FORWARDS, MOVE\+\_\+\+SPEED, s\+\_\+data\+::player, s\+\_\+player\+::rotation\+\_\+angle, STRAFE\+\_\+\+LEFT, s\+\_\+player\+::x, and s\+\_\+player\+::y.
+
+
+
+Referenced by player\+\_\+controller().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d}\label{player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d}} 
+\index{player\_control.c@{player\_control.c}!player\_controller@{player\_controller}}
+\index{player\_controller@{player\_controller}!player\_control.c@{player\_control.c}}
+\doxysubsubsection{\texorpdfstring{player\_controller()}{player\_controller()}}
+{\footnotesize\ttfamily void player\+\_\+controller (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+References GO\+\_\+\+BACKWARDS, GO\+\_\+\+FORWARDS, s\+\_\+data\+::mlx, move\+\_\+player(), STRAFE\+\_\+\+LEFT, STRAFE\+\_\+\+RIGHT, TURN\+\_\+\+LEFT, turn\+\_\+player(), and TURN\+\_\+\+RIGHT.
+
+
+
+Referenced by mlx\+\_\+looping().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player__control_8c_a584096c3ea3fc35a06612d7dc957bea4}\label{player__control_8c_a584096c3ea3fc35a06612d7dc957bea4}} 
+\index{player\_control.c@{player\_control.c}!turn\_player@{turn\_player}}
+\index{turn\_player@{turn\_player}!player\_control.c@{player\_control.c}}
+\doxysubsubsection{\texorpdfstring{turn\_player()}{turn\_player()}}
+{\footnotesize\ttfamily void turn\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data,  }\item[{enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}}}]{direction }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+data\+::player, ROTATE\+\_\+\+SPEED, s\+\_\+player\+::rotation\+\_\+angle, TURN\+\_\+\+LEFT, and TURN\+\_\+\+RIGHT.
+
+
+
+Referenced by player\+\_\+controller().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player__control_8c_a584096c3ea3fc35a06612d7dc957bea4_icgraph}
+\end{center}
+\end{figure}

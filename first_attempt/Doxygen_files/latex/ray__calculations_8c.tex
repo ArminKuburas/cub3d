@@ -1,0 +1,145 @@
+\hypertarget{ray__calculations_8c}{}\doxysection{source\+\_\+files/ray\+\_\+calculations.c File Reference}
+\label{ray__calculations_8c}\index{source\_files/ray\_calculations.c@{source\_files/ray\_calculations.c}}
+{\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
+Include dependency graph for ray\+\_\+calculations.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ray__calculations_8c_a3fc8548add5cdd402491ba925e73378d}{find\+\_\+collision}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, float x\+\_\+travel, float y\+\_\+travel, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+float \mbox{\hyperlink{ray__calculations_8c_ab9f5d6da64a51086370b12ad33a682e4}{horizontal\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, float angle, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+float \mbox{\hyperlink{ray__calculations_8c_af165918679598f2330d2549ca4734c37}{vertical\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, float angle, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+void \mbox{\hyperlink{ray__calculations_8c_a4a185f1d7500ad0a2153a620396354d3}{calculate\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ray__calculations_8c_a4a185f1d7500ad0a2153a620396354d3}\label{ray__calculations_8c_a4a185f1d7500ad0a2153a620396354d3}} 
+\index{ray\_calculations.c@{ray\_calculations.c}!calculate\_ray@{calculate\_ray}}
+\index{calculate\_ray@{calculate\_ray}!ray\_calculations.c@{ray\_calculations.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_ray()}{calculate\_ray()}}
+{\footnotesize\ttfamily void calculate\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::east\+\_\+texture, horizontal\+\_\+ray(), s\+\_\+data\+::south\+\_\+texture, s\+\_\+ray\+::texture, vertical\+\_\+ray(), s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
+
+
+
+Referenced by render\+\_\+next\+\_\+frame().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c_a4a185f1d7500ad0a2153a620396354d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c_a4a185f1d7500ad0a2153a620396354d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ray__calculations_8c_a3fc8548add5cdd402491ba925e73378d}\label{ray__calculations_8c_a3fc8548add5cdd402491ba925e73378d}} 
+\index{ray\_calculations.c@{ray\_calculations.c}!find\_collision@{find\_collision}}
+\index{find\_collision@{find\_collision}!ray\_calculations.c@{ray\_calculations.c}}
+\doxysubsubsection{\texorpdfstring{find\_collision()}{find\_collision()}}
+{\footnotesize\ttfamily void find\+\_\+collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{float}]{x\+\_\+travel,  }\item[{float}]{y\+\_\+travel,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References ft\+\_\+strchr(), s\+\_\+data\+::map, s\+\_\+data\+::map\+\_\+height, s\+\_\+data\+::map\+\_\+width, s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
+
+
+
+Referenced by horizontal\+\_\+ray(), and vertical\+\_\+ray().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{ray__calculations_8c_a3fc8548add5cdd402491ba925e73378d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c_a3fc8548add5cdd402491ba925e73378d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ray__calculations_8c_ab9f5d6da64a51086370b12ad33a682e4}\label{ray__calculations_8c_ab9f5d6da64a51086370b12ad33a682e4}} 
+\index{ray\_calculations.c@{ray\_calculations.c}!horizontal\_ray@{horizontal\_ray}}
+\index{horizontal\_ray@{horizontal\_ray}!ray\_calculations.c@{ray\_calculations.c}}
+\doxysubsubsection{\texorpdfstring{horizontal\_ray()}{horizontal\_ray()}}
+{\footnotesize\ttfamily float horizontal\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{float}]{angle,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References find\+\_\+collision(), s\+\_\+data\+::player, WEST, s\+\_\+ray\+::x, s\+\_\+player\+::x, s\+\_\+ray\+::y, and s\+\_\+player\+::y.
+
+
+
+Referenced by calculate\+\_\+ray().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c_ab9f5d6da64a51086370b12ad33a682e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c_ab9f5d6da64a51086370b12ad33a682e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ray__calculations_8c_af165918679598f2330d2549ca4734c37}\label{ray__calculations_8c_af165918679598f2330d2549ca4734c37}} 
+\index{ray\_calculations.c@{ray\_calculations.c}!vertical\_ray@{vertical\_ray}}
+\index{vertical\_ray@{vertical\_ray}!ray\_calculations.c@{ray\_calculations.c}}
+\doxysubsubsection{\texorpdfstring{vertical\_ray()}{vertical\_ray()}}
+{\footnotesize\ttfamily float vertical\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{float}]{angle,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References find\+\_\+collision(), s\+\_\+data\+::player, SOUTH, s\+\_\+ray\+::x, s\+\_\+player\+::x, s\+\_\+ray\+::y, and s\+\_\+player\+::y.
+
+
+
+Referenced by calculate\+\_\+ray().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c_af165918679598f2330d2549ca4734c37_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ray__calculations_8c_af165918679598f2330d2549ca4734c37_icgraph}
+\end{center}
+\end{figure}

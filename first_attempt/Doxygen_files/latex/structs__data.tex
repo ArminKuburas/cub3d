@@ -1,0 +1,183 @@
+\hypertarget{structs__data}{}\doxysection{s\+\_\+data Struct Reference}
+\label{structs__data}\index{s\_data@{s\_data}}
+
+
+{\ttfamily \#include $<$cub3d.\+h$>$}
+
+
+
+Collaboration diagram for s\+\_\+data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{structs__data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+mlx\+\_\+t $\ast$ \mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}}
+\item 
+mlx\+\_\+image\+\_\+t $\ast$ \mbox{\hyperlink{structs__data_a21a5ef56a5817352f9d783eae627f051}{image}}
+\item 
+mlx\+\_\+texture\+\_\+t $\ast$ \mbox{\hyperlink{structs__data_a7229c81d9938cd25ca3370bde2604d3e}{north\+\_\+texture}}
+\item 
+mlx\+\_\+texture\+\_\+t $\ast$ \mbox{\hyperlink{structs__data_a17b6028a66f507ef23604149ba96dcd4}{south\+\_\+texture}}
+\item 
+mlx\+\_\+texture\+\_\+t $\ast$ \mbox{\hyperlink{structs__data_a8dabcfe8bf051a1b0dfe3b5613002269}{west\+\_\+texture}}
+\item 
+mlx\+\_\+texture\+\_\+t $\ast$ \mbox{\hyperlink{structs__data_a7e2382361936ce9ab40e8fd8ef59c3be}{east\+\_\+texture}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structs__data_ab953b5ebff38d904f2972e3dc23b0187}{floor\+\_\+colour}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structs__data_a4a303b375c4a198122b463b0c2472029}{ceiling\+\_\+colour}}
+\item 
+char $\ast$$\ast$ \mbox{\hyperlink{structs__data_a64bfba03d4e99b6ffa98aa6c7afaf0da}{map}}
+\item 
+int \mbox{\hyperlink{structs__data_a0762ae0da9689bc2784dad10c8170ec8}{map\+\_\+height}}
+\item 
+int \mbox{\hyperlink{structs__data_a34aae2937a276ff7decf57ec9185c160}{map\+\_\+width}}
+\item 
+\mbox{\hyperlink{cub3d_8h_aef4e2e456f5bf835fd3145850f889c4a}{t\+\_\+player}} \mbox{\hyperlink{structs__data_a446faee463ab2336804d50d38eb8f092}{player}}
+\item 
+\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$ \mbox{\hyperlink{structs__data_a0fead1aa454d6e7ee8a8d7f7df351466}{parse\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structs__data_a4a303b375c4a198122b463b0c2472029}\label{structs__data_a4a303b375c4a198122b463b0c2472029}} 
+\index{s\_data@{s\_data}!ceiling\_colour@{ceiling\_colour}}
+\index{ceiling\_colour@{ceiling\_colour}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{ceiling\_colour}{ceiling\_colour}}
+{\footnotesize\ttfamily int32\+\_\+t s\+\_\+data\+::ceiling\+\_\+colour}
+
+
+
+Referenced by draw\+\_\+ray(), and populate\+\_\+data().
+
+\mbox{\Hypertarget{structs__data_a7e2382361936ce9ab40e8fd8ef59c3be}\label{structs__data_a7e2382361936ce9ab40e8fd8ef59c3be}} 
+\index{s\_data@{s\_data}!east\_texture@{east\_texture}}
+\index{east\_texture@{east\_texture}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{east\_texture}{east\_texture}}
+{\footnotesize\ttfamily mlx\+\_\+texture\+\_\+t$\ast$ s\+\_\+data\+::east\+\_\+texture}
+
+
+
+Referenced by calculate\+\_\+ray(), figure\+\_\+out\+\_\+texture(), free\+\_\+all\+\_\+and\+\_\+exit(), and load\+\_\+textures().
+
+\mbox{\Hypertarget{structs__data_ab953b5ebff38d904f2972e3dc23b0187}\label{structs__data_ab953b5ebff38d904f2972e3dc23b0187}} 
+\index{s\_data@{s\_data}!floor\_colour@{floor\_colour}}
+\index{floor\_colour@{floor\_colour}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{floor\_colour}{floor\_colour}}
+{\footnotesize\ttfamily int32\+\_\+t s\+\_\+data\+::floor\+\_\+colour}
+
+
+
+Referenced by draw\+\_\+ray(), and populate\+\_\+data().
+
+\mbox{\Hypertarget{structs__data_a21a5ef56a5817352f9d783eae627f051}\label{structs__data_a21a5ef56a5817352f9d783eae627f051}} 
+\index{s\_data@{s\_data}!image@{image}}
+\index{image@{image}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily mlx\+\_\+image\+\_\+t$\ast$ s\+\_\+data\+::image}
+
+
+
+Referenced by init\+\_\+mlx(), and modify\+\_\+pixel().
+
+\mbox{\Hypertarget{structs__data_a64bfba03d4e99b6ffa98aa6c7afaf0da}\label{structs__data_a64bfba03d4e99b6ffa98aa6c7afaf0da}} 
+\index{s\_data@{s\_data}!map@{map}}
+\index{map@{map}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily char$\ast$$\ast$ s\+\_\+data\+::map}
+
+
+
+Referenced by find\+\_\+collision(), free\+\_\+all\+\_\+and\+\_\+exit(), main(), populate\+\_\+data(), and reformat\+\_\+map().
+
+\mbox{\Hypertarget{structs__data_a0762ae0da9689bc2784dad10c8170ec8}\label{structs__data_a0762ae0da9689bc2784dad10c8170ec8}} 
+\index{s\_data@{s\_data}!map\_height@{map\_height}}
+\index{map\_height@{map\_height}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{map\_height}{map\_height}}
+{\footnotesize\ttfamily int s\+\_\+data\+::map\+\_\+height}
+
+
+
+Referenced by find\+\_\+collision(), and reformat\+\_\+map().
+
+\mbox{\Hypertarget{structs__data_a34aae2937a276ff7decf57ec9185c160}\label{structs__data_a34aae2937a276ff7decf57ec9185c160}} 
+\index{s\_data@{s\_data}!map\_width@{map\_width}}
+\index{map\_width@{map\_width}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{map\_width}{map\_width}}
+{\footnotesize\ttfamily int s\+\_\+data\+::map\+\_\+width}
+
+
+
+Referenced by find\+\_\+collision(), and reformat\+\_\+map().
+
+\mbox{\Hypertarget{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}\label{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}} 
+\index{s\_data@{s\_data}!mlx@{mlx}}
+\index{mlx@{mlx}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{mlx}{mlx}}
+{\footnotesize\ttfamily mlx\+\_\+t$\ast$ s\+\_\+data\+::mlx}
+
+
+
+Referenced by init\+\_\+mlx(), key\+\_\+press(), mlx\+\_\+looping(), and player\+\_\+controller().
+
+\mbox{\Hypertarget{structs__data_a7229c81d9938cd25ca3370bde2604d3e}\label{structs__data_a7229c81d9938cd25ca3370bde2604d3e}} 
+\index{s\_data@{s\_data}!north\_texture@{north\_texture}}
+\index{north\_texture@{north\_texture}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{north\_texture}{north\_texture}}
+{\footnotesize\ttfamily mlx\+\_\+texture\+\_\+t$\ast$ s\+\_\+data\+::north\+\_\+texture}
+
+
+
+Referenced by figure\+\_\+out\+\_\+texture(), free\+\_\+all\+\_\+and\+\_\+exit(), and load\+\_\+textures().
+
+\mbox{\Hypertarget{structs__data_a0fead1aa454d6e7ee8a8d7f7df351466}\label{structs__data_a0fead1aa454d6e7ee8a8d7f7df351466}} 
+\index{s\_data@{s\_data}!parse\_data@{parse\_data}}
+\index{parse\_data@{parse\_data}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{parse\_data}{parse\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}$\ast$ s\+\_\+data\+::parse\+\_\+data}
+
+
+
+Referenced by free\+\_\+all\+\_\+and\+\_\+exit(), initial\+\_\+map\+\_\+validation(), load\+\_\+textures(), main(), open\+\_\+load\+\_\+textures(), and reformat\+\_\+map().
+
+\mbox{\Hypertarget{structs__data_a446faee463ab2336804d50d38eb8f092}\label{structs__data_a446faee463ab2336804d50d38eb8f092}} 
+\index{s\_data@{s\_data}!player@{player}}
+\index{player@{player}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cub3d_8h_aef4e2e456f5bf835fd3145850f889c4a}{t\+\_\+player}} s\+\_\+data\+::player}
+
+
+
+Referenced by fix\+\_\+fish\+\_\+eye(), horizontal\+\_\+ray(), move\+\_\+player(), populate\+\_\+data(), render\+\_\+next\+\_\+frame(), set\+\_\+rotation\+\_\+angle(), turn\+\_\+player(), and vertical\+\_\+ray().
+
+\mbox{\Hypertarget{structs__data_a17b6028a66f507ef23604149ba96dcd4}\label{structs__data_a17b6028a66f507ef23604149ba96dcd4}} 
+\index{s\_data@{s\_data}!south\_texture@{south\_texture}}
+\index{south\_texture@{south\_texture}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{south\_texture}{south\_texture}}
+{\footnotesize\ttfamily mlx\+\_\+texture\+\_\+t$\ast$ s\+\_\+data\+::south\+\_\+texture}
+
+
+
+Referenced by calculate\+\_\+ray(), figure\+\_\+out\+\_\+texture(), free\+\_\+all\+\_\+and\+\_\+exit(), and load\+\_\+textures().
+
+\mbox{\Hypertarget{structs__data_a8dabcfe8bf051a1b0dfe3b5613002269}\label{structs__data_a8dabcfe8bf051a1b0dfe3b5613002269}} 
+\index{s\_data@{s\_data}!west\_texture@{west\_texture}}
+\index{west\_texture@{west\_texture}!s\_data@{s\_data}}
+\doxysubsubsection{\texorpdfstring{west\_texture}{west\_texture}}
+{\footnotesize\ttfamily mlx\+\_\+texture\+\_\+t$\ast$ s\+\_\+data\+::west\+\_\+texture}
+
+
+
+Referenced by figure\+\_\+out\+\_\+texture(), free\+\_\+all\+\_\+and\+\_\+exit(), and load\+\_\+textures().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{cub3d_8h}{cub3d.\+h}}\end{DoxyCompactItemize}

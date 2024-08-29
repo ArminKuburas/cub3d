@@ -1,0 +1,105 @@
+\hypertarget{helper__functions_8c}{}\doxysection{source\+\_\+files/helper\+\_\+functions.c File Reference}
+\label{helper__functions_8c}\index{source\_files/helper\_functions.c@{source\_files/helper\_functions.c}}
+{\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
+Include dependency graph for helper\+\_\+functions.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{helper__functions_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{helper__functions_8c_a7b324feb36531a7f3381ee8cb73ca022}{free\+\_\+all\+\_\+and\+\_\+exit}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+void \mbox{\hyperlink{helper__functions_8c_a59e245f491b2a5759a24ee37b1154272}{fix\+\_\+fish\+\_\+eye}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\item 
+int \mbox{\hyperlink{helper__functions_8c_a086076d5586afb94af1d7fb14ec44611}{ft\+\_\+err}} (char $\ast$str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{helper__functions_8c_a59e245f491b2a5759a24ee37b1154272}\label{helper__functions_8c_a59e245f491b2a5759a24ee37b1154272}} 
+\index{helper\_functions.c@{helper\_functions.c}!fix\_fish\_eye@{fix\_fish\_eye}}
+\index{fix\_fish\_eye@{fix\_fish\_eye}!helper\_functions.c@{helper\_functions.c}}
+\doxysubsubsection{\texorpdfstring{fix\_fish\_eye()}{fix\_fish\_eye()}}
+{\footnotesize\ttfamily void fix\+\_\+fish\+\_\+eye (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::player, and s\+\_\+player\+::rotation\+\_\+angle.
+
+
+
+Referenced by render\+\_\+next\+\_\+frame().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{helper__functions_8c_a59e245f491b2a5759a24ee37b1154272_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{helper__functions_8c_a7b324feb36531a7f3381ee8cb73ca022}\label{helper__functions_8c_a7b324feb36531a7f3381ee8cb73ca022}} 
+\index{helper\_functions.c@{helper\_functions.c}!free\_all\_and\_exit@{free\_all\_and\_exit}}
+\index{free\_all\_and\_exit@{free\_all\_and\_exit}!helper\_functions.c@{helper\_functions.c}}
+\doxysubsubsection{\texorpdfstring{free\_all\_and\_exit()}{free\_all\_and\_exit()}}
+{\footnotesize\ttfamily void free\+\_\+all\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+data\+::east\+\_\+texture, free\+\_\+array(), free\+\_\+map\+\_\+info(), s\+\_\+data\+::map, s\+\_\+data\+::north\+\_\+texture, s\+\_\+data\+::parse\+\_\+data, s\+\_\+data\+::south\+\_\+texture, and s\+\_\+data\+::west\+\_\+texture.
+
+
+
+Referenced by init\+\_\+mlx(), and mlx\+\_\+looping().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{helper__functions_8c_a7b324feb36531a7f3381ee8cb73ca022_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{helper__functions_8c_a7b324feb36531a7f3381ee8cb73ca022_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{helper__functions_8c_a086076d5586afb94af1d7fb14ec44611}\label{helper__functions_8c_a086076d5586afb94af1d7fb14ec44611}} 
+\index{helper\_functions.c@{helper\_functions.c}!ft\_err@{ft\_err}}
+\index{ft\_err@{ft\_err}!helper\_functions.c@{helper\_functions.c}}
+\doxysubsubsection{\texorpdfstring{ft\_err()}{ft\_err()}}
+{\footnotesize\ttfamily int ft\+\_\+err (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+References FAILURE, and ft\+\_\+strlen().
+
+
+
+Referenced by init\+\_\+mlx(), load\+\_\+textures(), open\+\_\+load\+\_\+textures(), and reformat\+\_\+map().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{helper__functions_8c_a086076d5586afb94af1d7fb14ec44611_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{helper__functions_8c_a086076d5586afb94af1d7fb14ec44611_icgraph}
+\end{center}
+\end{figure}
