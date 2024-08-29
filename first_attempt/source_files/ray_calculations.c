@@ -6,12 +6,19 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 16:53:27 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/28 10:35:25 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:56:27 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+/**
+ * @brief Finds the collision of the ray.
+ * @param ray Pointer to the ray structure.
+ * @param x_travel The x travel of the ray.
+ * @param y_travel The y travel of the ray.
+ * @param data Pointer to the data structure.
+ */
 void	find_collision(t_ray *ray, float x_travel, float y_travel, t_data *data)
 {
 	while (true)
@@ -25,6 +32,13 @@ void	find_collision(t_ray *ray, float x_travel, float y_travel, t_data *data)
 	}
 }
 
+/**
+ * @brief Calculates the horizontal travel ray.
+ * @param ray Pointer to the ray structure.
+ * @param angle The angle of the ray.
+ * @param data Pointer to the data structure.
+ * @return float Returns the distance of the ray.
+ */
 float	horizontal_ray(t_ray *ray, float angle, t_data *data)
 {
 	float	y_travel;
@@ -49,6 +63,13 @@ float	horizontal_ray(t_ray *ray, float angle, t_data *data)
 			+ powf((ray->y - data->player.y), 2)));
 }
 
+/**
+ * @brief Calculates the vertical travel ray.
+ * @param ray Pointer to the ray structure.
+ * @param angle The angle of the ray.
+ * @param data Pointer to the data structure.
+ * @return float Returns the distance of the ray.
+ */
 float	vertical_ray(t_ray *ray, float angle, t_data *data)
 {
 	float	x_travel;
@@ -73,6 +94,11 @@ float	vertical_ray(t_ray *ray, float angle, t_data *data)
 			+ powf((ray->y - data->player.y), 2)));
 }
 
+/**
+ * @brief Calculates the distance of the ray and the texture to use.
+ * @param ray Pointer to the ray structure.
+ * @param data Pointer to the data structure.
+ */
 void	calculate_ray(t_ray *ray, t_data *data)
 {
 	t_ray	horizontal;

@@ -6,12 +6,16 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:37:16 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/26 14:58:07 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:39:20 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+/**
+ * @brief Frees all the allocated memory and exits the program.
+ * @param data Pointer to the data structure.
+ */
 void	free_all_and_exit(t_data *data)
 {
 	free_map_info(data->parse_data);
@@ -28,6 +32,14 @@ void	free_all_and_exit(t_data *data)
 	exit(0);
 }
 
+
+/**
+ * @brief Fixes the fish eye effect.
+ * @param ray Pointer to the ray structure.
+ * @param data Pointer to the data structure.
+ * @paragraph The fish eye effect is caused
+ * by the rays hitting the walls at an angle.
+ */
 void	fix_fish_eye(t_ray *ray, t_data *data)
 {
 	float	angle;
@@ -39,6 +51,12 @@ void	fix_fish_eye(t_ray *ray, t_data *data)
 	ray->distance *= cos(angle);
 }
 
+
+/**
+ * @brief writes an error message to the standard error output.
+ * @param str The error message to be written.
+ * @return int Returns 1.
+ */
 int	ft_err(char *str)
 {
 	ssize_t __attribute__	((unused)) result;

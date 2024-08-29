@@ -6,12 +6,17 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/27 19:52:22 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:23:39 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+/**
+ * @brief Sets the rotation angle of the player.
+ * @param map Pointer to the map structure.
+ * @param data Pointer to the data structure.
+ */
 void	set_rotation_angle(t_map *map, t_data *data)
 {
 	if (map->start_dir == 'S')
@@ -24,6 +29,12 @@ void	set_rotation_angle(t_map *map, t_data *data)
 		data->player.rotation_angle = EAST;
 }
 
+/**
+ * @brief Populates the data structure with the map data.
+ * @param map Pointer to the map structure.
+ * @param data Pointer to the data structure.
+ * @return int Return 0 if the function runs successfully.
+ */
 int	populate_data(t_map *map, t_data *data)
 {
 	int	i;
@@ -48,6 +59,13 @@ int	populate_data(t_map *map, t_data *data)
 	return (SUCCESS);
 }
 
+/**
+ * @brief Validates the map.
+ * @param data Pointer to the data structure.
+ * @param argv Array of arguments
+ * @param argc Number of arguments.
+ * @return int Return 0 if the map is valid.
+ */
 int	initial_map_validation(t_data *data, char **argv, int argc)
 {
 	if (vec_new(&data->parse_data->map_copy, 0, sizeof(char *)) == -1)
@@ -65,6 +83,12 @@ int	initial_map_validation(t_data *data, char **argv, int argc)
 	return (SUCCESS);
 }
 
+/**
+ * @brief Main function of the program.
+ * @param argc Number of arguments.
+ * @param argv Array of arguments.
+ * @return int Return 0 if the program runs successfully.
+ */
 int	main(int argc, char **argv)
 {
 	t_map	map;

@@ -6,12 +6,17 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:26:42 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/29 06:59:02 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:47:28 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+/**
+ * @brief Closes the window when the escape key is pressed.
+ * @param key_data The key data.
+ * @param param Pointer to the data structure.
+ */
 void	key_press(mlx_key_data_t key_data, void *param)
 {
 	t_data	*data;
@@ -21,6 +26,11 @@ void	key_press(mlx_key_data_t key_data, void *param)
 		mlx_close_window(data->mlx);
 }
 
+/**
+ * @brief Moves the player.
+ * @param data Pointer to the data structure.
+ * @param direction The direction to move.
+ */
 void	move_player(t_data *data, enum e_direction direction)
 {
 	float	y_movement;
@@ -50,6 +60,11 @@ void	move_player(t_data *data, enum e_direction direction)
 	}
 }
 
+/**
+ * @brief Turns the player.
+ * @param data Pointer to the data structure.
+ * @param direction The direction to turn.
+ */
 void	turn_player(t_data *data, enum e_direction direction)
 {
 	if (direction == TURN_LEFT)
@@ -66,6 +81,10 @@ void	turn_player(t_data *data, enum e_direction direction)
 	}
 }
 
+/**
+ * @brief Controls the player movement.
+ * @param param Pointer to the data structure.
+ */
 void	player_controller(void *param)
 {
 	t_data	*data;
