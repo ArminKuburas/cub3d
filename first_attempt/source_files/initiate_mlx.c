@@ -6,12 +6,11 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/29 13:42:33 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:26:55 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
-
 
 /**
  * @brief Initializes the mlx library stuff.

@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:19:15 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/29 14:00:06 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:27:59 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ int	check_lines(t_map *map)
 		if (!ft_strncmp(str, "\n", 1))
 		{
 			return (ft_err("Empty lines in the map\n"));
-		}			
+		}
 		x = 0;
 		if (str[x] == ' ')
 			x++;

@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:37:16 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/29 13:39:20 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:26:45 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	free_all_and_exit(t_data *data)
 	exit(0);
 }
 
-
 /**
  * @brief Fixes the fish eye effect.
  * @param ray Pointer to the ray structure.
@@ -50,7 +49,6 @@ void	fix_fish_eye(t_ray *ray, t_data *data)
 		angle += 2 * M_PI;
 	ray->distance *= cos(angle);
 }
-
 
 /**
  * @brief writes an error message to the standard error output.
