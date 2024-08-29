@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   floor_ceiling_validators.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:23:33 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/27 18:42:59 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:27:34 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	validate_floor(t_map *map)
 	while (*f)
 	{
 		if (*f == ',')
-		{	
+		{
 			f++;
 			if (*f == ',' || *f == '\0')
 				return (ft_err("Incorrect floor color format\n"));
@@ -100,7 +100,7 @@ int	validate_ceiling(t_map *map)
 	while (*c)
 	{
 		if (*c == ',')
-		{	
+		{
 			c++;
 			if (*c == ',' || *c == '\0')
 				return (ft_err("Incorrect ceiling color format\n"));

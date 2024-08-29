@@ -1,0 +1,177 @@
+\hypertarget{vector_8h}{}\doxysection{other\+\_\+libraries/libft/vector.h File Reference}
+\label{vector_8h}\index{other\_libraries/libft/vector.h@{other\_libraries/libft/vector.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for vector.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__vec}{s\+\_\+vec}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vector_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}~1
+\item 
+\#define \mbox{\hyperlink{vector_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structs__vec}{s\+\_\+vec}} \mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{vector_8h_a13d37e1023d94abb5d3c4dc781c01dbe}{vec\+\_\+new}} (\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$src, size\+\_\+t init\+\_\+len, size\+\_\+t elem\+\_\+size)
+\item 
+void \mbox{\hyperlink{vector_8h_a8325762864e66e2dba57cd0dbe5ada71}{vec\+\_\+free}} (\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$src)
+\item 
+int \mbox{\hyperlink{vector_8h_ab9202dc6456672842933bf2994a87b60}{vec\+\_\+resize}} (\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$src, size\+\_\+t target\+\_\+len)
+\item 
+int \mbox{\hyperlink{vector_8h_a53b8f7580330786b67a29cc6eeee3ee8}{vec\+\_\+push}} (\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$src, void $\ast$elem)
+\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_a8ec3a8bb9012599135219f7f3502f490}{vec\+\_\+get}} (\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$src, size\+\_\+t index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{vector_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{vector_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\index{vector.h@{vector.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \#define FALSE~0}
+
+\mbox{\Hypertarget{vector_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{vector_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\index{vector.h@{vector.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \#define TRUE~1}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{vector_8h_a732266cd85519fcc4c080c94c5654f56}\label{vector_8h_a732266cd85519fcc4c080c94c5654f56}} 
+\index{vector.h@{vector.h}!t\_vec@{t\_vec}}
+\index{t\_vec@{t\_vec}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{t\_vec}{t\_vec}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__vec}{s\+\_\+vec}} \mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vector_8h_a8325762864e66e2dba57cd0dbe5ada71}\label{vector_8h_a8325762864e66e2dba57cd0dbe5ada71}} 
+\index{vector.h@{vector.h}!vec\_free@{vec\_free}}
+\index{vec\_free@{vec\_free}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_free()}{vec\_free()}}
+{\footnotesize\ttfamily void vec\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$}]{src }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+vec\+::alloc\+\_\+size, s\+\_\+vec\+::elem\+\_\+size, s\+\_\+vec\+::len, and s\+\_\+vec\+::memory.
+
+\mbox{\Hypertarget{vector_8h_a8ec3a8bb9012599135219f7f3502f490}\label{vector_8h_a8ec3a8bb9012599135219f7f3502f490}} 
+\index{vector.h@{vector.h}!vec\_get@{vec\_get}}
+\index{vec\_get@{vec\_get}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_get()}{vec\_get()}}
+{\footnotesize\ttfamily void$\ast$ vec\+\_\+get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$}]{src,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+vec\+::elem\+\_\+size, s\+\_\+vec\+::len, and s\+\_\+vec\+::memory.
+
+
+
+Referenced by populate\+\_\+data().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{vector_8h_a8ec3a8bb9012599135219f7f3502f490_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vector_8h_a13d37e1023d94abb5d3c4dc781c01dbe}\label{vector_8h_a13d37e1023d94abb5d3c4dc781c01dbe}} 
+\index{vector.h@{vector.h}!vec\_new@{vec\_new}}
+\index{vec\_new@{vec\_new}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_new()}{vec\_new()}}
+{\footnotesize\ttfamily int vec\+\_\+new (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$}]{src,  }\item[{size\+\_\+t}]{init\+\_\+len,  }\item[{size\+\_\+t}]{elem\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+vec\+::alloc\+\_\+size, s\+\_\+vec\+::elem\+\_\+size, s\+\_\+vec\+::len, and s\+\_\+vec\+::memory.
+
+
+
+Referenced by initial\+\_\+map\+\_\+validation(), vec\+\_\+push(), and vec\+\_\+resize().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h_a13d37e1023d94abb5d3c4dc781c01dbe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vector_8h_a53b8f7580330786b67a29cc6eeee3ee8}\label{vector_8h_a53b8f7580330786b67a29cc6eeee3ee8}} 
+\index{vector.h@{vector.h}!vec\_push@{vec\_push}}
+\index{vec\_push@{vec\_push}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_push()}{vec\_push()}}
+{\footnotesize\ttfamily int vec\+\_\+push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$}]{src,  }\item[{void $\ast$}]{elem }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+vec\+::alloc\+\_\+size, s\+\_\+vec\+::elem\+\_\+size, ft\+\_\+memmove(), s\+\_\+vec\+::len, s\+\_\+vec\+::memory, vec\+\_\+new(), and vec\+\_\+resize().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h_a53b8f7580330786b67a29cc6eeee3ee8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{vector_8h_ab9202dc6456672842933bf2994a87b60}\label{vector_8h_ab9202dc6456672842933bf2994a87b60}} 
+\index{vector.h@{vector.h}!vec\_resize@{vec\_resize}}
+\index{vec\_resize@{vec\_resize}!vector.h@{vector.h}}
+\doxysubsubsection{\texorpdfstring{vec\_resize()}{vec\_resize()}}
+{\footnotesize\ttfamily int vec\+\_\+resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vector_8h_a732266cd85519fcc4c080c94c5654f56}{t\+\_\+vec}} $\ast$}]{src,  }\item[{size\+\_\+t}]{target\+\_\+len }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+vec\+::alloc\+\_\+size, s\+\_\+vec\+::elem\+\_\+size, ft\+\_\+memmove(), s\+\_\+vec\+::len, s\+\_\+vec\+::memory, and vec\+\_\+new().
+
+
+
+Referenced by vec\+\_\+push().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{vector_8h_ab9202dc6456672842933bf2994a87b60_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{vector_8h_ab9202dc6456672842933bf2994a87b60_icgraph}
+\end{center}
+\end{figure}

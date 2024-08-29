@@ -1,0 +1,1307 @@
+\hypertarget{libft_8h}{}\doxysection{other\+\_\+libraries/libft/libft.h File Reference}
+\label{libft_8h}\index{other\_libraries/libft/libft.h@{other\_libraries/libft/libft.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}vector.\+h\char`\"{}}\newline
+Include dependency graph for libft.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__list}{s\+\_\+list}}
+\item 
+struct \mbox{\hyperlink{structs__hash__table}{s\+\_\+hash\+\_\+table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libft_8h_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}~42
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structs__list}{s\+\_\+list}} \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}}
+\item 
+typedef struct \mbox{\hyperlink{structs__hash__table}{s\+\_\+hash\+\_\+table}} \mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{libft_8h_afad2ec371b4188602da9a94db687cb16}{ft\+\_\+atoi}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Converts the initial portion of the string pointed to by str to int. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{libft_8h_a5937ab0d08e31d0e3e4a16ec71e293a1}{ft\+\_\+bzero}} (void $\ast$s, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Writes n zeroed bytes to the string s. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{libft_8h_a6747f1fa402c0eb1dde5b99d3cdc900f}{ft\+\_\+calloc}} (size\+\_\+t count, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Allocates memory for an pointer array and sets each element to zero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{libft_8h_a9c2c3821ea43ebdf97de07b123503f8b}{ft\+\_\+isalnum}} (int c)
+\begin{DoxyCompactList}\small\item\em Tests for any character for which isalpha or isdigit is true. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{libft_8h_ac283963beaa3b8c7d09b78851cda297e}{ft\+\_\+isalpha}} (int c)
+\begin{DoxyCompactList}\small\item\em Tests for any character for which isupper or islower is true. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{libft_8h_abf60ddbec6479540e81f3648cf71f1f4}{ft\+\_\+isascii}} (int c)
+\item 
+int \mbox{\hyperlink{libft_8h_a2cf15b8a1a277d1e2ce3654101a2003d}{ft\+\_\+isdigit}} (int c)
+\item 
+int \mbox{\hyperlink{libft_8h_abcdba69692f21146aeea5b3d59b7d0ca}{ft\+\_\+isprint}} (int c)
+\item 
+void $\ast$ \mbox{\hyperlink{libft_8h_a1c5cab6df8df9875c6eddb2b36badae5}{ft\+\_\+memchr}} (const void $\ast$s, int c, size\+\_\+t n)
+\item 
+int \mbox{\hyperlink{libft_8h_a08f665a1828c402f2ffe2e2187f135fc}{ft\+\_\+memcmp}} (const void $\ast$s1, const void $\ast$s2, size\+\_\+t n)
+\item 
+void $\ast$ \mbox{\hyperlink{libft_8h_a28cfd23975baf37693e3ddc17815b9ce}{ft\+\_\+memcpy}} (void $\ast$dst, const void $\ast$src, size\+\_\+t n)
+\item 
+void $\ast$ \mbox{\hyperlink{libft_8h_ad7ffc8e46aa6ec16209436c18c7e01ea}{ft\+\_\+memmove}} (void $\ast$dst, const void $\ast$src, size\+\_\+t len)
+\item 
+void $\ast$ \mbox{\hyperlink{libft_8h_ac340ddbfddbbf2c8de3c36f0f28c336d}{ft\+\_\+memset}} (void $\ast$b, int c, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Writes len bytes of value c to the string b. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_a8d986b0243eb93d15d9361e341877688}{ft\+\_\+strchr}} (const char $\ast$s, int c)
+\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_aeab425f44e9a04e54160d60d3c9e870c}{ft\+\_\+strdup}} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Duplicates a string. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{libft_8h_a7531453313e0cbfde6fe51662c9c3208}{ft\+\_\+strlcat}} (char $\ast$dst, const char $\ast$src, size\+\_\+t dstsize)
+\item 
+size\+\_\+t \mbox{\hyperlink{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}{ft\+\_\+strlcpy}} (char $\ast$dst, const char $\ast$src, size\+\_\+t dstsize)
+\begin{DoxyCompactList}\small\item\em Copies a string to a buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}{ft\+\_\+strlen}} (const char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Finds the length of a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}{ft\+\_\+strncmp}} (const char $\ast$s1, const char $\ast$s2, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_ae813b6571722b89567f28fd3f6f04d10}{ft\+\_\+strnstr}} (const char $\ast$haystack, const char $\ast$needle, size\+\_\+t len)
+\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_a0474d24bfb12ac7f698f9293ebd163ff}{ft\+\_\+strrchr}} (const char $\ast$s, int c)
+\item 
+char \mbox{\hyperlink{libft_8h_a32ce947d6fb2b3dcca807829f9d22d00}{ft\+\_\+tolower}} (char c)
+\item 
+char \mbox{\hyperlink{libft_8h_ae4dea254ea6ffb0d67b072896e84014b}{ft\+\_\+toupper}} (char c)
+\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_a953557fcaa67b7fca7be72552898c691}{ft\+\_\+substr}} (char const $\ast$s, unsigned int start, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Creates a substring from a string. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_a5c1c26f8be9bc527cfe69a3555124795}{ft\+\_\+strjoin}} (char const $\ast$s1, char const $\ast$s2)
+\begin{DoxyCompactList}\small\item\em Joins two strings together. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_adc992044de001512918b7ad017f06cb1}{ft\+\_\+strtrim}} (char const $\ast$s1, char const $\ast$set)
+\begin{DoxyCompactList}\small\item\em Trims the set of characters from the beginning and end of a string. \end{DoxyCompactList}\item 
+char $\ast$$\ast$ \mbox{\hyperlink{libft_8h_a1b7b6087722961261b63eebafc2e2ed2}{ft\+\_\+split}} (char const $\ast$s, char c)
+\begin{DoxyCompactList}\small\item\em Splits a string into substrings using a delimiter. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_ae5e08fbfd5d8129c2bf3a6c42fc7734c}{ft\+\_\+itoa}} (int n)
+\begin{DoxyCompactList}\small\item\em Converts an integer to a string. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_ad9c0488c57afc864b87fbb0bc604db82}{ft\+\_\+strmapi}} (char const $\ast$s, char($\ast$f)(unsigned int, char))
+\begin{DoxyCompactList}\small\item\em Applies a function to each character of a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{libft_8h_ada722cffd2c6c8169ae339afd0f9763c}{ft\+\_\+striteri}} (char $\ast$s, void($\ast$f)(unsigned int, char $\ast$))
+\item 
+void \mbox{\hyperlink{libft_8h_a8ee15a511946c1397bd2bdea4aed6aee}{ft\+\_\+putchar\+\_\+fd}} (char c, int fd)
+\item 
+void \mbox{\hyperlink{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}{ft\+\_\+putstr\+\_\+fd}} (char $\ast$s, int fd)
+\begin{DoxyCompactList}\small\item\em Outputs a string to a file descriptor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{libft_8h_aeb112152acfc553d58d61a5df38afcde}{ft\+\_\+putendl\+\_\+fd}} (char $\ast$s, int fd)
+\begin{DoxyCompactList}\small\item\em Outputs a string to a file descriptor followed by a newline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{libft_8h_a63cc0aec12256d125d3f85e472280972}{ft\+\_\+putnbr\+\_\+fd}} (int n, int fd)
+\begin{DoxyCompactList}\small\item\em Outputs an integer to a file descriptor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$ \mbox{\hyperlink{libft_8h_a743cc39883396bbd22b0e14c44b9baa5}{ft\+\_\+lstnew}} (void $\ast$content)
+\item 
+void \mbox{\hyperlink{libft_8h_a0195e4eb88fad15717ed90524ac15771}{ft\+\_\+lstadd\+\_\+front}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$$\ast$lst, \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$new)
+\item 
+int \mbox{\hyperlink{libft_8h_a9da614988ac99446db9df99d2c773fc1}{ft\+\_\+lstsize}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$lst)
+\item 
+\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$ \mbox{\hyperlink{libft_8h_aa79e167d6ec8f17866085697fff01b13}{ft\+\_\+lstlast}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$lst)
+\item 
+void \mbox{\hyperlink{libft_8h_a4c10e88fffc3c9467eb16e6debd227a4}{ft\+\_\+lstadd\+\_\+back}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$$\ast$lst, \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$new)
+\item 
+void \mbox{\hyperlink{libft_8h_ac2b881501f9ee2f3ed5718f6d9ebee7c}{ft\+\_\+lstdelone}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$lst, void($\ast$del)(void $\ast$))
+\item 
+void \mbox{\hyperlink{libft_8h_a6e900cfaea2857bbf490f3105e38da93}{ft\+\_\+lstclear}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$$\ast$lst, void($\ast$del)(void $\ast$))
+\item 
+void \mbox{\hyperlink{libft_8h_a1888c62a89ec3d206f2ed4590f4a021d}{ft\+\_\+lstiter}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$lst, void($\ast$f)(void $\ast$))
+\item 
+\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$ \mbox{\hyperlink{libft_8h_af317957d24e30d6a4db8229303747f6d}{ft\+\_\+lstmap}} (\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$lst, void $\ast$(f)(void $\ast$), void($\ast$del)(void $\ast$))
+\item 
+int \mbox{\hyperlink{libft_8h_ad556e5ddfccc15afb27781daca9750f4}{ft\+\_\+puthex}} (unsigned int nbr, int uppercase, int $\ast$length)
+\item 
+int \mbox{\hyperlink{libft_8h_ab1262687eae369d4ffa1e59b1cdb8be2}{ft\+\_\+ptrhex}} (unsigned long ptr, int $\ast$length)
+\item 
+int \mbox{\hyperlink{libft_8h_a44acb205b26001f43e341ece46aaffe9}{ft\+\_\+putstr}} (char $\ast$string)
+\item 
+int \mbox{\hyperlink{libft_8h_a8e65869b4bf210213cdbc0cbda258a58}{ft\+\_\+put\+\_\+u\+\_\+nbr}} (unsigned int n, int $\ast$length)
+\item 
+int \mbox{\hyperlink{libft_8h_a8b5c8ecd9dd02406abd454e7464f4ff3}{ft\+\_\+putchar}} (char c)
+\item 
+int \mbox{\hyperlink{libft_8h_a17fade9337801d955c92104559a2d504}{ft\+\_\+putnbr}} (int n, int $\ast$length)
+\item 
+int \mbox{\hyperlink{libft_8h_a1a04419f657be214129cb35741adf28f}{ft\+\_\+printf}} (const char $\ast$str,...)
+\begin{DoxyCompactList}\small\item\em Custom printf function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{libft_8h_a7d68dbbc77da832b16975da0954404fd}{ft\+\_\+free\+\_\+substrings}} (char $\ast$$\ast$$\ast$arr\+\_\+str)
+\begin{DoxyCompactList}\small\item\em Frees the substrings of a string array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{libft_8h_abd118f33a5a0fe00b6cbbfb0eeae25a5}{ft\+\_\+strcmp}} (char $\ast$s1, char $\ast$s2)
+\begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_a54a0c1ca4382d4a3b72b42c27e43bf88}{ft\+\_\+strndup}} (const char $\ast$s, size\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Duplicates a string up to n characters. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_a2cec821a822e32b5f1aa7f701beddd4f}{gnl\+\_\+strchr}} (char $\ast$s, int c)
+\item 
+size\+\_\+t \mbox{\hyperlink{libft_8h_a00d889234b004b532638e5b9fef966be}{gnl\+\_\+strlen}} (const char $\ast$s)
+\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_a5a9ec9d3667a203333739d3873f4c3ae}{gnl\+\_\+strjoin}} (char $\ast$s1, char $\ast$s2)
+\item 
+char $\ast$ \mbox{\hyperlink{libft_8h_aed7a5e18848da190b01eb9e791c51824}{get\+\_\+next\+\_\+line}} (int fd)
+\item 
+unsigned long \mbox{\hyperlink{libft_8h_aa5a13344c65fd6da94580a12235bc931}{create\+\_\+hash}} (unsigned char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Creates a hash value from a string via djb2 method. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{libft_8h_ac2ca5acdafa0fb5ae608ef208709764c}{insert\+\_\+hash}} (\mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}} $\ast$hash\+\_\+table, char $\ast$key, int table\+\_\+size)
+\item 
+\mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}} $\ast$ \mbox{\hyperlink{libft_8h_af2eb482b5264753a2cf25e81c6dd4d73}{search\+\_\+hash}} (\mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}} $\ast$hash\+\_\+table, char $\ast$key, int table\+\_\+size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{libft_8h_a6b20d41d6252e9871430c242cb1a56e7}\label{libft_8h_a6b20d41d6252e9871430c242cb1a56e7}} 
+\index{libft.h@{libft.h}!BUFFER\_SIZE@{BUFFER\_SIZE}}
+\index{BUFFER\_SIZE@{BUFFER\_SIZE}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_SIZE}{BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+SIZE~42}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{libft_8h_affe7e1092de85006b13d42ca096677ef}\label{libft_8h_affe7e1092de85006b13d42ca096677ef}} 
+\index{libft.h@{libft.h}!t\_hash@{t\_hash}}
+\index{t\_hash@{t\_hash}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{t\_hash}{t\_hash}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__hash__table}{s\+\_\+hash\+\_\+table}} \mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}}}
+
+\mbox{\Hypertarget{libft_8h_aefde00352c5326bb1c28ebd4404c4795}\label{libft_8h_aefde00352c5326bb1c28ebd4404c4795}} 
+\index{libft.h@{libft.h}!t\_list@{t\_list}}
+\index{t\_list@{t\_list}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{t\_list}{t\_list}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__list}{s\+\_\+list}} \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{libft_8h_aa5a13344c65fd6da94580a12235bc931}\label{libft_8h_aa5a13344c65fd6da94580a12235bc931}} 
+\index{libft.h@{libft.h}!create\_hash@{create\_hash}}
+\index{create\_hash@{create\_hash}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{create\_hash()}{create\_hash()}}
+{\footnotesize\ttfamily unsigned long create\+\_\+hash (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Creates a hash value from a string via djb2 method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be hashed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hash value. 
+\end{DoxyReturn}
+
+
+Referenced by insert\+\_\+hash(), and search\+\_\+hash().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{libft_8h_aa5a13344c65fd6da94580a12235bc931_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_afad2ec371b4188602da9a94db687cb16}\label{libft_8h_afad2ec371b4188602da9a94db687cb16}} 
+\index{libft.h@{libft.h}!ft\_atoi@{ft\_atoi}}
+\index{ft\_atoi@{ft\_atoi}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_atoi()}{ft\_atoi()}}
+{\footnotesize\ttfamily int ft\+\_\+atoi (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Converts the initial portion of the string pointed to by str to int. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the converted int value. 
+\end{DoxyReturn}
+
+
+Referenced by populate\+\_\+data().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{libft_8h_afad2ec371b4188602da9a94db687cb16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a5937ab0d08e31d0e3e4a16ec71e293a1}\label{libft_8h_a5937ab0d08e31d0e3e4a16ec71e293a1}} 
+\index{libft.h@{libft.h}!ft\_bzero@{ft\_bzero}}
+\index{ft\_bzero@{ft\_bzero}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_bzero()}{ft\_bzero()}}
+{\footnotesize\ttfamily void ft\+\_\+bzero (\begin{DoxyParamCaption}\item[{void $\ast$}]{s,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Writes n zeroed bytes to the string s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be zeroed. \\
+\hline
+{\em n} & The amount of bytes to be zeroed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+References ft\+\_\+memset().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{libft_8h_a5937ab0d08e31d0e3e4a16ec71e293a1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a6747f1fa402c0eb1dde5b99d3cdc900f}\label{libft_8h_a6747f1fa402c0eb1dde5b99d3cdc900f}} 
+\index{libft.h@{libft.h}!ft\_calloc@{ft\_calloc}}
+\index{ft\_calloc@{ft\_calloc}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_calloc()}{ft\_calloc()}}
+{\footnotesize\ttfamily void$\ast$ ft\+\_\+calloc (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Allocates memory for an pointer array and sets each element to zero. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The amount of elements in the array. \\
+\hline
+{\em size} & The size of each element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the allocated memory or returns NULL. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+memset().
+
+
+
+Referenced by ft\+\_\+strdup(), ft\+\_\+strjoin(), ft\+\_\+strmapi(), ft\+\_\+strndup(), ft\+\_\+substr(), and realloc\+\_\+line().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{libft_8h_a6747f1fa402c0eb1dde5b99d3cdc900f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_a6747f1fa402c0eb1dde5b99d3cdc900f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a7d68dbbc77da832b16975da0954404fd}\label{libft_8h_a7d68dbbc77da832b16975da0954404fd}} 
+\index{libft.h@{libft.h}!ft\_free\_substrings@{ft\_free\_substrings}}
+\index{ft\_free\_substrings@{ft\_free\_substrings}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_free\_substrings()}{ft\_free\_substrings()}}
+{\footnotesize\ttfamily void ft\+\_\+free\+\_\+substrings (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{arr\+\_\+str }\end{DoxyParamCaption})}
+
+
+
+Frees the substrings of a string array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr\+\_\+str} & The string array to be freed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libft_8h_a9c2c3821ea43ebdf97de07b123503f8b}\label{libft_8h_a9c2c3821ea43ebdf97de07b123503f8b}} 
+\index{libft.h@{libft.h}!ft\_isalnum@{ft\_isalnum}}
+\index{ft\_isalnum@{ft\_isalnum}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_isalnum()}{ft\_isalnum()}}
+{\footnotesize\ttfamily int ft\+\_\+isalnum (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Tests for any character for which isalpha or isdigit is true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if the character tests true, zero if false. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+isalpha(), and ft\+\_\+isdigit().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{libft_8h_a9c2c3821ea43ebdf97de07b123503f8b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ac283963beaa3b8c7d09b78851cda297e}\label{libft_8h_ac283963beaa3b8c7d09b78851cda297e}} 
+\index{libft.h@{libft.h}!ft\_isalpha@{ft\_isalpha}}
+\index{ft\_isalpha@{ft\_isalpha}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_isalpha()}{ft\_isalpha()}}
+{\footnotesize\ttfamily int ft\+\_\+isalpha (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Tests for any character for which isupper or islower is true. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero if the character tests true, zero if false. 
+\end{DoxyReturn}
+
+
+Referenced by ft\+\_\+isalnum().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{libft_8h_ac283963beaa3b8c7d09b78851cda297e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_abf60ddbec6479540e81f3648cf71f1f4}\label{libft_8h_abf60ddbec6479540e81f3648cf71f1f4}} 
+\index{libft.h@{libft.h}!ft\_isascii@{ft\_isascii}}
+\index{ft\_isascii@{ft\_isascii}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_isascii()}{ft\_isascii()}}
+{\footnotesize\ttfamily int ft\+\_\+isascii (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a2cf15b8a1a277d1e2ce3654101a2003d}\label{libft_8h_a2cf15b8a1a277d1e2ce3654101a2003d}} 
+\index{libft.h@{libft.h}!ft\_isdigit@{ft\_isdigit}}
+\index{ft\_isdigit@{ft\_isdigit}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_isdigit()}{ft\_isdigit()}}
+{\footnotesize\ttfamily int ft\+\_\+isdigit (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Referenced by ft\+\_\+isalnum().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{libft_8h_a2cf15b8a1a277d1e2ce3654101a2003d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_abcdba69692f21146aeea5b3d59b7d0ca}\label{libft_8h_abcdba69692f21146aeea5b3d59b7d0ca}} 
+\index{libft.h@{libft.h}!ft\_isprint@{ft\_isprint}}
+\index{ft\_isprint@{ft\_isprint}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_isprint()}{ft\_isprint()}}
+{\footnotesize\ttfamily int ft\+\_\+isprint (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_ae5e08fbfd5d8129c2bf3a6c42fc7734c}\label{libft_8h_ae5e08fbfd5d8129c2bf3a6c42fc7734c}} 
+\index{libft.h@{libft.h}!ft\_itoa@{ft\_itoa}}
+\index{ft\_itoa@{ft\_itoa}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_itoa()}{ft\_itoa()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+itoa (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Converts an integer to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The string representation of the integer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libft_8h_a4c10e88fffc3c9467eb16e6debd227a4}\label{libft_8h_a4c10e88fffc3c9467eb16e6debd227a4}} 
+\index{libft.h@{libft.h}!ft\_lstadd\_back@{ft\_lstadd\_back}}
+\index{ft\_lstadd\_back@{ft\_lstadd\_back}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstadd\_back()}{ft\_lstadd\_back()}}
+{\footnotesize\ttfamily void ft\+\_\+lstadd\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$$\ast$}]{lst,  }\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{new }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::next.
+
+
+
+Referenced by ft\+\_\+lstmap().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{libft_8h_a4c10e88fffc3c9467eb16e6debd227a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a0195e4eb88fad15717ed90524ac15771}\label{libft_8h_a0195e4eb88fad15717ed90524ac15771}} 
+\index{libft.h@{libft.h}!ft\_lstadd\_front@{ft\_lstadd\_front}}
+\index{ft\_lstadd\_front@{ft\_lstadd\_front}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstadd\_front()}{ft\_lstadd\_front()}}
+{\footnotesize\ttfamily void ft\+\_\+lstadd\+\_\+front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$$\ast$}]{lst,  }\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{new }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a6e900cfaea2857bbf490f3105e38da93}\label{libft_8h_a6e900cfaea2857bbf490f3105e38da93}} 
+\index{libft.h@{libft.h}!ft\_lstclear@{ft\_lstclear}}
+\index{ft\_lstclear@{ft\_lstclear}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstclear()}{ft\_lstclear()}}
+{\footnotesize\ttfamily void ft\+\_\+lstclear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$$\ast$}]{lst,  }\item[{void($\ast$)(void $\ast$)}]{del }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::next.
+
+
+
+Referenced by ft\+\_\+lstmap().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{libft_8h_a6e900cfaea2857bbf490f3105e38da93_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ac2b881501f9ee2f3ed5718f6d9ebee7c}\label{libft_8h_ac2b881501f9ee2f3ed5718f6d9ebee7c}} 
+\index{libft.h@{libft.h}!ft\_lstdelone@{ft\_lstdelone}}
+\index{ft\_lstdelone@{ft\_lstdelone}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstdelone()}{ft\_lstdelone()}}
+{\footnotesize\ttfamily void ft\+\_\+lstdelone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{lst,  }\item[{void($\ast$)(void $\ast$)}]{del }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::content.
+
+\mbox{\Hypertarget{libft_8h_a1888c62a89ec3d206f2ed4590f4a021d}\label{libft_8h_a1888c62a89ec3d206f2ed4590f4a021d}} 
+\index{libft.h@{libft.h}!ft\_lstiter@{ft\_lstiter}}
+\index{ft\_lstiter@{ft\_lstiter}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstiter()}{ft\_lstiter()}}
+{\footnotesize\ttfamily void ft\+\_\+lstiter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{lst,  }\item[{void($\ast$)(void $\ast$)}]{f }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::content, and s\+\_\+list\+::next.
+
+\mbox{\Hypertarget{libft_8h_aa79e167d6ec8f17866085697fff01b13}\label{libft_8h_aa79e167d6ec8f17866085697fff01b13}} 
+\index{libft.h@{libft.h}!ft\_lstlast@{ft\_lstlast}}
+\index{ft\_lstlast@{ft\_lstlast}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstlast()}{ft\_lstlast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}}$\ast$ ft\+\_\+lstlast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::next.
+
+\mbox{\Hypertarget{libft_8h_af317957d24e30d6a4db8229303747f6d}\label{libft_8h_af317957d24e30d6a4db8229303747f6d}} 
+\index{libft.h@{libft.h}!ft\_lstmap@{ft\_lstmap}}
+\index{ft\_lstmap@{ft\_lstmap}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstmap()}{ft\_lstmap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}}$\ast$ ft\+\_\+lstmap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{lst,  }\item[{void $\ast$}]{f)(void $\ast$,  }\item[{void($\ast$)(void $\ast$)}]{del }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::content, ft\+\_\+lstadd\+\_\+back(), ft\+\_\+lstclear(), ft\+\_\+lstnew(), and s\+\_\+list\+::next.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{libft_8h_af317957d24e30d6a4db8229303747f6d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a743cc39883396bbd22b0e14c44b9baa5}\label{libft_8h_a743cc39883396bbd22b0e14c44b9baa5}} 
+\index{libft.h@{libft.h}!ft\_lstnew@{ft\_lstnew}}
+\index{ft\_lstnew@{ft\_lstnew}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstnew()}{ft\_lstnew()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}}$\ast$ ft\+\_\+lstnew (\begin{DoxyParamCaption}\item[{void $\ast$}]{content }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::content, and s\+\_\+list\+::next.
+
+
+
+Referenced by ft\+\_\+lstmap().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{libft_8h_a743cc39883396bbd22b0e14c44b9baa5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a9da614988ac99446db9df99d2c773fc1}\label{libft_8h_a9da614988ac99446db9df99d2c773fc1}} 
+\index{libft.h@{libft.h}!ft\_lstsize@{ft\_lstsize}}
+\index{ft\_lstsize@{ft\_lstsize}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_lstsize()}{ft\_lstsize()}}
+{\footnotesize\ttfamily int ft\+\_\+lstsize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_aefde00352c5326bb1c28ebd4404c4795}{t\+\_\+list}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+
+References s\+\_\+list\+::next.
+
+\mbox{\Hypertarget{libft_8h_a1c5cab6df8df9875c6eddb2b36badae5}\label{libft_8h_a1c5cab6df8df9875c6eddb2b36badae5}} 
+\index{libft.h@{libft.h}!ft\_memchr@{ft\_memchr}}
+\index{ft\_memchr@{ft\_memchr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_memchr()}{ft\_memchr()}}
+{\footnotesize\ttfamily void$\ast$ ft\+\_\+memchr (\begin{DoxyParamCaption}\item[{const void $\ast$}]{s,  }\item[{int}]{c,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a08f665a1828c402f2ffe2e2187f135fc}\label{libft_8h_a08f665a1828c402f2ffe2e2187f135fc}} 
+\index{libft.h@{libft.h}!ft\_memcmp@{ft\_memcmp}}
+\index{ft\_memcmp@{ft\_memcmp}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_memcmp()}{ft\_memcmp()}}
+{\footnotesize\ttfamily int ft\+\_\+memcmp (\begin{DoxyParamCaption}\item[{const void $\ast$}]{s1,  }\item[{const void $\ast$}]{s2,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a28cfd23975baf37693e3ddc17815b9ce}\label{libft_8h_a28cfd23975baf37693e3ddc17815b9ce}} 
+\index{libft.h@{libft.h}!ft\_memcpy@{ft\_memcpy}}
+\index{ft\_memcpy@{ft\_memcpy}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_memcpy()}{ft\_memcpy()}}
+{\footnotesize\ttfamily void$\ast$ ft\+\_\+memcpy (\begin{DoxyParamCaption}\item[{void $\ast$}]{dst,  }\item[{const void $\ast$}]{src,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Referenced by ft\+\_\+strdup(), ft\+\_\+strjoin(), ft\+\_\+strndup(), and ft\+\_\+substr().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_a28cfd23975baf37693e3ddc17815b9ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ad7ffc8e46aa6ec16209436c18c7e01ea}\label{libft_8h_ad7ffc8e46aa6ec16209436c18c7e01ea}} 
+\index{libft.h@{libft.h}!ft\_memmove@{ft\_memmove}}
+\index{ft\_memmove@{ft\_memmove}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_memmove()}{ft\_memmove()}}
+{\footnotesize\ttfamily void$\ast$ ft\+\_\+memmove (\begin{DoxyParamCaption}\item[{void $\ast$}]{dst,  }\item[{const void $\ast$}]{src,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Referenced by vec\+\_\+push(), and vec\+\_\+resize().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_ad7ffc8e46aa6ec16209436c18c7e01ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ac340ddbfddbbf2c8de3c36f0f28c336d}\label{libft_8h_ac340ddbfddbbf2c8de3c36f0f28c336d}} 
+\index{libft.h@{libft.h}!ft\_memset@{ft\_memset}}
+\index{ft\_memset@{ft\_memset}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_memset()}{ft\_memset()}}
+{\footnotesize\ttfamily void$\ast$ ft\+\_\+memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{b,  }\item[{int}]{c,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Writes len bytes of value c to the string b. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The string to be written to. \\
+\hline
+{\em c} & The value to be written. \\
+\hline
+{\em len} & The amount of bytes to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the memory area b. 
+\end{DoxyReturn}
+
+
+Referenced by ft\+\_\+bzero(), and ft\+\_\+calloc().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_ac340ddbfddbbf2c8de3c36f0f28c336d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a1a04419f657be214129cb35741adf28f}\label{libft_8h_a1a04419f657be214129cb35741adf28f}} 
+\index{libft.h@{libft.h}!ft\_printf@{ft\_printf}}
+\index{ft\_printf@{ft\_printf}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_printf()}{ft\_printf()}}
+{\footnotesize\ttfamily int ft\+\_\+printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Custom printf function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be printed. \\
+\hline
+{\em ...} & The variadric arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the length of the printed string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libft_8h_ab1262687eae369d4ffa1e59b1cdb8be2}\label{libft_8h_ab1262687eae369d4ffa1e59b1cdb8be2}} 
+\index{libft.h@{libft.h}!ft\_ptrhex@{ft\_ptrhex}}
+\index{ft\_ptrhex@{ft\_ptrhex}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_ptrhex()}{ft\_ptrhex()}}
+{\footnotesize\ttfamily int ft\+\_\+ptrhex (\begin{DoxyParamCaption}\item[{unsigned long}]{ptr,  }\item[{int $\ast$}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a8e65869b4bf210213cdbc0cbda258a58}\label{libft_8h_a8e65869b4bf210213cdbc0cbda258a58}} 
+\index{libft.h@{libft.h}!ft\_put\_u\_nbr@{ft\_put\_u\_nbr}}
+\index{ft\_put\_u\_nbr@{ft\_put\_u\_nbr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_put\_u\_nbr()}{ft\_put\_u\_nbr()}}
+{\footnotesize\ttfamily int ft\+\_\+put\+\_\+u\+\_\+nbr (\begin{DoxyParamCaption}\item[{unsigned int}]{n,  }\item[{int $\ast$}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a8b5c8ecd9dd02406abd454e7464f4ff3}\label{libft_8h_a8b5c8ecd9dd02406abd454e7464f4ff3}} 
+\index{libft.h@{libft.h}!ft\_putchar@{ft\_putchar}}
+\index{ft\_putchar@{ft\_putchar}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_putchar()}{ft\_putchar()}}
+{\footnotesize\ttfamily int ft\+\_\+putchar (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Referenced by ft\+\_\+putstr().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{libft_8h_a8b5c8ecd9dd02406abd454e7464f4ff3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a8ee15a511946c1397bd2bdea4aed6aee}\label{libft_8h_a8ee15a511946c1397bd2bdea4aed6aee}} 
+\index{libft.h@{libft.h}!ft\_putchar\_fd@{ft\_putchar\_fd}}
+\index{ft\_putchar\_fd@{ft\_putchar\_fd}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_putchar\_fd()}{ft\_putchar\_fd()}}
+{\footnotesize\ttfamily void ft\+\_\+putchar\+\_\+fd (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_aeb112152acfc553d58d61a5df38afcde}\label{libft_8h_aeb112152acfc553d58d61a5df38afcde}} 
+\index{libft.h@{libft.h}!ft\_putendl\_fd@{ft\_putendl\_fd}}
+\index{ft\_putendl\_fd@{ft\_putendl\_fd}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_putendl\_fd()}{ft\_putendl\_fd()}}
+{\footnotesize\ttfamily void ft\+\_\+putendl\+\_\+fd (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Outputs a string to a file descriptor followed by a newline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be outputted. \\
+\hline
+{\em fd} & The file descriptor to be used. \\
+\hline
+\end{DoxyParams}
+
+
+References ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{libft_8h_aeb112152acfc553d58d61a5df38afcde_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ad556e5ddfccc15afb27781daca9750f4}\label{libft_8h_ad556e5ddfccc15afb27781daca9750f4}} 
+\index{libft.h@{libft.h}!ft\_puthex@{ft\_puthex}}
+\index{ft\_puthex@{ft\_puthex}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_puthex()}{ft\_puthex()}}
+{\footnotesize\ttfamily int ft\+\_\+puthex (\begin{DoxyParamCaption}\item[{unsigned int}]{nbr,  }\item[{int}]{uppercase,  }\item[{int $\ast$}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a17fade9337801d955c92104559a2d504}\label{libft_8h_a17fade9337801d955c92104559a2d504}} 
+\index{libft.h@{libft.h}!ft\_putnbr@{ft\_putnbr}}
+\index{ft\_putnbr@{ft\_putnbr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_putnbr()}{ft\_putnbr()}}
+{\footnotesize\ttfamily int ft\+\_\+putnbr (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int $\ast$}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a63cc0aec12256d125d3f85e472280972}\label{libft_8h_a63cc0aec12256d125d3f85e472280972}} 
+\index{libft.h@{libft.h}!ft\_putnbr\_fd@{ft\_putnbr\_fd}}
+\index{ft\_putnbr\_fd@{ft\_putnbr\_fd}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_putnbr\_fd()}{ft\_putnbr\_fd()}}
+{\footnotesize\ttfamily void ft\+\_\+putnbr\+\_\+fd (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Outputs an integer to a file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & The integer to be outputted. \\
+\hline
+{\em fd} & The file descriptor to be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{libft_8h_a44acb205b26001f43e341ece46aaffe9}\label{libft_8h_a44acb205b26001f43e341ece46aaffe9}} 
+\index{libft.h@{libft.h}!ft\_putstr@{ft\_putstr}}
+\index{ft\_putstr@{ft\_putstr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_putstr()}{ft\_putstr()}}
+{\footnotesize\ttfamily int ft\+\_\+putstr (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+References ft\+\_\+putchar().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{libft_8h_a44acb205b26001f43e341ece46aaffe9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}\label{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469}} 
+\index{libft.h@{libft.h}!ft\_putstr\_fd@{ft\_putstr\_fd}}
+\index{ft\_putstr\_fd@{ft\_putstr\_fd}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_putstr\_fd()}{ft\_putstr\_fd()}}
+{\footnotesize\ttfamily void ft\+\_\+putstr\+\_\+fd (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Outputs a string to a file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be outputted. \\
+\hline
+{\em fd} & The file descriptor to be used. \\
+\hline
+\end{DoxyParams}
+
+
+References ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{libft_8h_acefce9ac519f8f8b7d3fde33dbafe469_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a1b7b6087722961261b63eebafc2e2ed2}\label{libft_8h_a1b7b6087722961261b63eebafc2e2ed2}} 
+\index{libft.h@{libft.h}!ft\_split@{ft\_split}}
+\index{ft\_split@{ft\_split}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_split()}{ft\_split()}}
+{\footnotesize\ttfamily char$\ast$$\ast$ ft\+\_\+split (\begin{DoxyParamCaption}\item[{char const $\ast$}]{s,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Splits a string into substrings using a delimiter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be split. \\
+\hline
+{\em c} & The delimiter character. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result array. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libft_8h_a8d986b0243eb93d15d9361e341877688}\label{libft_8h_a8d986b0243eb93d15d9361e341877688}} 
+\index{libft.h@{libft.h}!ft\_strchr@{ft\_strchr}}
+\index{ft\_strchr@{ft\_strchr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strchr()}{ft\_strchr()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strchr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Referenced by find\+\_\+collision().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_a8d986b0243eb93d15d9361e341877688_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_abd118f33a5a0fe00b6cbbfb0eeae25a5}\label{libft_8h_abd118f33a5a0fe00b6cbbfb0eeae25a5}} 
+\index{libft.h@{libft.h}!ft\_strcmp@{ft\_strcmp}}
+\index{ft\_strcmp@{ft\_strcmp}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strcmp()}{ft\_strcmp()}}
+{\footnotesize\ttfamily int ft\+\_\+strcmp (\begin{DoxyParamCaption}\item[{char $\ast$}]{s1,  }\item[{char $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Compares two strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & The first string to be compared. \\
+\hline
+{\em s2} & The second string to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the difference between the two strings. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libft_8h_aeab425f44e9a04e54160d60d3c9e870c}\label{libft_8h_aeab425f44e9a04e54160d60d3c9e870c}} 
+\index{libft.h@{libft.h}!ft\_strdup@{ft\_strdup}}
+\index{ft\_strdup@{ft\_strdup}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strdup()}{ft\_strdup()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strdup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Duplicates a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be duplicated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the new string or returns NULL. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+calloc(), ft\+\_\+memcpy(), and ft\+\_\+strlen().
+
+
+
+Referenced by ft\+\_\+strjoin(), ft\+\_\+substr(), and populate\+\_\+data().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_aeab425f44e9a04e54160d60d3c9e870c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{libft_8h_aeab425f44e9a04e54160d60d3c9e870c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ada722cffd2c6c8169ae339afd0f9763c}\label{libft_8h_ada722cffd2c6c8169ae339afd0f9763c}} 
+\index{libft.h@{libft.h}!ft\_striteri@{ft\_striteri}}
+\index{ft\_striteri@{ft\_striteri}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_striteri()}{ft\_striteri()}}
+{\footnotesize\ttfamily void ft\+\_\+striteri (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{void($\ast$)(unsigned int, char $\ast$)}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_a5c1c26f8be9bc527cfe69a3555124795}\label{libft_8h_a5c1c26f8be9bc527cfe69a3555124795}} 
+\index{libft.h@{libft.h}!ft\_strjoin@{ft\_strjoin}}
+\index{ft\_strjoin@{ft\_strjoin}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strjoin()}{ft\_strjoin()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strjoin (\begin{DoxyParamCaption}\item[{char const $\ast$}]{s1,  }\item[{char const $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Joins two strings together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & The first string. \\
+\hline
+{\em s2} & The second string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the new string or returns NULL. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+calloc(), ft\+\_\+memcpy(), ft\+\_\+strdup(), and ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_a5c1c26f8be9bc527cfe69a3555124795_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a7531453313e0cbfde6fe51662c9c3208}\label{libft_8h_a7531453313e0cbfde6fe51662c9c3208}} 
+\index{libft.h@{libft.h}!ft\_strlcat@{ft\_strlcat}}
+\index{ft\_strlcat@{ft\_strlcat}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strlcat()}{ft\_strlcat()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlcat (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{const char $\ast$}]{src,  }\item[{size\+\_\+t}]{dstsize }\end{DoxyParamCaption})}
+
+
+
+References ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{libft_8h_a7531453313e0cbfde6fe51662c9c3208_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}\label{libft_8h_a12f759eb9793cf306fede66d0b7de0fc}} 
+\index{libft.h@{libft.h}!ft\_strlcpy@{ft\_strlcpy}}
+\index{ft\_strlcpy@{ft\_strlcpy}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strlcpy()}{ft\_strlcpy()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlcpy (\begin{DoxyParamCaption}\item[{char $\ast$}]{dst,  }\item[{const char $\ast$}]{src,  }\item[{size\+\_\+t}]{dstsize }\end{DoxyParamCaption})}
+
+
+
+Copies a string to a buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dst} & The destination buffer. \\
+\hline
+{\em src} & The source string. \\
+\hline
+{\em dstsize} & The size of the destination buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the length of the source string. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{libft_8h_a12f759eb9793cf306fede66d0b7de0fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}\label{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a}} 
+\index{libft.h@{libft.h}!ft\_strlen@{ft\_strlen}}
+\index{ft\_strlen@{ft\_strlen}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strlen()}{ft\_strlen()}}
+{\footnotesize\ttfamily size\+\_\+t ft\+\_\+strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Finds the length of a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be measured. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the length of the string. 
+\end{DoxyReturn}
+
+
+Referenced by ft\+\_\+err(), ft\+\_\+putendl\+\_\+fd(), ft\+\_\+putstr\+\_\+fd(), ft\+\_\+strdup(), ft\+\_\+strjoin(), ft\+\_\+strlcat(), ft\+\_\+strlcpy(), ft\+\_\+strmapi(), ft\+\_\+strndup(), ft\+\_\+strnstr(), ft\+\_\+strrchr(), ft\+\_\+substr(), and reformat\+\_\+map().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_abbb8c6c4ed85d892e7f1509f65f5768a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ad9c0488c57afc864b87fbb0bc604db82}\label{libft_8h_ad9c0488c57afc864b87fbb0bc604db82}} 
+\index{libft.h@{libft.h}!ft\_strmapi@{ft\_strmapi}}
+\index{ft\_strmapi@{ft\_strmapi}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strmapi()}{ft\_strmapi()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strmapi (\begin{DoxyParamCaption}\item[{char const $\ast$}]{s,  }\item[{char($\ast$)(unsigned int, char)}]{f }\end{DoxyParamCaption})}
+
+
+
+Applies a function to each character of a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be iterated. \\
+\hline
+{\em f} & The function to be applied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new string. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+calloc(), and ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{libft_8h_ad9c0488c57afc864b87fbb0bc604db82_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}\label{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc}} 
+\index{libft.h@{libft.h}!ft\_strncmp@{ft\_strncmp}}
+\index{ft\_strncmp@{ft\_strncmp}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strncmp()}{ft\_strncmp()}}
+{\footnotesize\ttfamily int ft\+\_\+strncmp (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s1,  }\item[{const char $\ast$}]{s2,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Compares two strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & The first string to be compared. \\
+\hline
+{\em s2} & The second string to be compared. \\
+\hline
+{\em n} & The amount of characters to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the difference between the first differing characters. 
+\end{DoxyReturn}
+
+
+Referenced by ft\+\_\+strnstr().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{libft_8h_a9d2fe792187aa4ed08e5864fb2c4d6dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a54a0c1ca4382d4a3b72b42c27e43bf88}\label{libft_8h_a54a0c1ca4382d4a3b72b42c27e43bf88}} 
+\index{libft.h@{libft.h}!ft\_strndup@{ft\_strndup}}
+\index{ft\_strndup@{ft\_strndup}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strndup()}{ft\_strndup()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strndup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{size\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Duplicates a string up to n characters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be duplicated. \\
+\hline
+{\em n} & The amount of characters to be duplicated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the new string or returns NULL. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+calloc(), ft\+\_\+memcpy(), and ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_a54a0c1ca4382d4a3b72b42c27e43bf88_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ae813b6571722b89567f28fd3f6f04d10}\label{libft_8h_ae813b6571722b89567f28fd3f6f04d10}} 
+\index{libft.h@{libft.h}!ft\_strnstr@{ft\_strnstr}}
+\index{ft\_strnstr@{ft\_strnstr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strnstr()}{ft\_strnstr()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strnstr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{haystack,  }\item[{const char $\ast$}]{needle,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+References ft\+\_\+strlen(), and ft\+\_\+strncmp().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{libft_8h_ae813b6571722b89567f28fd3f6f04d10_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a0474d24bfb12ac7f698f9293ebd163ff}\label{libft_8h_a0474d24bfb12ac7f698f9293ebd163ff}} 
+\index{libft.h@{libft.h}!ft\_strrchr@{ft\_strrchr}}
+\index{ft\_strrchr@{ft\_strrchr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strrchr()}{ft\_strrchr()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strrchr (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+References ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{libft_8h_a0474d24bfb12ac7f698f9293ebd163ff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_adc992044de001512918b7ad017f06cb1}\label{libft_8h_adc992044de001512918b7ad017f06cb1}} 
+\index{libft.h@{libft.h}!ft\_strtrim@{ft\_strtrim}}
+\index{ft\_strtrim@{ft\_strtrim}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strtrim()}{ft\_strtrim()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+strtrim (\begin{DoxyParamCaption}\item[{char const $\ast$}]{s1,  }\item[{char const $\ast$}]{set }\end{DoxyParamCaption})}
+
+
+
+Trims the set of characters from the beginning and end of a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & The string to be trimmed. \\
+\hline
+{\em set} & The set of characters to be trimmed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new trimmed string. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{libft_8h_a953557fcaa67b7fca7be72552898c691}\label{libft_8h_a953557fcaa67b7fca7be72552898c691}} 
+\index{libft.h@{libft.h}!ft\_substr@{ft\_substr}}
+\index{ft\_substr@{ft\_substr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_substr()}{ft\_substr()}}
+{\footnotesize\ttfamily char$\ast$ ft\+\_\+substr (\begin{DoxyParamCaption}\item[{char const $\ast$}]{s,  }\item[{unsigned int}]{start,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Creates a substring from a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to be copied. \\
+\hline
+{\em start} & The starting index. \\
+\hline
+{\em len} & The length of the substring. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new substring. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+calloc(), ft\+\_\+memcpy(), ft\+\_\+strdup(), and ft\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{libft_8h_a953557fcaa67b7fca7be72552898c691_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a32ce947d6fb2b3dcca807829f9d22d00}\label{libft_8h_a32ce947d6fb2b3dcca807829f9d22d00}} 
+\index{libft.h@{libft.h}!ft\_tolower@{ft\_tolower}}
+\index{ft\_tolower@{ft\_tolower}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_tolower()}{ft\_tolower()}}
+{\footnotesize\ttfamily char ft\+\_\+tolower (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_ae4dea254ea6ffb0d67b072896e84014b}\label{libft_8h_ae4dea254ea6ffb0d67b072896e84014b}} 
+\index{libft.h@{libft.h}!ft\_toupper@{ft\_toupper}}
+\index{ft\_toupper@{ft\_toupper}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{ft\_toupper()}{ft\_toupper()}}
+{\footnotesize\ttfamily char ft\+\_\+toupper (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libft_8h_aed7a5e18848da190b01eb9e791c51824}\label{libft_8h_aed7a5e18848da190b01eb9e791c51824}} 
+\index{libft.h@{libft.h}!get\_next\_line@{get\_next\_line}}
+\index{get\_next\_line@{get\_next\_line}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{get\_next\_line()}{get\_next\_line()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+next\+\_\+line (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+References BUFFER\+\_\+\+SIZE.
+
+\mbox{\Hypertarget{libft_8h_a2cec821a822e32b5f1aa7f701beddd4f}\label{libft_8h_a2cec821a822e32b5f1aa7f701beddd4f}} 
+\index{libft.h@{libft.h}!gnl\_strchr@{gnl\_strchr}}
+\index{gnl\_strchr@{gnl\_strchr}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{gnl\_strchr()}{gnl\_strchr()}}
+{\footnotesize\ttfamily char$\ast$ gnl\+\_\+strchr (\begin{DoxyParamCaption}\item[{char $\ast$}]{s,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+References gnl\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{libft_8h_a2cec821a822e32b5f1aa7f701beddd4f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a5a9ec9d3667a203333739d3873f4c3ae}\label{libft_8h_a5a9ec9d3667a203333739d3873f4c3ae}} 
+\index{libft.h@{libft.h}!gnl\_strjoin@{gnl\_strjoin}}
+\index{gnl\_strjoin@{gnl\_strjoin}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{gnl\_strjoin()}{gnl\_strjoin()}}
+{\footnotesize\ttfamily char$\ast$ gnl\+\_\+strjoin (\begin{DoxyParamCaption}\item[{char $\ast$}]{s1,  }\item[{char $\ast$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+References gnl\+\_\+strlen().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{libft_8h_a5a9ec9d3667a203333739d3873f4c3ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_a00d889234b004b532638e5b9fef966be}\label{libft_8h_a00d889234b004b532638e5b9fef966be}} 
+\index{libft.h@{libft.h}!gnl\_strlen@{gnl\_strlen}}
+\index{gnl\_strlen@{gnl\_strlen}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{gnl\_strlen()}{gnl\_strlen()}}
+{\footnotesize\ttfamily size\+\_\+t gnl\+\_\+strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Referenced by gnl\+\_\+strchr(), and gnl\+\_\+strjoin().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{libft_8h_a00d889234b004b532638e5b9fef966be_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_ac2ca5acdafa0fb5ae608ef208709764c}\label{libft_8h_ac2ca5acdafa0fb5ae608ef208709764c}} 
+\index{libft.h@{libft.h}!insert\_hash@{insert\_hash}}
+\index{insert\_hash@{insert\_hash}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{insert\_hash()}{insert\_hash()}}
+{\footnotesize\ttfamily int insert\+\_\+hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}} $\ast$}]{hash\+\_\+table,  }\item[{char $\ast$}]{key,  }\item[{int}]{table\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+References create\+\_\+hash().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{libft_8h_ac2ca5acdafa0fb5ae608ef208709764c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{libft_8h_af2eb482b5264753a2cf25e81c6dd4d73}\label{libft_8h_af2eb482b5264753a2cf25e81c6dd4d73}} 
+\index{libft.h@{libft.h}!search\_hash@{search\_hash}}
+\index{search\_hash@{search\_hash}!libft.h@{libft.h}}
+\doxysubsubsection{\texorpdfstring{search\_hash()}{search\_hash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}}$\ast$ search\+\_\+hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libft_8h_affe7e1092de85006b13d42ca096677ef}{t\+\_\+hash}} $\ast$}]{hash\+\_\+table,  }\item[{char $\ast$}]{key,  }\item[{int}]{table\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+References create\+\_\+hash().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{libft_8h_af2eb482b5264753a2cf25e81c6dd4d73_cgraph}
+\end{center}
+\end{figure}

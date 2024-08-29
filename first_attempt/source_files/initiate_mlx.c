@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   initiate_mlx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/22 13:23:05 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/28 18:34:57 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:26:55 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+/**
+ * @brief Initializes the mlx library stuff.
+ * @param data Pointer to the data structure.
+ */
 void	init_mlx(t_data *data)
 {
 	data->mlx = mlx_init(WIDTH, HEIGHT, "Cub3D", FALSE);
@@ -29,10 +33,17 @@ void	init_mlx(t_data *data)
 	if (mlx_image_to_window(data->mlx, data->image, 0, 0) < 0)
 	{
 		ft_err("mlx image to window failed");
+		mlx_delete_image(data->mlx, data->image);
 		free_all_and_exit(data);
 	}
 }
 
+/**
+ * @brief Figures out what texture to use and how to draw it.
+ * @param texture_height Pointer to the height of the texture.
+ * @param ray Pointer to the ray structure.
+ * @param data Pointer to the data structure.
+ */
 void	figure_out_texture(int *texture_height, t_ray *ray, t_data *data)
 {
 	if (ray->texture == data->east_texture)
@@ -57,6 +68,13 @@ void	figure_out_texture(int *texture_height, t_ray *ray, t_data *data)
 	}
 }
 
+/**
+ * @brief Draws the ray on the screen.
+ * @param ray Pointer to the ray structure.
+ * @param texture_height Height of the texture.
+ * @param rays_amount Amount of rays.
+ * @param data Pointer to the data structure.
+ */
 void	draw_ray(t_ray *ray, int texture_height, int rays_amount, t_data *data)
 {
 	int32_t	color;
@@ -82,6 +100,12 @@ void	draw_ray(t_ray *ray, int texture_height, int rays_amount, t_data *data)
 	}
 }
 
+/**
+ * @brief Renders the next frame of the game.
+ * @param main_data Pointer to the data structure.
+ * @paragraph This function is called by mlx_loop_hook
+ * to render the next frame of the game. 
+ */
 void	render_next_frame(void *main_data)
 {
 	t_data	*data;
@@ -110,6 +134,10 @@ void	render_next_frame(void *main_data)
 	}
 }
 
+/**
+ * @brief Main loop of the program.
+ * @param data Pointer to the data structure.
+ */
 void	mlx_looping(t_data *data)
 {
 	init_mlx(data);

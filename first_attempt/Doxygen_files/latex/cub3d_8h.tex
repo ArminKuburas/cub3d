@@ -1,0 +1,885 @@
+\hypertarget{cub3d_8h}{}\doxysection{headers/cub3d.h File Reference}
+\label{cub3d_8h}\index{headers/cub3d.h@{headers/cub3d.h}}
+{\ttfamily \#include \char`\"{}../../../\+MLX42/include/\+MLX42/\+MLX42.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../other\+\_\+libraries/libft/libft.\+h\char`\"{}}\newline
+Include dependency graph for cub3d.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__ray}{s\+\_\+ray}}
+\item 
+struct \mbox{\hyperlink{structs__map}{s\+\_\+map}}
+\item 
+struct \mbox{\hyperlink{structs__player}{s\+\_\+player}}
+\item 
+struct \mbox{\hyperlink{structs__data}{s\+\_\+data}}
+\item 
+struct \mbox{\hyperlink{structs__parsing__data}{s\+\_\+parsing\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}~1920
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}~1080
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_afab1d6380725d86a389fb84b888b091d}{FOV}}~1.\+0471975512f
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a6d58f9ac447476b4e084d7ca383f5183}{FAILURE}}~1
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_aa90cac659d18e8ef6294c7ae337f6b58}{SUCCESS}}~0
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a755da365a2f771fdb9e15af22fee7d74}{WEST}}~3.\+1415926535898f
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a1711232abf72723b5216c206e6bbb175}{NORTH}}~1.\+57079632679f
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a072a1ef1143314441742097b799be322}{EAST}}~0
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_af3830320fe6287f717dca9669f417950}{SOUTH}}~4.\+71238898038f
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a1701ac0f424440a3abf2e2fbea71d9e8}{MOVE\+\_\+\+SPEED}}~3.\+0f
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a7b68e6d4467390702f67b508ad1389d9}{ROTATE\+\_\+\+SPEED}}~0.\+2f
+\item 
+\#define \mbox{\hyperlink{cub3d_8h_a2f54719dcdf8932e3141388b38dee848}{DEFAULT\+\_\+\+COLOUR}}~0x\+FF000000
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structs__ray}{s\+\_\+ray}} \mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}}
+\item 
+typedef struct \mbox{\hyperlink{structs__map}{s\+\_\+map}} \mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}
+\item 
+typedef struct \mbox{\hyperlink{structs__player}{s\+\_\+player}} \mbox{\hyperlink{cub3d_8h_aef4e2e456f5bf835fd3145850f889c4a}{t\+\_\+player}}
+\item 
+typedef struct \mbox{\hyperlink{structs__data}{s\+\_\+data}} \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}}
+\item 
+typedef struct \mbox{\hyperlink{structs__parsing__data}{s\+\_\+parsing\+\_\+data}} \mbox{\hyperlink{cub3d_8h_a03f4636d7ec6babd76eb5d20cdf7f96f}{t\+\_\+parsing\+\_\+data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}} \{ \newline
+\mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615a443fd275f4bdeea48cae8c00b86e3443}{GO\+\_\+\+FORWARDS}}
+, \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615ac3b6c7b73f5d90e7aa9c08faa3e8c3a2}{GO\+\_\+\+BACKWARDS}}
+, \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615a54135bc9287175fd0f5f55d9448eb94b}{STRAFE\+\_\+\+LEFT}}
+, \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615a252a83033989de5389bf73d10c6c14a7}{STRAFE\+\_\+\+RIGHT}}
+, \newline
+\mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615aa680fb2367a2e11042d902b7d6320f12}{TURN\+\_\+\+LEFT}}
+, \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615a5867af0449808578577a55aad42450ed}{TURN\+\_\+\+RIGHT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{cub3d_8h_a0d8fde4adcb05f829b36a85fdd24c8f5}{check\+\_\+arguments}} (int argc, char $\ast$$\ast$argv, \mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map)
+\item 
+void \mbox{\hyperlink{cub3d_8h_a54c7c7c6e3294c8a1ae4389db708b128}{free\+\_\+map\+\_\+info}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map)
+\item 
+int \mbox{\hyperlink{cub3d_8h_a4cec9d1d22fe87b9bfb62d45b55228bd}{validate\+\_\+map}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map)
+\item 
+void \mbox{\hyperlink{cub3d_8h_a61eef260fd276afee90a86ef5db943fc}{free\+\_\+array}} (char $\ast$$\ast$arr)
+\item 
+int \mbox{\hyperlink{cub3d_8h_a086076d5586afb94af1d7fb14ec44611}{ft\+\_\+err}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em writes an error message to the standard error output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3d_8h_a16c63d8d44419a99162659233cdcd016}{mlx\+\_\+looping}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Main loop of the program. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{cub3d_8h_a998754e1a2fcc7ec315a3c449be7d2e6}{ft\+\_\+pixel}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b, uint8\+\_\+t a)
+\begin{DoxyCompactList}\small\item\em Creates a pixel from the given colour values. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3d_8h_a4a185f1d7500ad0a2153a620396354d3}{calculate\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Calculates the distance of the ray and the texture to use. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3d_8h_a073079a23abdacc30e1cdba23b3fbe1d}{player\+\_\+controller}} (void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Controls the player movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3d_8h_acf77a39baf3bcb7f5f8443bf30e202c2}{key\+\_\+press}} (mlx\+\_\+key\+\_\+data\+\_\+t key\+\_\+data, void $\ast$param)
+\begin{DoxyCompactList}\small\item\em Closes the window when the escape key is pressed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3d_8h_a59e245f491b2a5759a24ee37b1154272}{fix\+\_\+fish\+\_\+eye}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Fixes the fish eye effect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3d_8h_a7b324feb36531a7f3381ee8cb73ca022}{free\+\_\+all\+\_\+and\+\_\+exit}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Frees all the allocated memory and exits the program. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{cub3d_8h_a4592bec96f95eb9c2f172b6a5ddaf064}{texture\+\_\+pixel\+\_\+colour}} (mlx\+\_\+texture\+\_\+t $\ast$image, int x, int y)
+\begin{DoxyCompactList}\small\item\em attemps to find the pixel at the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{cub3d_8h_a2872d9c7dcd3899e475ea4eeb0f98d64}{modify\+\_\+pixel}} (int x, int y, int32\+\_\+t colour, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Modifies the pixel at the given coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cub3d_8h_a17300c98d3dde6921b785d0a4282a585}{parse\+\_\+directions}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map, char $\ast$line, int $\ast$count)
+\item 
+int \mbox{\hyperlink{cub3d_8h_a49a96371ec2e86b1769996c3b69c18fb}{parse\+\_\+f}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map, char $\ast$line, int $\ast$count)
+\item 
+int \mbox{\hyperlink{cub3d_8h_adba92323ff1dcb3e17dee7de901abd14}{parse\+\_\+c}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map, char $\ast$line, int $\ast$count)
+\item 
+int \mbox{\hyperlink{cub3d_8h_a063375bc3f853c145f70d7784765e266}{check\+\_\+lines}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map)
+\item 
+int \mbox{\hyperlink{cub3d_8h_a290931afaff1496f4471f0405c86c174}{validate\+\_\+floor}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map)
+\item 
+int \mbox{\hyperlink{cub3d_8h_adfef21e265912e6fd39a0fa2afdfa437}{validate\+\_\+ceiling}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map)
+\item 
+int \mbox{\hyperlink{cub3d_8h_afbf8107aeed946cd856caa39f1a71ec6}{reformat\+\_\+map}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em reformats the map to a rectangle and into a 2D-\/array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cub3d_8h_a7fb85ae909538cee27908cdafbb267da}{open\+\_\+load\+\_\+textures}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Opens and loads the textures. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{cub3d_8h_ab48dbed3bdf6db167f89209ae91c5415}{check\+\_\+islands}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cub3d_8h_a2f54719dcdf8932e3141388b38dee848}\label{cub3d_8h_a2f54719dcdf8932e3141388b38dee848}} 
+\index{cub3d.h@{cub3d.h}!DEFAULT\_COLOUR@{DEFAULT\_COLOUR}}
+\index{DEFAULT\_COLOUR@{DEFAULT\_COLOUR}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_COLOUR}{DEFAULT\_COLOUR}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+COLOUR~0x\+FF000000}
+
+\mbox{\Hypertarget{cub3d_8h_a072a1ef1143314441742097b799be322}\label{cub3d_8h_a072a1ef1143314441742097b799be322}} 
+\index{cub3d.h@{cub3d.h}!EAST@{EAST}}
+\index{EAST@{EAST}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{EAST}{EAST}}
+{\footnotesize\ttfamily \#define EAST~0}
+
+\mbox{\Hypertarget{cub3d_8h_a6d58f9ac447476b4e084d7ca383f5183}\label{cub3d_8h_a6d58f9ac447476b4e084d7ca383f5183}} 
+\index{cub3d.h@{cub3d.h}!FAILURE@{FAILURE}}
+\index{FAILURE@{FAILURE}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{FAILURE}{FAILURE}}
+{\footnotesize\ttfamily \#define FAILURE~1}
+
+\mbox{\Hypertarget{cub3d_8h_afab1d6380725d86a389fb84b888b091d}\label{cub3d_8h_afab1d6380725d86a389fb84b888b091d}} 
+\index{cub3d.h@{cub3d.h}!FOV@{FOV}}
+\index{FOV@{FOV}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{FOV}{FOV}}
+{\footnotesize\ttfamily \#define FOV~1.\+0471975512f}
+
+\mbox{\Hypertarget{cub3d_8h_aed89bd71aee8be823e8a20ec4e093c1e}\label{cub3d_8h_aed89bd71aee8be823e8a20ec4e093c1e}} 
+\index{cub3d.h@{cub3d.h}!HEIGHT@{HEIGHT}}
+\index{HEIGHT@{HEIGHT}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{HEIGHT}{HEIGHT}}
+{\footnotesize\ttfamily \#define HEIGHT~1080}
+
+\mbox{\Hypertarget{cub3d_8h_a1701ac0f424440a3abf2e2fbea71d9e8}\label{cub3d_8h_a1701ac0f424440a3abf2e2fbea71d9e8}} 
+\index{cub3d.h@{cub3d.h}!MOVE\_SPEED@{MOVE\_SPEED}}
+\index{MOVE\_SPEED@{MOVE\_SPEED}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{MOVE\_SPEED}{MOVE\_SPEED}}
+{\footnotesize\ttfamily \#define MOVE\+\_\+\+SPEED~3.\+0f}
+
+\mbox{\Hypertarget{cub3d_8h_a1711232abf72723b5216c206e6bbb175}\label{cub3d_8h_a1711232abf72723b5216c206e6bbb175}} 
+\index{cub3d.h@{cub3d.h}!NORTH@{NORTH}}
+\index{NORTH@{NORTH}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{NORTH}{NORTH}}
+{\footnotesize\ttfamily \#define NORTH~1.\+57079632679f}
+
+\mbox{\Hypertarget{cub3d_8h_a7b68e6d4467390702f67b508ad1389d9}\label{cub3d_8h_a7b68e6d4467390702f67b508ad1389d9}} 
+\index{cub3d.h@{cub3d.h}!ROTATE\_SPEED@{ROTATE\_SPEED}}
+\index{ROTATE\_SPEED@{ROTATE\_SPEED}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{ROTATE\_SPEED}{ROTATE\_SPEED}}
+{\footnotesize\ttfamily \#define ROTATE\+\_\+\+SPEED~0.\+2f}
+
+\mbox{\Hypertarget{cub3d_8h_af3830320fe6287f717dca9669f417950}\label{cub3d_8h_af3830320fe6287f717dca9669f417950}} 
+\index{cub3d.h@{cub3d.h}!SOUTH@{SOUTH}}
+\index{SOUTH@{SOUTH}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{SOUTH}{SOUTH}}
+{\footnotesize\ttfamily \#define SOUTH~4.\+71238898038f}
+
+\mbox{\Hypertarget{cub3d_8h_aa90cac659d18e8ef6294c7ae337f6b58}\label{cub3d_8h_aa90cac659d18e8ef6294c7ae337f6b58}} 
+\index{cub3d.h@{cub3d.h}!SUCCESS@{SUCCESS}}
+\index{SUCCESS@{SUCCESS}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{SUCCESS}{SUCCESS}}
+{\footnotesize\ttfamily \#define SUCCESS~0}
+
+\mbox{\Hypertarget{cub3d_8h_a755da365a2f771fdb9e15af22fee7d74}\label{cub3d_8h_a755da365a2f771fdb9e15af22fee7d74}} 
+\index{cub3d.h@{cub3d.h}!WEST@{WEST}}
+\index{WEST@{WEST}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{WEST}{WEST}}
+{\footnotesize\ttfamily \#define WEST~3.\+1415926535898f}
+
+\mbox{\Hypertarget{cub3d_8h_a241aeeb764887ae5e3de58b98f04b16d}\label{cub3d_8h_a241aeeb764887ae5e3de58b98f04b16d}} 
+\index{cub3d.h@{cub3d.h}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily \#define WIDTH~1920}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}\label{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}} 
+\index{cub3d.h@{cub3d.h}!t\_data@{t\_data}}
+\index{t\_data@{t\_data}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{t\_data}{t\_data}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__data}{s\+\_\+data}} \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}}}
+
+\mbox{\Hypertarget{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}\label{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}} 
+\index{cub3d.h@{cub3d.h}!t\_map@{t\_map}}
+\index{t\_map@{t\_map}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{t\_map}{t\_map}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__map}{s\+\_\+map}} \mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}}}
+
+\mbox{\Hypertarget{cub3d_8h_a03f4636d7ec6babd76eb5d20cdf7f96f}\label{cub3d_8h_a03f4636d7ec6babd76eb5d20cdf7f96f}} 
+\index{cub3d.h@{cub3d.h}!t\_parsing\_data@{t\_parsing\_data}}
+\index{t\_parsing\_data@{t\_parsing\_data}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{t\_parsing\_data}{t\_parsing\_data}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__parsing__data}{s\+\_\+parsing\+\_\+data}} \mbox{\hyperlink{cub3d_8h_a03f4636d7ec6babd76eb5d20cdf7f96f}{t\+\_\+parsing\+\_\+data}}}
+
+\mbox{\Hypertarget{cub3d_8h_aef4e2e456f5bf835fd3145850f889c4a}\label{cub3d_8h_aef4e2e456f5bf835fd3145850f889c4a}} 
+\index{cub3d.h@{cub3d.h}!t\_player@{t\_player}}
+\index{t\_player@{t\_player}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{t\_player}{t\_player}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__player}{s\+\_\+player}} \mbox{\hyperlink{cub3d_8h_aef4e2e456f5bf835fd3145850f889c4a}{t\+\_\+player}}}
+
+\mbox{\Hypertarget{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}\label{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}} 
+\index{cub3d.h@{cub3d.h}!t\_ray@{t\_ray}}
+\index{t\_ray@{t\_ray}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{t\_ray}{t\_ray}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__ray}{s\+\_\+ray}} \mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{cub3d_8h_ab5cafc132b36f66243995c2518e05615}\label{cub3d_8h_ab5cafc132b36f66243995c2518e05615}} 
+\index{cub3d.h@{cub3d.h}!e\_direction@{e\_direction}}
+\index{e\_direction@{e\_direction}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{e\_direction}{e\_direction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GO\_FORWARDS@{GO\_FORWARDS}!cub3d.h@{cub3d.h}}\index{cub3d.h@{cub3d.h}!GO\_FORWARDS@{GO\_FORWARDS}}}\mbox{\Hypertarget{cub3d_8h_ab5cafc132b36f66243995c2518e05615a443fd275f4bdeea48cae8c00b86e3443}\label{cub3d_8h_ab5cafc132b36f66243995c2518e05615a443fd275f4bdeea48cae8c00b86e3443}} 
+GO\+\_\+\+FORWARDS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GO\_BACKWARDS@{GO\_BACKWARDS}!cub3d.h@{cub3d.h}}\index{cub3d.h@{cub3d.h}!GO\_BACKWARDS@{GO\_BACKWARDS}}}\mbox{\Hypertarget{cub3d_8h_ab5cafc132b36f66243995c2518e05615ac3b6c7b73f5d90e7aa9c08faa3e8c3a2}\label{cub3d_8h_ab5cafc132b36f66243995c2518e05615ac3b6c7b73f5d90e7aa9c08faa3e8c3a2}} 
+GO\+\_\+\+BACKWARDS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRAFE\_LEFT@{STRAFE\_LEFT}!cub3d.h@{cub3d.h}}\index{cub3d.h@{cub3d.h}!STRAFE\_LEFT@{STRAFE\_LEFT}}}\mbox{\Hypertarget{cub3d_8h_ab5cafc132b36f66243995c2518e05615a54135bc9287175fd0f5f55d9448eb94b}\label{cub3d_8h_ab5cafc132b36f66243995c2518e05615a54135bc9287175fd0f5f55d9448eb94b}} 
+STRAFE\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRAFE\_RIGHT@{STRAFE\_RIGHT}!cub3d.h@{cub3d.h}}\index{cub3d.h@{cub3d.h}!STRAFE\_RIGHT@{STRAFE\_RIGHT}}}\mbox{\Hypertarget{cub3d_8h_ab5cafc132b36f66243995c2518e05615a252a83033989de5389bf73d10c6c14a7}\label{cub3d_8h_ab5cafc132b36f66243995c2518e05615a252a83033989de5389bf73d10c6c14a7}} 
+STRAFE\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_LEFT@{TURN\_LEFT}!cub3d.h@{cub3d.h}}\index{cub3d.h@{cub3d.h}!TURN\_LEFT@{TURN\_LEFT}}}\mbox{\Hypertarget{cub3d_8h_ab5cafc132b36f66243995c2518e05615aa680fb2367a2e11042d902b7d6320f12}\label{cub3d_8h_ab5cafc132b36f66243995c2518e05615aa680fb2367a2e11042d902b7d6320f12}} 
+TURN\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TURN\_RIGHT@{TURN\_RIGHT}!cub3d.h@{cub3d.h}}\index{cub3d.h@{cub3d.h}!TURN\_RIGHT@{TURN\_RIGHT}}}\mbox{\Hypertarget{cub3d_8h_ab5cafc132b36f66243995c2518e05615a5867af0449808578577a55aad42450ed}\label{cub3d_8h_ab5cafc132b36f66243995c2518e05615a5867af0449808578577a55aad42450ed}} 
+TURN\+\_\+\+RIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cub3d_8h_a4a185f1d7500ad0a2153a620396354d3}\label{cub3d_8h_a4a185f1d7500ad0a2153a620396354d3}} 
+\index{cub3d.h@{cub3d.h}!calculate\_ray@{calculate\_ray}}
+\index{calculate\_ray@{calculate\_ray}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_ray()}{calculate\_ray()}}
+{\footnotesize\ttfamily void calculate\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Calculates the distance of the ray and the texture to use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
+References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::east\+\_\+texture, horizontal\+\_\+ray(), s\+\_\+data\+::south\+\_\+texture, s\+\_\+ray\+::texture, vertical\+\_\+ray(), s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
+
+
+
+Referenced by render\+\_\+next\+\_\+frame().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a4a185f1d7500ad0a2153a620396354d3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a4a185f1d7500ad0a2153a620396354d3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a0d8fde4adcb05f829b36a85fdd24c8f5}\label{cub3d_8h_a0d8fde4adcb05f829b36a85fdd24c8f5}} 
+\index{cub3d.h@{cub3d.h}!check\_arguments@{check\_arguments}}
+\index{check\_arguments@{check\_arguments}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{check\_arguments()}{check\_arguments()}}
+{\footnotesize\ttfamily int check\+\_\+arguments (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Referenced by initial\+\_\+map\+\_\+validation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a0d8fde4adcb05f829b36a85fdd24c8f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_ab48dbed3bdf6db167f89209ae91c5415}\label{cub3d_8h_ab48dbed3bdf6db167f89209ae91c5415}} 
+\index{cub3d.h@{cub3d.h}!check\_islands@{check\_islands}}
+\index{check\_islands@{check\_islands}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{check\_islands()}{check\_islands()}}
+{\footnotesize\ttfamily int check\+\_\+islands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Referenced by reformat\+\_\+map().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_ab48dbed3bdf6db167f89209ae91c5415_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a063375bc3f853c145f70d7784765e266}\label{cub3d_8h_a063375bc3f853c145f70d7784765e266}} 
+\index{cub3d.h@{cub3d.h}!check\_lines@{check\_lines}}
+\index{check\_lines@{check\_lines}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{check\_lines()}{check\_lines()}}
+{\footnotesize\ttfamily int check\+\_\+lines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cub3d_8h_a59e245f491b2a5759a24ee37b1154272}\label{cub3d_8h_a59e245f491b2a5759a24ee37b1154272}} 
+\index{cub3d.h@{cub3d.h}!fix\_fish\_eye@{fix\_fish\_eye}}
+\index{fix\_fish\_eye@{fix\_fish\_eye}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{fix\_fish\_eye()}{fix\_fish\_eye()}}
+{\footnotesize\ttfamily void fix\+\_\+fish\+\_\+eye (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Fixes the fish eye effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{helper__functions_8c_The}{}\doxysubparagraph{fish eye effect is caused}\label{helper__functions_8c_The}
+by the rays hitting the walls at an angle. 
+
+References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::player, and s\+\_\+player\+::rotation\+\_\+angle.
+
+
+
+Referenced by render\+\_\+next\+\_\+frame().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a59e245f491b2a5759a24ee37b1154272_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a7b324feb36531a7f3381ee8cb73ca022}\label{cub3d_8h_a7b324feb36531a7f3381ee8cb73ca022}} 
+\index{cub3d.h@{cub3d.h}!free\_all\_and\_exit@{free\_all\_and\_exit}}
+\index{free\_all\_and\_exit@{free\_all\_and\_exit}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{free\_all\_and\_exit()}{free\_all\_and\_exit()}}
+{\footnotesize\ttfamily void free\+\_\+all\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Frees all the allocated memory and exits the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
+References s\+\_\+data\+::east\+\_\+texture, free\+\_\+array(), free\+\_\+map\+\_\+info(), s\+\_\+data\+::map, s\+\_\+data\+::north\+\_\+texture, s\+\_\+data\+::parse\+\_\+data, s\+\_\+data\+::south\+\_\+texture, and s\+\_\+data\+::west\+\_\+texture.
+
+
+
+Referenced by init\+\_\+mlx(), and mlx\+\_\+looping().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{cub3d_8h_a7b324feb36531a7f3381ee8cb73ca022_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a7b324feb36531a7f3381ee8cb73ca022_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a61eef260fd276afee90a86ef5db943fc}\label{cub3d_8h_a61eef260fd276afee90a86ef5db943fc}} 
+\index{cub3d.h@{cub3d.h}!free\_array@{free\_array}}
+\index{free\_array@{free\_array}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{free\_array()}{free\_array()}}
+{\footnotesize\ttfamily void free\+\_\+array (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{arr }\end{DoxyParamCaption})}
+
+
+
+Referenced by free\+\_\+all\+\_\+and\+\_\+exit(), and main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a61eef260fd276afee90a86ef5db943fc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a54c7c7c6e3294c8a1ae4389db708b128}\label{cub3d_8h_a54c7c7c6e3294c8a1ae4389db708b128}} 
+\index{cub3d.h@{cub3d.h}!free\_map\_info@{free\_map\_info}}
+\index{free\_map\_info@{free\_map\_info}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{free\_map\_info()}{free\_map\_info()}}
+{\footnotesize\ttfamily void free\+\_\+map\+\_\+info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Referenced by free\+\_\+all\+\_\+and\+\_\+exit(), initial\+\_\+map\+\_\+validation(), and main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a54c7c7c6e3294c8a1ae4389db708b128_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a086076d5586afb94af1d7fb14ec44611}\label{cub3d_8h_a086076d5586afb94af1d7fb14ec44611}} 
+\index{cub3d.h@{cub3d.h}!ft\_err@{ft\_err}}
+\index{ft\_err@{ft\_err}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{ft\_err()}{ft\_err()}}
+{\footnotesize\ttfamily int ft\+\_\+err (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+writes an error message to the standard error output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The error message to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1. 
+\end{DoxyReturn}
+
+
+References FAILURE, and ft\+\_\+strlen().
+
+
+
+Referenced by init\+\_\+mlx(), load\+\_\+textures(), open\+\_\+load\+\_\+textures(), and reformat\+\_\+map().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{cub3d_8h_a086076d5586afb94af1d7fb14ec44611_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a086076d5586afb94af1d7fb14ec44611_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a998754e1a2fcc7ec315a3c449be7d2e6}\label{cub3d_8h_a998754e1a2fcc7ec315a3c449be7d2e6}} 
+\index{cub3d.h@{cub3d.h}!ft\_pixel@{ft\_pixel}}
+\index{ft\_pixel@{ft\_pixel}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{ft\_pixel()}{ft\_pixel()}}
+{\footnotesize\ttfamily int32\+\_\+t ft\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b,  }\item[{uint8\+\_\+t}]{a }\end{DoxyParamCaption})}
+
+
+
+Creates a pixel from the given colour values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red value of the pixel. \\
+\hline
+{\em g} & The green value of the pixel. \\
+\hline
+{\em b} & The blue value of the pixel. \\
+\hline
+{\em a} & The alpha value of the pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns the colour in int32\+\_\+t format. 
+\end{DoxyReturn}
+
+
+Referenced by pixel\+\_\+colour(), populate\+\_\+data(), and texture\+\_\+pixel\+\_\+colour().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a998754e1a2fcc7ec315a3c449be7d2e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_acf77a39baf3bcb7f5f8443bf30e202c2}\label{cub3d_8h_acf77a39baf3bcb7f5f8443bf30e202c2}} 
+\index{cub3d.h@{cub3d.h}!key\_press@{key\_press}}
+\index{key\_press@{key\_press}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{key\_press()}{key\_press()}}
+{\footnotesize\ttfamily void key\+\_\+press (\begin{DoxyParamCaption}\item[{mlx\+\_\+key\+\_\+data\+\_\+t}]{key\+\_\+data,  }\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+Closes the window when the escape key is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+data} & The key data. \\
+\hline
+{\em param} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
+References s\+\_\+data\+::mlx.
+
+
+
+Referenced by mlx\+\_\+looping().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{cub3d_8h_acf77a39baf3bcb7f5f8443bf30e202c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a16c63d8d44419a99162659233cdcd016}\label{cub3d_8h_a16c63d8d44419a99162659233cdcd016}} 
+\index{cub3d.h@{cub3d.h}!mlx\_looping@{mlx\_looping}}
+\index{mlx\_looping@{mlx\_looping}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{mlx\_looping()}{mlx\_looping()}}
+{\footnotesize\ttfamily void mlx\+\_\+looping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Main loop of the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
+References free\+\_\+all\+\_\+and\+\_\+exit(), init\+\_\+mlx(), key\+\_\+press(), s\+\_\+data\+::mlx, player\+\_\+controller(), and render\+\_\+next\+\_\+frame().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a16c63d8d44419a99162659233cdcd016_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{cub3d_8h_a16c63d8d44419a99162659233cdcd016_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a2872d9c7dcd3899e475ea4eeb0f98d64}\label{cub3d_8h_a2872d9c7dcd3899e475ea4eeb0f98d64}} 
+\index{cub3d.h@{cub3d.h}!modify\_pixel@{modify\_pixel}}
+\index{modify\_pixel@{modify\_pixel}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{modify\_pixel()}{modify\_pixel()}}
+{\footnotesize\ttfamily void modify\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int32\+\_\+t}]{colour,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Modifies the pixel at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the pixel. \\
+\hline
+{\em y} & The y coordinate of the pixel. \\
+\hline
+{\em colour} & The colour to be set. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
+References s\+\_\+data\+::image, and pixel\+\_\+colour().
+
+
+
+Referenced by draw\+\_\+ray().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a2872d9c7dcd3899e475ea4eeb0f98d64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a2872d9c7dcd3899e475ea4eeb0f98d64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a7fb85ae909538cee27908cdafbb267da}\label{cub3d_8h_a7fb85ae909538cee27908cdafbb267da}} 
+\index{cub3d.h@{cub3d.h}!open\_load\_textures@{open\_load\_textures}}
+\index{open\_load\_textures@{open\_load\_textures}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{open\_load\_textures()}{open\_load\_textures()}}
+{\footnotesize\ttfamily int open\+\_\+load\+\_\+textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Opens and loads the textures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 if the textures are loaded successfully. 
+\end{DoxyReturn}
+
+
+References s\+\_\+map\+::ea, ft\+\_\+err(), load\+\_\+textures(), s\+\_\+map\+::no, s\+\_\+data\+::parse\+\_\+data, s\+\_\+map\+::so, and s\+\_\+map\+::we.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a7fb85ae909538cee27908cdafbb267da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{cub3d_8h_a7fb85ae909538cee27908cdafbb267da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_adba92323ff1dcb3e17dee7de901abd14}\label{cub3d_8h_adba92323ff1dcb3e17dee7de901abd14}} 
+\index{cub3d.h@{cub3d.h}!parse\_c@{parse\_c}}
+\index{parse\_c@{parse\_c}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{parse\_c()}{parse\_c()}}
+{\footnotesize\ttfamily int parse\+\_\+c (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{char $\ast$}]{line,  }\item[{int $\ast$}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cub3d_8h_a17300c98d3dde6921b785d0a4282a585}\label{cub3d_8h_a17300c98d3dde6921b785d0a4282a585}} 
+\index{cub3d.h@{cub3d.h}!parse\_directions@{parse\_directions}}
+\index{parse\_directions@{parse\_directions}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{parse\_directions()}{parse\_directions()}}
+{\footnotesize\ttfamily int parse\+\_\+directions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{char $\ast$}]{line,  }\item[{int $\ast$}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cub3d_8h_a49a96371ec2e86b1769996c3b69c18fb}\label{cub3d_8h_a49a96371ec2e86b1769996c3b69c18fb}} 
+\index{cub3d.h@{cub3d.h}!parse\_f@{parse\_f}}
+\index{parse\_f@{parse\_f}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{parse\_f()}{parse\_f()}}
+{\footnotesize\ttfamily int parse\+\_\+f (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{char $\ast$}]{line,  }\item[{int $\ast$}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cub3d_8h_a073079a23abdacc30e1cdba23b3fbe1d}\label{cub3d_8h_a073079a23abdacc30e1cdba23b3fbe1d}} 
+\index{cub3d.h@{cub3d.h}!player\_controller@{player\_controller}}
+\index{player\_controller@{player\_controller}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{player\_controller()}{player\_controller()}}
+{\footnotesize\ttfamily void player\+\_\+controller (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
+
+
+
+Controls the player movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
+References GO\+\_\+\+BACKWARDS, GO\+\_\+\+FORWARDS, s\+\_\+data\+::mlx, move\+\_\+player(), STRAFE\+\_\+\+LEFT, STRAFE\+\_\+\+RIGHT, TURN\+\_\+\+LEFT, turn\+\_\+player(), and TURN\+\_\+\+RIGHT.
+
+
+
+Referenced by mlx\+\_\+looping().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{cub3d_8h_a073079a23abdacc30e1cdba23b3fbe1d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a073079a23abdacc30e1cdba23b3fbe1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_afbf8107aeed946cd856caa39f1a71ec6}\label{cub3d_8h_afbf8107aeed946cd856caa39f1a71ec6}} 
+\index{cub3d.h@{cub3d.h}!reformat\_map@{reformat\_map}}
+\index{reformat\_map@{reformat\_map}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{reformat\_map()}{reformat\_map()}}
+{\footnotesize\ttfamily int reformat\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+reformats the map to a rectangle and into a 2D-\/array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 if the map is reformatted successfully. 
+\end{DoxyReturn}
+
+
+References check\+\_\+islands(), ft\+\_\+err(), ft\+\_\+strlen(), s\+\_\+map\+::line\+\_\+count, s\+\_\+data\+::map, s\+\_\+data\+::map\+\_\+height, s\+\_\+data\+::map\+\_\+width, s\+\_\+data\+::parse\+\_\+data, and realloc\+\_\+line().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_afbf8107aeed946cd856caa39f1a71ec6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{cub3d_8h_afbf8107aeed946cd856caa39f1a71ec6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_a4592bec96f95eb9c2f172b6a5ddaf064}\label{cub3d_8h_a4592bec96f95eb9c2f172b6a5ddaf064}} 
+\index{cub3d.h@{cub3d.h}!texture\_pixel\_colour@{texture\_pixel\_colour}}
+\index{texture\_pixel\_colour@{texture\_pixel\_colour}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{texture\_pixel\_colour()}{texture\_pixel\_colour()}}
+{\footnotesize\ttfamily int32\+\_\+t texture\+\_\+pixel\+\_\+colour (\begin{DoxyParamCaption}\item[{mlx\+\_\+texture\+\_\+t $\ast$}]{image,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+attemps to find the pixel at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the texture structure. \\
+\hline
+{\em x} & The x coordinate of the pixel. \\
+\hline
+{\em y} & The y coordinate of the pixel. \\
+\hline
+\end{DoxyParams}
+
+
+References DEFAULT\+\_\+\+COLOUR, and ft\+\_\+pixel().
+
+
+
+Referenced by draw\+\_\+ray().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{cub3d_8h_a4592bec96f95eb9c2f172b6a5ddaf064_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a4592bec96f95eb9c2f172b6a5ddaf064_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{cub3d_8h_adfef21e265912e6fd39a0fa2afdfa437}\label{cub3d_8h_adfef21e265912e6fd39a0fa2afdfa437}} 
+\index{cub3d.h@{cub3d.h}!validate\_ceiling@{validate\_ceiling}}
+\index{validate\_ceiling@{validate\_ceiling}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{validate\_ceiling()}{validate\_ceiling()}}
+{\footnotesize\ttfamily int validate\+\_\+ceiling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cub3d_8h_a290931afaff1496f4471f0405c86c174}\label{cub3d_8h_a290931afaff1496f4471f0405c86c174}} 
+\index{cub3d.h@{cub3d.h}!validate\_floor@{validate\_floor}}
+\index{validate\_floor@{validate\_floor}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{validate\_floor()}{validate\_floor()}}
+{\footnotesize\ttfamily int validate\+\_\+floor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cub3d_8h_a4cec9d1d22fe87b9bfb62d45b55228bd}\label{cub3d_8h_a4cec9d1d22fe87b9bfb62d45b55228bd}} 
+\index{cub3d.h@{cub3d.h}!validate\_map@{validate\_map}}
+\index{validate\_map@{validate\_map}!cub3d.h@{cub3d.h}}
+\doxysubsubsection{\texorpdfstring{validate\_map()}{validate\_map()}}
+{\footnotesize\ttfamily int validate\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+Referenced by initial\+\_\+map\+\_\+validation().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cub3d_8h_a4cec9d1d22fe87b9bfb62d45b55228bd_icgraph}
+\end{center}
+\end{figure}

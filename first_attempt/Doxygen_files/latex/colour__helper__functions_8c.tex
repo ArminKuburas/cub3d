@@ -1,0 +1,194 @@
+\hypertarget{colour__helper__functions_8c}{}\doxysection{source\+\_\+files/colour\+\_\+helper\+\_\+functions.c File Reference}
+\label{colour__helper__functions_8c}\index{source\_files/colour\_helper\_functions.c@{source\_files/colour\_helper\_functions.c}}
+{\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
+Include dependency graph for colour\+\_\+helper\+\_\+functions.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{colour__helper__functions_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{colour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6}{ft\+\_\+pixel}} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b, uint8\+\_\+t a)
+\begin{DoxyCompactList}\small\item\em Creates a pixel from the given colour values. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{colour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056}{pixel\+\_\+colour}} (mlx\+\_\+image\+\_\+t $\ast$image, int x, int y)
+\begin{DoxyCompactList}\small\item\em attemps to find the pixel at the given coordinates. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{colour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064}{texture\+\_\+pixel\+\_\+colour}} (mlx\+\_\+texture\+\_\+t $\ast$image, int x, int y)
+\begin{DoxyCompactList}\small\item\em attemps to find the pixel at the given coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{colour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64}{modify\+\_\+pixel}} (int x, int y, int32\+\_\+t colour, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Modifies the pixel at the given coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{colour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6}\label{colour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6}} 
+\index{colour\_helper\_functions.c@{colour\_helper\_functions.c}!ft\_pixel@{ft\_pixel}}
+\index{ft\_pixel@{ft\_pixel}!colour\_helper\_functions.c@{colour\_helper\_functions.c}}
+\doxysubsubsection{\texorpdfstring{ft\_pixel()}{ft\_pixel()}}
+{\footnotesize\ttfamily int32\+\_\+t ft\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r,  }\item[{uint8\+\_\+t}]{g,  }\item[{uint8\+\_\+t}]{b,  }\item[{uint8\+\_\+t}]{a }\end{DoxyParamCaption})}
+
+
+
+Creates a pixel from the given colour values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red value of the pixel. \\
+\hline
+{\em g} & The green value of the pixel. \\
+\hline
+{\em b} & The blue value of the pixel. \\
+\hline
+{\em a} & The alpha value of the pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns the colour in int32\+\_\+t format. 
+\end{DoxyReturn}
+
+
+Referenced by pixel\+\_\+colour(), populate\+\_\+data(), and texture\+\_\+pixel\+\_\+colour().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{colour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{colour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64}\label{colour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64}} 
+\index{colour\_helper\_functions.c@{colour\_helper\_functions.c}!modify\_pixel@{modify\_pixel}}
+\index{modify\_pixel@{modify\_pixel}!colour\_helper\_functions.c@{colour\_helper\_functions.c}}
+\doxysubsubsection{\texorpdfstring{modify\_pixel()}{modify\_pixel()}}
+{\footnotesize\ttfamily void modify\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int32\+\_\+t}]{colour,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Modifies the pixel at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x coordinate of the pixel. \\
+\hline
+{\em y} & The y coordinate of the pixel. \\
+\hline
+{\em colour} & The colour to be set. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
+References s\+\_\+data\+::image, and pixel\+\_\+colour().
+
+
+
+Referenced by draw\+\_\+ray().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{colour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{colour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{colour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056}\label{colour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056}} 
+\index{colour\_helper\_functions.c@{colour\_helper\_functions.c}!pixel\_colour@{pixel\_colour}}
+\index{pixel\_colour@{pixel\_colour}!colour\_helper\_functions.c@{colour\_helper\_functions.c}}
+\doxysubsubsection{\texorpdfstring{pixel\_colour()}{pixel\_colour()}}
+{\footnotesize\ttfamily int32\+\_\+t pixel\+\_\+colour (\begin{DoxyParamCaption}\item[{mlx\+\_\+image\+\_\+t $\ast$}]{image,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+attemps to find the pixel at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the image structure. \\
+\hline
+{\em x} & The x coordinate of the pixel. \\
+\hline
+{\em y} & The y coordinate of the pixel. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t Returns the colour of the pixel. 
+\end{DoxyReturn}
+
+
+References DEFAULT\+\_\+\+COLOUR, and ft\+\_\+pixel().
+
+
+
+Referenced by modify\+\_\+pixel().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{colour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{colour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{colour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064}\label{colour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064}} 
+\index{colour\_helper\_functions.c@{colour\_helper\_functions.c}!texture\_pixel\_colour@{texture\_pixel\_colour}}
+\index{texture\_pixel\_colour@{texture\_pixel\_colour}!colour\_helper\_functions.c@{colour\_helper\_functions.c}}
+\doxysubsubsection{\texorpdfstring{texture\_pixel\_colour()}{texture\_pixel\_colour()}}
+{\footnotesize\ttfamily int32\+\_\+t texture\+\_\+pixel\+\_\+colour (\begin{DoxyParamCaption}\item[{mlx\+\_\+texture\+\_\+t $\ast$}]{image,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+attemps to find the pixel at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the texture structure. \\
+\hline
+{\em x} & The x coordinate of the pixel. \\
+\hline
+{\em y} & The y coordinate of the pixel. \\
+\hline
+\end{DoxyParams}
+
+
+References DEFAULT\+\_\+\+COLOUR, and ft\+\_\+pixel().
+
+
+
+Referenced by draw\+\_\+ray().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{colour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{colour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_icgraph}
+\end{center}
+\end{figure}

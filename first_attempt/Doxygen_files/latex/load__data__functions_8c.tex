@@ -1,0 +1,223 @@
+\hypertarget{load__data__functions_8c}{}\doxysection{source\+\_\+files/load\+\_\+data\+\_\+functions.c File Reference}
+\label{load__data__functions_8c}\index{source\_files/load\_data\_functions.c@{source\_files/load\_data\_functions.c}}
+{\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
+Include dependency graph for load\+\_\+data\+\_\+functions.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{load__data__functions_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{load__data__functions_8c_a766820be38b2029f97daa096808c9f8a}{set\+\_\+empty\+\_\+data}} (int $\ast$len, int max\+\_\+len, char $\ast$ptr1)
+\begin{DoxyCompactList}\small\item\em sets the rest of the data to spaces. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{load__data__functions_8c_a232014ff8d45f3177734cefc987fd8e4}{realloc\+\_\+line}} (char $\ast$$\ast$ptr, int max\+\_\+len)
+\item 
+int \mbox{\hyperlink{load__data__functions_8c_afbf8107aeed946cd856caa39f1a71ec6}{reformat\+\_\+map}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em reformats the map to a rectangle and into a 2D-\/array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{load__data__functions_8c_aad8f3a0626dc5f0e91b237d0826b1d4d}{load\+\_\+textures}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Loads the images into textures. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{load__data__functions_8c_a7fb85ae909538cee27908cdafbb267da}{open\+\_\+load\+\_\+textures}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Opens and loads the textures. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{load__data__functions_8c_aad8f3a0626dc5f0e91b237d0826b1d4d}\label{load__data__functions_8c_aad8f3a0626dc5f0e91b237d0826b1d4d}} 
+\index{load\_data\_functions.c@{load\_data\_functions.c}!load\_textures@{load\_textures}}
+\index{load\_textures@{load\_textures}!load\_data\_functions.c@{load\_data\_functions.c}}
+\doxysubsubsection{\texorpdfstring{load\_textures()}{load\_textures()}}
+{\footnotesize\ttfamily int load\+\_\+textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Loads the images into textures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 if the textures are loaded successfully. 
+\end{DoxyReturn}
+
+
+References s\+\_\+map\+::ea, s\+\_\+data\+::east\+\_\+texture, ft\+\_\+err(), s\+\_\+map\+::no, s\+\_\+data\+::north\+\_\+texture, s\+\_\+data\+::parse\+\_\+data, s\+\_\+map\+::so, s\+\_\+data\+::south\+\_\+texture, s\+\_\+map\+::we, and s\+\_\+data\+::west\+\_\+texture.
+
+
+
+Referenced by open\+\_\+load\+\_\+textures().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{load__data__functions_8c_aad8f3a0626dc5f0e91b237d0826b1d4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{load__data__functions_8c_aad8f3a0626dc5f0e91b237d0826b1d4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{load__data__functions_8c_a7fb85ae909538cee27908cdafbb267da}\label{load__data__functions_8c_a7fb85ae909538cee27908cdafbb267da}} 
+\index{load\_data\_functions.c@{load\_data\_functions.c}!open\_load\_textures@{open\_load\_textures}}
+\index{open\_load\_textures@{open\_load\_textures}!load\_data\_functions.c@{load\_data\_functions.c}}
+\doxysubsubsection{\texorpdfstring{open\_load\_textures()}{open\_load\_textures()}}
+{\footnotesize\ttfamily int open\+\_\+load\+\_\+textures (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Opens and loads the textures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 if the textures are loaded successfully. 
+\end{DoxyReturn}
+
+
+References s\+\_\+map\+::ea, ft\+\_\+err(), load\+\_\+textures(), s\+\_\+map\+::no, s\+\_\+data\+::parse\+\_\+data, s\+\_\+map\+::so, and s\+\_\+map\+::we.
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{load__data__functions_8c_a7fb85ae909538cee27908cdafbb267da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{load__data__functions_8c_a7fb85ae909538cee27908cdafbb267da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{load__data__functions_8c_a232014ff8d45f3177734cefc987fd8e4}\label{load__data__functions_8c_a232014ff8d45f3177734cefc987fd8e4}} 
+\index{load\_data\_functions.c@{load\_data\_functions.c}!realloc\_line@{realloc\_line}}
+\index{realloc\_line@{realloc\_line}!load\_data\_functions.c@{load\_data\_functions.c}}
+\doxysubsubsection{\texorpdfstring{realloc\_line()}{realloc\_line()}}
+{\footnotesize\ttfamily int realloc\+\_\+line (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{ptr,  }\item[{int}]{max\+\_\+len }\end{DoxyParamCaption})}
+
+@reallocates the line to the max\+\_\+len. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Pointer to the line. \\
+\hline
+{\em max\+\_\+len} & The maximum length of the line. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 if the line is reallocated successfully. 
+\end{DoxyReturn}
+
+
+References ft\+\_\+calloc(), and set\+\_\+empty\+\_\+data().
+
+
+
+Referenced by reformat\+\_\+map().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{load__data__functions_8c_a232014ff8d45f3177734cefc987fd8e4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{load__data__functions_8c_a232014ff8d45f3177734cefc987fd8e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{load__data__functions_8c_afbf8107aeed946cd856caa39f1a71ec6}\label{load__data__functions_8c_afbf8107aeed946cd856caa39f1a71ec6}} 
+\index{load\_data\_functions.c@{load\_data\_functions.c}!reformat\_map@{reformat\_map}}
+\index{reformat\_map@{reformat\_map}!load\_data\_functions.c@{load\_data\_functions.c}}
+\doxysubsubsection{\texorpdfstring{reformat\_map()}{reformat\_map()}}
+{\footnotesize\ttfamily int reformat\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+reformats the map to a rectangle and into a 2D-\/array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 0 if the map is reformatted successfully. 
+\end{DoxyReturn}
+
+
+References check\+\_\+islands(), ft\+\_\+err(), ft\+\_\+strlen(), s\+\_\+map\+::line\+\_\+count, s\+\_\+data\+::map, s\+\_\+data\+::map\+\_\+height, s\+\_\+data\+::map\+\_\+width, s\+\_\+data\+::parse\+\_\+data, and realloc\+\_\+line().
+
+
+
+Referenced by main().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{load__data__functions_8c_afbf8107aeed946cd856caa39f1a71ec6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{load__data__functions_8c_afbf8107aeed946cd856caa39f1a71ec6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{load__data__functions_8c_a766820be38b2029f97daa096808c9f8a}\label{load__data__functions_8c_a766820be38b2029f97daa096808c9f8a}} 
+\index{load\_data\_functions.c@{load\_data\_functions.c}!set\_empty\_data@{set\_empty\_data}}
+\index{set\_empty\_data@{set\_empty\_data}!load\_data\_functions.c@{load\_data\_functions.c}}
+\doxysubsubsection{\texorpdfstring{set\_empty\_data()}{set\_empty\_data()}}
+{\footnotesize\ttfamily void set\+\_\+empty\+\_\+data (\begin{DoxyParamCaption}\item[{int $\ast$}]{len,  }\item[{int}]{max\+\_\+len,  }\item[{char $\ast$}]{ptr1 }\end{DoxyParamCaption})}
+
+
+
+sets the rest of the data to spaces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em len} & Pointer to the length of the line. \\
+\hline
+{\em max\+\_\+len} & The maximum length of the line. \\
+\hline
+{\em ptr1} & Pointer to the line. \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by realloc\+\_\+line().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{load__data__functions_8c_a766820be38b2029f97daa096808c9f8a_icgraph}
+\end{center}
+\end{figure}

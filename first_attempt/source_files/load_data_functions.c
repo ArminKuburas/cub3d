@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   load_data_functions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 13:17:10 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/28 18:32:59 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:45:53 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+/**
+ * @brief sets the rest of the data to spaces.
+ * @param len Pointer to the length of the line.
+ * @param max_len The maximum length of the line.
+ * @param ptr1 Pointer to the line.
+ */
 void	set_empty_data(int *len, int max_len, char *ptr1)
 {
 	while (len[0] < max_len - 1)
@@ -29,6 +35,12 @@ void	set_empty_data(int *len, int max_len, char *ptr1)
 	}
 }
 
+/**
+ * @reallocates the line to the max_len.
+ * @param ptr Pointer to the line.
+ * @param max_len The maximum length of the line.
+ * @return int Returns 0 if the line is reallocated successfully.
+ */
 int	realloc_line(char **ptr, int max_len)
 {
 	char	*temp;
@@ -58,6 +70,11 @@ int	realloc_line(char **ptr, int max_len)
 	return (0);
 }
 
+/**
+ * @brief reformats the map to a rectangle and into a 2D-array.
+ * @param data Pointer to the data structure.
+ * @return int Returns 0 if the map is reformatted successfully.
+ */
 int	reformat_map(t_data *data)
 {
 	char	**ptr;
@@ -86,6 +103,11 @@ int	reformat_map(t_data *data)
 	return (0);
 }
 
+/**
+ * @brief Loads the images into textures.
+ * @param data Pointer to the data structure.
+ * @return int Returns 0 if the textures are loaded successfully.
+ */
 int	load_textures(t_data *data)
 {
 	data->north_texture = mlx_load_png(data->parse_data->so);
@@ -115,6 +137,11 @@ int	load_textures(t_data *data)
 	return (0);
 }
 
+/**
+ * @brief Opens and loads the textures.
+ * @param data Pointer to the data structure.
+ * @return int Returns 0 if the textures are loaded successfully.
+ */
 int	open_load_textures(t_data *data)
 {
 	int	fd;

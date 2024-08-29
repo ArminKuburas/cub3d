@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   additional_parsers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akovalev <akovalev@student.42.fr>          +#+  +:+       +#+        */
+/*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:19:15 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/28 17:00:03 by akovalev         ###   ########.fr       */
+/*   Updated: 2024/08/29 18:27:59 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/cub3d.h"
 
+/**
+ * @brief Parses the floor color from the map.
+ * @param map Pointer to the map structure.
+ * @param line The current line in the map.
+ * @param count The count of the lines parsed.
+ * @return int Returns 0 if the function runs successfully.
+ */
 int	parse_f(t_map *map, char *line, int *count)
 {
 	char	*ptr;
@@ -32,6 +39,13 @@ int	parse_f(t_map *map, char *line, int *count)
 	return (0);
 }
 
+/**
+ * @brief Parses the ceiling colour from the map.
+ * @param map Pointer to the map structure.
+ * @param line The current line in the map.
+ * @param count The count of the lines parsed.
+ * @return int Returns 0 if the function runs successfully.
+ */
 int	parse_c(t_map *map, char *line, int *count)
 {
 	char	*ptr;
@@ -52,6 +66,14 @@ int	parse_c(t_map *map, char *line, int *count)
 	return (0);
 }
 
+/**
+ * @brief Checks the surrounding positions of the current position in the map.
+ * @param map Pointer to the map structure.
+ * @param str The current line in the map.
+ * @param x The x position in the map.
+ * @param y The y position in the map.
+ * @return int Returns 0 if the position is valid.
+ */
 int	check_around_pos(t_map *map, char *str, size_t x, size_t y)
 {
 	if (y)
@@ -77,6 +99,11 @@ int	check_around_pos(t_map *map, char *str, size_t x, size_t y)
 	return (0);
 }
 
+/**
+ * @brief Checks the current position in the map for disallowed characters.
+ * @param map Pointer to the map structure.
+ * @param str The current line in the map.
+ */
 int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 {
 	if (str[x] != 'N' && str[x] != 'S' && str[x] != 'E' && str[x] != 'W'
@@ -101,6 +128,11 @@ int	check_cur_pos(t_map *map, char *str, size_t x, size_t y)
 	return (0);
 }
 
+/**
+ * @brief Checks the map for empty lines and disallowed characters.
+ * @param map Pointer to the map structure.
+ * @return int Returns 0 if the map is valid.
+ */
 int	check_lines(t_map *map)
 {
 	size_t	y;
@@ -114,7 +146,7 @@ int	check_lines(t_map *map)
 		if (!ft_strncmp(str, "\n", 1))
 		{
 			return (ft_err("Empty lines in the map\n"));
-		}			
+		}
 		x = 0;
 		if (str[x] == ' ')
 			x++;
