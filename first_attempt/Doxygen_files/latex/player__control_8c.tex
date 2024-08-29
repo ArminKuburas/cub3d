@@ -1,8 +1,7 @@
 \hypertarget{player__control_8c}{}\doxysection{source\+\_\+files/player\+\_\+control.c File Reference}
 \label{player__control_8c}\index{source\_files/player\_control.c@{source\_files/player\_control.c}}
 {\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
-Include dependency graph for player\+\_\+control.\+c\+:
-\nopagebreak
+Include dependency graph for player\+\_\+control.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,13 +12,13 @@ Include dependency graph for player\+\_\+control.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{player__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2}{key\+\_\+press}} (mlx\+\_\+key\+\_\+data\+\_\+t key\+\_\+data, void $\ast$param)
-\item 
+\begin{DoxyCompactList}\small\item\em Closes the window when the escape key is pressed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{player__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed}{move\+\_\+player}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data, enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}} direction)
-\item 
+\begin{DoxyCompactList}\small\item\em Moves the player. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{player__control_8c_a584096c3ea3fc35a06612d7dc957bea4}{turn\+\_\+player}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data, enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}} direction)
-\item 
+\begin{DoxyCompactList}\small\item\em Turns the player. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d}{player\+\_\+controller}} (void $\ast$param)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Controls the player movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -29,6 +28,17 @@ void \mbox{\hyperlink{player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d}{play
 \doxysubsubsection{\texorpdfstring{key\_press()}{key\_press()}}
 {\footnotesize\ttfamily void key\+\_\+press (\begin{DoxyParamCaption}\item[{mlx\+\_\+key\+\_\+data\+\_\+t}]{key\+\_\+data,  }\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
 
+
+
+Closes the window when the escape key is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+data} & The key data. \\
+\hline
+{\em param} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
 
 
 References s\+\_\+data\+::mlx.
@@ -53,6 +63,17 @@ Here is the caller graph for this function\+:
 
 
 
+Moves the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+{\em direction} & The direction to move. \\
+\hline
+\end{DoxyParams}
+
+
 References GO\+\_\+\+BACKWARDS, GO\+\_\+\+FORWARDS, MOVE\+\_\+\+SPEED, s\+\_\+data\+::player, s\+\_\+player\+::rotation\+\_\+angle, STRAFE\+\_\+\+LEFT, s\+\_\+player\+::x, and s\+\_\+player\+::y.
 
 
@@ -73,6 +94,15 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{player\_controller()}{player\_controller()}}
 {\footnotesize\ttfamily void player\+\_\+controller (\begin{DoxyParamCaption}\item[{void $\ast$}]{param }\end{DoxyParamCaption})}
 
+
+
+Controls the player movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
 
 
 References GO\+\_\+\+BACKWARDS, GO\+\_\+\+FORWARDS, s\+\_\+data\+::mlx, move\+\_\+player(), STRAFE\+\_\+\+LEFT, STRAFE\+\_\+\+RIGHT, TURN\+\_\+\+LEFT, turn\+\_\+player(), and TURN\+\_\+\+RIGHT.
@@ -103,6 +133,17 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{turn\_player()}{turn\_player()}}
 {\footnotesize\ttfamily void turn\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data,  }\item[{enum \mbox{\hyperlink{cub3d_8h_ab5cafc132b36f66243995c2518e05615}{e\+\_\+direction}}}]{direction }\end{DoxyParamCaption})}
 
+
+
+Turns the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+{\em direction} & The direction to turn. \\
+\hline
+\end{DoxyParams}
 
 
 References s\+\_\+data\+::player, ROTATE\+\_\+\+SPEED, s\+\_\+player\+::rotation\+\_\+angle, TURN\+\_\+\+LEFT, and TURN\+\_\+\+RIGHT.

@@ -1,8 +1,7 @@
 \hypertarget{helper__functions_8c}{}\doxysection{source\+\_\+files/helper\+\_\+functions.c File Reference}
 \label{helper__functions_8c}\index{source\_files/helper\_functions.c@{source\_files/helper\_functions.c}}
 {\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
-Include dependency graph for helper\+\_\+functions.\+c\+:
-\nopagebreak
+Include dependency graph for helper\+\_\+functions.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,11 +12,11 @@ Include dependency graph for helper\+\_\+functions.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{helper__functions_8c_a7b324feb36531a7f3381ee8cb73ca022}{free\+\_\+all\+\_\+and\+\_\+exit}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Frees all the allocated memory and exits the program. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{helper__functions_8c_a59e245f491b2a5759a24ee37b1154272}{fix\+\_\+fish\+\_\+eye}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Fixes the fish eye effect. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{helper__functions_8c_a086076d5586afb94af1d7fb14ec44611}{ft\+\_\+err}} (char $\ast$str)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em writes an error message to the standard error output. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -28,6 +27,18 @@ int \mbox{\hyperlink{helper__functions_8c_a086076d5586afb94af1d7fb14ec44611}{ft\
 {\footnotesize\ttfamily void fix\+\_\+fish\+\_\+eye (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
 
+
+Fixes the fish eye effect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{helper__functions_8c_The}{}\doxysubparagraph{fish eye effect is caused}\label{helper__functions_8c_The}
+by the rays hitting the walls at an angle. 
 
 References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::player, and s\+\_\+player\+::rotation\+\_\+angle.
 
@@ -49,6 +60,15 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{free\_all\_and\_exit()}{free\_all\_and\_exit()}}
 {\footnotesize\ttfamily void free\+\_\+all\+\_\+and\+\_\+exit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
+
+
+Frees all the allocated memory and exits the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
 
 
 References s\+\_\+data\+::east\+\_\+texture, free\+\_\+array(), free\+\_\+map\+\_\+info(), s\+\_\+data\+::map, s\+\_\+data\+::north\+\_\+texture, s\+\_\+data\+::parse\+\_\+data, s\+\_\+data\+::south\+\_\+texture, and s\+\_\+data\+::west\+\_\+texture.
@@ -79,6 +99,18 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{ft\_err()}{ft\_err()}}
 {\footnotesize\ttfamily int ft\+\_\+err (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
 
+
+
+writes an error message to the standard error output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The error message to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Returns 1. 
+\end{DoxyReturn}
 
 
 References FAILURE, and ft\+\_\+strlen().

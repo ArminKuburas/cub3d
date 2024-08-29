@@ -1,8 +1,7 @@
 \hypertarget{main_8c}{}\doxysection{source\+\_\+files/main.c File Reference}
 \label{main_8c}\index{source\_files/main.c@{source\_files/main.c}}
 {\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
-Include dependency graph for main.\+c\+:
-\nopagebreak
+Include dependency graph for main.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,13 +12,13 @@ Include dependency graph for main.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{main_8c_afa9b83c1e3c27b84885f1049034c093d}{set\+\_\+rotation\+\_\+angle}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the rotation angle of the player. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_ad4b2f9d1424c89d393e5638eb41f52a6}{populate\+\_\+data}} (\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$map, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Populates the data structure with the map data. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_aba2fcd61b8ec425fb355a5f1b246953e}{initial\+\_\+map\+\_\+validation}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data, char $\ast$$\ast$argv, int argc)
-\item 
+\begin{DoxyCompactList}\small\item\em Validates the map. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main function of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -29,6 +28,22 @@ int \mbox{\hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc
 \doxysubsubsection{\texorpdfstring{initial\_map\_validation()}{initial\_map\_validation()}}
 {\footnotesize\ttfamily int initial\+\_\+map\+\_\+validation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{int}]{argc }\end{DoxyParamCaption})}
 
+
+
+Validates the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+{\em argv} & Array of arguments \\
+\hline
+{\em argc} & Number of arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Return 0 if the map is valid. 
+\end{DoxyReturn}
 
 
 References check\+\_\+arguments(), FAILURE, free\+\_\+map\+\_\+info(), s\+\_\+map\+::map\+\_\+copy, s\+\_\+data\+::parse\+\_\+data, SUCCESS, validate\+\_\+map(), and vec\+\_\+new().
@@ -61,6 +76,20 @@ Here is the caller graph for this function\+:
 
 
 
+Main function of the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of arguments. \\
+\hline
+{\em argv} & Array of arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Return 0 if the program runs successfully. 
+\end{DoxyReturn}
+
+
 References FAILURE, s\+\_\+map\+::fd, free\+\_\+array(), free\+\_\+map\+\_\+info(), initial\+\_\+map\+\_\+validation(), s\+\_\+data\+::map, mlx\+\_\+looping(), open\+\_\+load\+\_\+textures(), s\+\_\+data\+::parse\+\_\+data, populate\+\_\+data(), reformat\+\_\+map(), and SUCCESS.
 
 Here is the call graph for this function\+:
@@ -77,6 +106,20 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{populate\_data()}{populate\_data()}}
 {\footnotesize\ttfamily int populate\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
+
+
+Populates the data structure with the map data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the map structure. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Return 0 if the function runs successfully. 
+\end{DoxyReturn}
 
 
 References s\+\_\+map\+::ceiling, s\+\_\+data\+::ceiling\+\_\+colour, FAILURE, s\+\_\+map\+::floor, s\+\_\+data\+::floor\+\_\+colour, ft\+\_\+atoi(), ft\+\_\+pixel(), ft\+\_\+strdup(), s\+\_\+map\+::line\+\_\+count, s\+\_\+data\+::map, s\+\_\+map\+::map\+\_\+copy, s\+\_\+data\+::player, set\+\_\+rotation\+\_\+angle(), s\+\_\+map\+::start\+\_\+x, s\+\_\+map\+::start\+\_\+y, SUCCESS, vec\+\_\+get(), s\+\_\+player\+::x, and s\+\_\+player\+::y.
@@ -107,6 +150,17 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{set\_rotation\_angle()}{set\_rotation\_angle()}}
 {\footnotesize\ttfamily void set\+\_\+rotation\+\_\+angle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_aa6370cd7b08553210cd2ca45f421b122}{t\+\_\+map}} $\ast$}]{map,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
+
+
+Sets the rotation angle of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the map structure. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
 
 
 References EAST, NORTH, s\+\_\+data\+::player, s\+\_\+player\+::rotation\+\_\+angle, SOUTH, s\+\_\+map\+::start\+\_\+dir, and WEST.

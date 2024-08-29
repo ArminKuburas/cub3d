@@ -1,8 +1,7 @@
 \hypertarget{initiate__mlx_8c}{}\doxysection{source\+\_\+files/initiate\+\_\+mlx.c File Reference}
 \label{initiate__mlx_8c}\index{source\_files/initiate\_mlx.c@{source\_files/initiate\_mlx.c}}
 {\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
-Include dependency graph for initiate\+\_\+mlx.\+c\+:
-\nopagebreak
+Include dependency graph for initiate\+\_\+mlx.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,15 +12,15 @@ Include dependency graph for initiate\+\_\+mlx.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991}{init\+\_\+mlx}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the mlx library stuff. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{initiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e}{figure\+\_\+out\+\_\+texture}} (int $\ast$texture\+\_\+height, \mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Figures out what texture to use and how to draw it. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941}{draw\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, int texture\+\_\+height, int rays\+\_\+amount, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Draws the ray on the screen. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae}{render\+\_\+next\+\_\+frame}} (void $\ast$main\+\_\+data)
-\item 
+\begin{DoxyCompactList}\small\item\em Renders the next frame of the game. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016}{mlx\+\_\+looping}} (\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main loop of the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -31,6 +30,21 @@ void \mbox{\hyperlink{initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016}{mlx\+\
 \doxysubsubsection{\texorpdfstring{draw\_ray()}{draw\_ray()}}
 {\footnotesize\ttfamily void draw\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{int}]{texture\+\_\+height,  }\item[{int}]{rays\+\_\+amount,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
+
+
+Draws the ray on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em texture\+\_\+height} & Height of the texture. \\
+\hline
+{\em rays\+\_\+amount} & Amount of rays. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
 
 
 References s\+\_\+data\+::ceiling\+\_\+colour, s\+\_\+ray\+::distance, s\+\_\+data\+::floor\+\_\+colour, HEIGHT, modify\+\_\+pixel(), s\+\_\+ray\+::texture, texture\+\_\+pixel\+\_\+colour(), s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
@@ -63,6 +77,19 @@ Here is the caller graph for this function\+:
 
 
 
+Figures out what texture to use and how to draw it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture\+\_\+height} & Pointer to the height of the texture. \\
+\hline
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
 References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::east\+\_\+texture, HEIGHT, NORTH, s\+\_\+data\+::north\+\_\+texture, SOUTH, s\+\_\+data\+::south\+\_\+texture, s\+\_\+ray\+::texture, WEST, s\+\_\+data\+::west\+\_\+texture, s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
 
 
@@ -83,6 +110,15 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{init\_mlx()}{init\_mlx()}}
 {\footnotesize\ttfamily void init\+\_\+mlx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
+
+
+Initializes the mlx library stuff. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
 
 
 References FALSE, free\+\_\+all\+\_\+and\+\_\+exit(), ft\+\_\+err(), HEIGHT, s\+\_\+data\+::image, s\+\_\+data\+::mlx, and WIDTH.
@@ -115,6 +151,15 @@ Here is the caller graph for this function\+:
 
 
 
+Main loop of the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
 References free\+\_\+all\+\_\+and\+\_\+exit(), init\+\_\+mlx(), key\+\_\+press(), s\+\_\+data\+::mlx, player\+\_\+controller(), and render\+\_\+next\+\_\+frame().
 
 
@@ -144,6 +189,16 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily void render\+\_\+next\+\_\+frame (\begin{DoxyParamCaption}\item[{void $\ast$}]{main\+\_\+data }\end{DoxyParamCaption})}
 
 
+
+Renders the next frame of the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em main\+\_\+data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\hypertarget{initiate__mlx_8c_This}{}\doxysubparagraph{function is called by mlx\+\_\+loop\+\_\+hook}\label{initiate__mlx_8c_This}
+to render the next frame of the game. 
 
 References s\+\_\+ray\+::angle, calculate\+\_\+ray(), s\+\_\+ray\+::distance, draw\+\_\+ray(), figure\+\_\+out\+\_\+texture(), fix\+\_\+fish\+\_\+eye(), FOV, HEIGHT, s\+\_\+data\+::player, s\+\_\+player\+::rotation\+\_\+angle, and WIDTH.
 

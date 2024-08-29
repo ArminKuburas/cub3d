@@ -97,12 +97,16 @@ Include dependency graph for colour_helper_functions.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a998754e1a2fcc7ec315a3c449be7d2e6"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6">ft_pixel</a> (uint8_t r, uint8_t g, uint8_t b, uint8_t a)</td></tr>
+<tr class="memdesc:a998754e1a2fcc7ec315a3c449be7d2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a pixel from the given colour values.  <a href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6">More...</a><br /></td></tr>
 <tr class="separator:a998754e1a2fcc7ec315a3c449be7d2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12e0ba665595079acf8cd4af6f720056"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056">pixel_colour</a> (mlx_image_t *image, int x, int y)</td></tr>
+<tr class="memdesc:a12e0ba665595079acf8cd4af6f720056"><td class="mdescLeft">&#160;</td><td class="mdescRight">attemps to find the pixel at the given coordinates.  <a href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056">More...</a><br /></td></tr>
 <tr class="separator:a12e0ba665595079acf8cd4af6f720056"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4592bec96f95eb9c2f172b6a5ddaf064"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064">texture_pixel_colour</a> (mlx_texture_t *image, int x, int y)</td></tr>
+<tr class="memdesc:a4592bec96f95eb9c2f172b6a5ddaf064"><td class="mdescLeft">&#160;</td><td class="mdescRight">attemps to find the pixel at the given coordinates.  <a href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064">More...</a><br /></td></tr>
 <tr class="separator:a4592bec96f95eb9c2f172b6a5ddaf064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2872d9c7dcd3899e475ea4eeb0f98d64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64">modify_pixel</a> (int x, int y, int32_t colour, <a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:a2872d9c7dcd3899e475ea4eeb0f98d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifies the pixel at the given coordinates.  <a href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64">More...</a><br /></td></tr>
 <tr class="separator:a2872d9c7dcd3899e475ea4eeb0f98d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -144,21 +148,33 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a pixel from the given colour values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>The red value of the pixel. </td></tr>
+    <tr><td class="paramname">g</td><td>The green value of the pixel. </td></tr>
+    <tr><td class="paramname">b</td><td>The blue value of the pixel. </td></tr>
+    <tr><td class="paramname">a</td><td>The alpha value of the pixel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Returns the colour in int32_t format. </dd></dl>
+
 <p class="reference">Referenced by <a class="el" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056">pixel_colour()</a>, <a class="el" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6">populate_data()</a>, and <a class="el" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064">texture_pixel_colour()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="colour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6_icgraph.png" border="0" usemap="#acolour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6_icgraph" alt=""/></div>
 <map name="acolour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6_icgraph" id="acolour__helper__functions_8c_a998754e1a2fcc7ec315a3c449be7d2e6_icgraph">
-<area shape="rect" title=" " alt="" coords="949,56,1019,83"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title=" " alt="" coords="774,56,874,83"/>
-<area shape="rect" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6" title=" " alt="" coords="584,107,699,133"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title=" " alt="" coords="747,5,901,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title=" " alt="" coords="589,56,694,83"/>
-<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title=" " alt="" coords="453,56,536,83"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="259,56,405,83"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,56,211,83"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,81,60,108"/>
+<area shape="rect" title="Creates a pixel from the given colour values." alt="" coords="949,56,1019,83"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title="attemps to find the pixel at the given coordinates." alt="" coords="774,56,874,83"/>
+<area shape="rect" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6" title="Populates the data structure with the map data." alt="" coords="584,107,699,133"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title="attemps to find the pixel at the given coordinates." alt="" coords="747,5,901,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title="Modifies the pixel at the given coordinates." alt="" coords="589,56,694,83"/>
+<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title="Draws the ray on the screen." alt="" coords="453,56,536,83"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="259,56,405,83"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,56,211,83"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,81,60,108"/>
 </map>
 </div>
 
@@ -202,6 +218,17 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Modifies the pixel at the given coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The x coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">colour</td><td>The colour to be set. </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="structs__data.html#a21a5ef56a5817352f9d783eae627f051">s_data::image</a>, and <a class="el" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056">pixel_colour()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941">draw_ray()</a>.</p>
@@ -210,9 +237,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="colour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_cgraph.png" border="0" usemap="#acolour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_cgraph" alt=""/></div>
 <map name="acolour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_cgraph" id="acolour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,111,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title=" " alt="" coords="159,5,259,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="307,5,376,32"/>
+<area shape="rect" title="Modifies the pixel at the given coordinates." alt="" coords="5,5,111,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title="attemps to find the pixel at the given coordinates." alt="" coords="159,5,259,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="307,5,376,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -220,11 +247,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="colour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_icgraph.png" border="0" usemap="#acolour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_icgraph" alt=""/></div>
 <map name="acolour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_icgraph" id="acolour__helper__functions_8c_a2872d9c7dcd3899e475ea4eeb0f98d64_icgraph">
-<area shape="rect" title=" " alt="" coords="584,5,689,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title=" " alt="" coords="453,5,536,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="259,5,405,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Modifies the pixel at the given coordinates." alt="" coords="584,5,689,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title="Draws the ray on the screen." alt="" coords="453,5,536,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="259,5,405,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -262,6 +289,17 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>attemps to find the pixel at the given coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Pointer to the image structure. </td></tr>
+    <tr><td class="paramname">x</td><td>The x coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinate of the pixel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int32_t Returns the colour of the pixel. </dd></dl>
+
 <p class="reference">References <a class="el" href="cub3d_8h.html#a2f54719dcdf8932e3141388b38dee848">DEFAULT_COLOUR</a>, and <a class="el" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6">ft_pixel()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64">modify_pixel()</a>.</p>
@@ -270,8 +308,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="colour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_cgraph.png" border="0" usemap="#acolour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_cgraph" alt=""/></div>
 <map name="acolour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_cgraph" id="acolour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,105,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="153,5,223,32"/>
+<area shape="rect" title="attemps to find the pixel at the given coordinates." alt="" coords="5,5,105,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="153,5,223,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -279,12 +317,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="colour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_icgraph.png" border="0" usemap="#acolour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_icgraph" alt=""/></div>
 <map name="acolour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_icgraph" id="acolour__helper__functions_8c_a12e0ba665595079acf8cd4af6f720056_icgraph">
-<area shape="rect" title=" " alt="" coords="737,5,837,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title=" " alt="" coords="584,5,689,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title=" " alt="" coords="453,5,536,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="259,5,405,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="attemps to find the pixel at the given coordinates." alt="" coords="737,5,837,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title="Modifies the pixel at the given coordinates." alt="" coords="584,5,689,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title="Draws the ray on the screen." alt="" coords="453,5,536,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="259,5,405,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -322,6 +360,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>attemps to find the pixel at the given coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Pointer to the texture structure. </td></tr>
+    <tr><td class="paramname">x</td><td>The x coordinate of the pixel. </td></tr>
+    <tr><td class="paramname">y</td><td>The y coordinate of the pixel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="cub3d_8h.html#a2f54719dcdf8932e3141388b38dee848">DEFAULT_COLOUR</a>, and <a class="el" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6">ft_pixel()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941">draw_ray()</a>.</p>
@@ -330,8 +378,8 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="colour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_cgraph.png" border="0" usemap="#acolour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_cgraph" alt=""/></div>
 <map name="acolour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_cgraph" id="acolour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,160,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="208,5,277,32"/>
+<area shape="rect" title="attemps to find the pixel at the given coordinates." alt="" coords="5,5,160,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="208,5,277,32"/>
 </map>
 </div>
 <div class="dynheader">
@@ -339,11 +387,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="colour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_icgraph.png" border="0" usemap="#acolour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_icgraph" alt=""/></div>
 <map name="acolour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_icgraph" id="acolour__helper__functions_8c_a4592bec96f95eb9c2f172b6a5ddaf064_icgraph">
-<area shape="rect" title=" " alt="" coords="584,5,739,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title=" " alt="" coords="453,5,536,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="259,5,405,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="attemps to find the pixel at the given coordinates." alt="" coords="584,5,739,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title="Draws the ray on the screen." alt="" coords="453,5,536,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="259,5,405,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 

@@ -97,12 +97,16 @@ Include dependency graph for player_control.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acf77a39baf3bcb7f5f8443bf30e202c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player__control_8c.html#acf77a39baf3bcb7f5f8443bf30e202c2">key_press</a> (mlx_key_data_t key_data, void *param)</td></tr>
+<tr class="memdesc:acf77a39baf3bcb7f5f8443bf30e202c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the window when the escape key is pressed.  <a href="player__control_8c.html#acf77a39baf3bcb7f5f8443bf30e202c2">More...</a><br /></td></tr>
 <tr class="separator:acf77a39baf3bcb7f5f8443bf30e202c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2b15f62c4821eedde6c6380bd70c0ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed">move_player</a> (<a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data, enum <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615">e_direction</a> direction)</td></tr>
+<tr class="memdesc:aa2b15f62c4821eedde6c6380bd70c0ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player.  <a href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed">More...</a><br /></td></tr>
 <tr class="separator:aa2b15f62c4821eedde6c6380bd70c0ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a584096c3ea3fc35a06612d7dc957bea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4">turn_player</a> (<a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data, enum <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615">e_direction</a> direction)</td></tr>
+<tr class="memdesc:a584096c3ea3fc35a06612d7dc957bea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns the player.  <a href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4">More...</a><br /></td></tr>
 <tr class="separator:a584096c3ea3fc35a06612d7dc957bea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a073079a23abdacc30e1cdba23b3fbe1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d">player_controller</a> (void *param)</td></tr>
+<tr class="memdesc:a073079a23abdacc30e1cdba23b3fbe1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls the player movement.  <a href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d">More...</a><br /></td></tr>
 <tr class="separator:a073079a23abdacc30e1cdba23b3fbe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -132,6 +136,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Closes the window when the escape key is pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_data</td><td>The key data. </td></tr>
+    <tr><td class="paramname">param</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="structs__data.html#aa08af92adf0cee639d22b46c2d8b0b97">s_data::mlx</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016">mlx_looping()</a>.</p>
@@ -140,9 +153,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="player__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2_icgraph.png" border="0" usemap="#aplayer__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2_icgraph" alt=""/></div>
 <map name="aplayer__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2_icgraph" id="aplayer__control_8c_acf77a39baf3bcb7f5f8443bf30e202c2_icgraph">
-<area shape="rect" title=" " alt="" coords="259,5,345,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Closes the window when the escape key is pressed." alt="" coords="259,5,345,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -174,6 +187,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Moves the player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+    <tr><td class="paramname">direction</td><td>The direction to move. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615ac3b6c7b73f5d90e7aa9c08faa3e8c3a2">GO_BACKWARDS</a>, <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615a443fd275f4bdeea48cae8c00b86e3443">GO_FORWARDS</a>, <a class="el" href="cub3d_8h.html#a1701ac0f424440a3abf2e2fbea71d9e8">MOVE_SPEED</a>, <a class="el" href="structs__data.html#a446faee463ab2336804d50d38eb8f092">s_data::player</a>, <a class="el" href="structs__player.html#a78de9af13b255477486d81a2bb7badcb">s_player::rotation_angle</a>, <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615a54135bc9287175fd0f5f55d9448eb94b">STRAFE_LEFT</a>, <a class="el" href="structs__player.html#a61fbe2226f8d06cec19218f6f9a5013b">s_player::x</a>, and <a class="el" href="structs__player.html#ab5c4a62581d260519aa41178463f0695">s_player::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d">player_controller()</a>.</p>
@@ -182,10 +204,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="player__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed_icgraph.png" border="0" usemap="#aplayer__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed_icgraph" alt=""/></div>
 <map name="aplayer__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed_icgraph" id="aplayer__control_8c_aa2b15f62c4821eedde6c6380bd70c0ed_icgraph">
-<area shape="rect" title=" " alt="" coords="439,5,545,32"/>
-<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title=" " alt="" coords="259,5,391,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Moves the player." alt="" coords="439,5,545,32"/>
+<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title="Controls the player movement." alt="" coords="259,5,391,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -207,6 +229,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Controls the player movement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615ac3b6c7b73f5d90e7aa9c08faa3e8c3a2">GO_BACKWARDS</a>, <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615a443fd275f4bdeea48cae8c00b86e3443">GO_FORWARDS</a>, <a class="el" href="structs__data.html#aa08af92adf0cee639d22b46c2d8b0b97">s_data::mlx</a>, <a class="el" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed">move_player()</a>, <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615a54135bc9287175fd0f5f55d9448eb94b">STRAFE_LEFT</a>, <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615a252a83033989de5389bf73d10c6c14a7">STRAFE_RIGHT</a>, <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615aa680fb2367a2e11042d902b7d6320f12">TURN_LEFT</a>, <a class="el" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4">turn_player()</a>, and <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615a5867af0449808578577a55aad42450ed">TURN_RIGHT</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016">mlx_looping()</a>.</p>
@@ -215,9 +245,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_cgraph.png" border="0" usemap="#aplayer__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_cgraph" alt=""/></div>
 <map name="aplayer__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_cgraph" id="aplayer__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,137,57"/>
-<area shape="rect" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed" title=" " alt="" coords="185,5,292,32"/>
-<area shape="rect" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4" title=" " alt="" coords="191,56,287,83"/>
+<area shape="rect" title="Controls the player movement." alt="" coords="5,31,137,57"/>
+<area shape="rect" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed" title="Moves the player." alt="" coords="185,5,292,32"/>
+<area shape="rect" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4" title="Turns the player." alt="" coords="191,56,287,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -225,9 +255,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="player__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_icgraph.png" border="0" usemap="#aplayer__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_icgraph" alt=""/></div>
 <map name="aplayer__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_icgraph" id="aplayer__control_8c_a073079a23abdacc30e1cdba23b3fbe1d_icgraph">
-<area shape="rect" title=" " alt="" coords="259,5,391,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Controls the player movement." alt="" coords="259,5,391,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -259,6 +289,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Turns the player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+    <tr><td class="paramname">direction</td><td>The direction to turn. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="structs__data.html#a446faee463ab2336804d50d38eb8f092">s_data::player</a>, <a class="el" href="cub3d_8h.html#a7b68e6d4467390702f67b508ad1389d9">ROTATE_SPEED</a>, <a class="el" href="structs__player.html#a78de9af13b255477486d81a2bb7badcb">s_player::rotation_angle</a>, <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615aa680fb2367a2e11042d902b7d6320f12">TURN_LEFT</a>, and <a class="el" href="cub3d_8h.html#ab5cafc132b36f66243995c2518e05615a5867af0449808578577a55aad42450ed">TURN_RIGHT</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d">player_controller()</a>.</p>
@@ -267,10 +306,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="player__control_8c_a584096c3ea3fc35a06612d7dc957bea4_icgraph.png" border="0" usemap="#aplayer__control_8c_a584096c3ea3fc35a06612d7dc957bea4_icgraph" alt=""/></div>
 <map name="aplayer__control_8c_a584096c3ea3fc35a06612d7dc957bea4_icgraph" id="aplayer__control_8c_a584096c3ea3fc35a06612d7dc957bea4_icgraph">
-<area shape="rect" title=" " alt="" coords="439,5,535,32"/>
-<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title=" " alt="" coords="259,5,391,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Turns the player." alt="" coords="439,5,535,32"/>
+<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title="Controls the player movement." alt="" coords="259,5,391,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 

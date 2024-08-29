@@ -1,8 +1,7 @@
 \hypertarget{ray__calculations_8c}{}\doxysection{source\+\_\+files/ray\+\_\+calculations.c File Reference}
 \label{ray__calculations_8c}\index{source\_files/ray\_calculations.c@{source\_files/ray\_calculations.c}}
 {\ttfamily \#include \char`\"{}../headers/cub3d.\+h\char`\"{}}\newline
-Include dependency graph for ray\+\_\+calculations.\+c\+:
-\nopagebreak
+Include dependency graph for ray\+\_\+calculations.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,13 +12,13 @@ Include dependency graph for ray\+\_\+calculations.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{ray__calculations_8c_a3fc8548add5cdd402491ba925e73378d}{find\+\_\+collision}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, float x\+\_\+travel, float y\+\_\+travel, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Finds the collision of the ray. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{ray__calculations_8c_ab9f5d6da64a51086370b12ad33a682e4}{horizontal\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, float angle, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the horizontal travel ray. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{ray__calculations_8c_af165918679598f2330d2549ca4734c37}{vertical\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, float angle, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the vertical travel ray. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{ray__calculations_8c_a4a185f1d7500ad0a2153a620396354d3}{calculate\+\_\+ray}} (\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$ray, \mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$data)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculates the distance of the ray and the texture to use. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -29,6 +28,17 @@ void \mbox{\hyperlink{ray__calculations_8c_a4a185f1d7500ad0a2153a620396354d3}{ca
 \doxysubsubsection{\texorpdfstring{calculate\_ray()}{calculate\_ray()}}
 {\footnotesize\ttfamily void calculate\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
+
+
+Calculates the distance of the ray and the texture to use. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
 
 
 References s\+\_\+ray\+::angle, s\+\_\+ray\+::distance, s\+\_\+data\+::east\+\_\+texture, horizontal\+\_\+ray(), s\+\_\+data\+::south\+\_\+texture, s\+\_\+ray\+::texture, vertical\+\_\+ray(), s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
@@ -61,6 +71,21 @@ Here is the caller graph for this function\+:
 
 
 
+Finds the collision of the ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em x\+\_\+travel} & The x travel of the ray. \\
+\hline
+{\em y\+\_\+travel} & The y travel of the ray. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+
+
 References ft\+\_\+strchr(), s\+\_\+data\+::map, s\+\_\+data\+::map\+\_\+height, s\+\_\+data\+::map\+\_\+width, s\+\_\+ray\+::x, and s\+\_\+ray\+::y.
 
 
@@ -91,6 +116,22 @@ Here is the caller graph for this function\+:
 
 
 
+Calculates the horizontal travel ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em angle} & The angle of the ray. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Returns the distance of the ray. 
+\end{DoxyReturn}
+
+
 References find\+\_\+collision(), s\+\_\+data\+::player, WEST, s\+\_\+ray\+::x, s\+\_\+player\+::x, s\+\_\+ray\+::y, and s\+\_\+player\+::y.
 
 
@@ -119,6 +160,22 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{vertical\_ray()}{vertical\_ray()}}
 {\footnotesize\ttfamily float vertical\+\_\+ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{cub3d_8h_a249ca701a99a7da39d83c6270adac2ec}{t\+\_\+ray}} $\ast$}]{ray,  }\item[{float}]{angle,  }\item[{\mbox{\hyperlink{cub3d_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} $\ast$}]{data }\end{DoxyParamCaption})}
 
+
+
+Calculates the vertical travel ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Pointer to the ray structure. \\
+\hline
+{\em angle} & The angle of the ray. \\
+\hline
+{\em data} & Pointer to the data structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Returns the distance of the ray. 
+\end{DoxyReturn}
 
 
 References find\+\_\+collision(), s\+\_\+data\+::player, SOUTH, s\+\_\+ray\+::x, s\+\_\+player\+::x, s\+\_\+ray\+::y, and s\+\_\+player\+::y.

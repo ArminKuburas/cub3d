@@ -97,14 +97,19 @@ Include dependency graph for initiate_mlx.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae1eeb494b10f372f7b40a5372cd08991"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initiate__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991">init_mlx</a> (<a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:ae1eeb494b10f372f7b40a5372cd08991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the mlx library stuff.  <a href="initiate__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991">More...</a><br /></td></tr>
 <tr class="separator:ae1eeb494b10f372f7b40a5372cd08991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a487758b5a96a9789ba81ac65fe12072e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e">figure_out_texture</a> (int *texture_height, <a class="el" href="cub3d_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> *ray, <a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:a487758b5a96a9789ba81ac65fe12072e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Figures out what texture to use and how to draw it.  <a href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e">More...</a><br /></td></tr>
 <tr class="separator:a487758b5a96a9789ba81ac65fe12072e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab84f9fdc5e3aa37183a691f535383941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941">draw_ray</a> (<a class="el" href="cub3d_8h.html#a249ca701a99a7da39d83c6270adac2ec">t_ray</a> *ray, int texture_height, int rays_amount, <a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:ab84f9fdc5e3aa37183a691f535383941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws the ray on the screen.  <a href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941">More...</a><br /></td></tr>
 <tr class="separator:ab84f9fdc5e3aa37183a691f535383941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3723aa02a3ab2e4bedc030e70552f0ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae">render_next_frame</a> (void *main_data)</td></tr>
+<tr class="memdesc:a3723aa02a3ab2e4bedc030e70552f0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the next frame of the game.  <a href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae">More...</a><br /></td></tr>
 <tr class="separator:a3723aa02a3ab2e4bedc030e70552f0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16c63d8d44419a99162659233cdcd016"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016">mlx_looping</a> (<a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:a16c63d8d44419a99162659233cdcd016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main loop of the program.  <a href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016">More...</a><br /></td></tr>
 <tr class="separator:a16c63d8d44419a99162659233cdcd016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -146,6 +151,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Draws the ray on the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ray</td><td>Pointer to the ray structure. </td></tr>
+    <tr><td class="paramname">texture_height</td><td>Height of the texture. </td></tr>
+    <tr><td class="paramname">rays_amount</td><td>Amount of rays. </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="structs__data.html#a4a303b375c4a198122b463b0c2472029">s_data::ceiling_colour</a>, <a class="el" href="structs__ray.html#aceec7a0f79151d5652763f0908bec2b8">s_ray::distance</a>, <a class="el" href="structs__data.html#ab953b5ebff38d904f2972e3dc23b0187">s_data::floor_colour</a>, <a class="el" href="cub3d_8h.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>, <a class="el" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64">modify_pixel()</a>, <a class="el" href="structs__ray.html#a7e3eb4329031b31f5514d8ba8a57965c">s_ray::texture</a>, <a class="el" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064">texture_pixel_colour()</a>, <a class="el" href="structs__ray.html#a5ba9663f8c36ac55f6bd0b522b0fa6a1">s_ray::x</a>, and <a class="el" href="structs__ray.html#a62c8aa8b3764fda21980d463a026f989">s_ray::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae">render_next_frame()</a>.</p>
@@ -154,11 +170,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_cgraph.png" border="0" usemap="#ainitiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_cgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_cgraph" id="ainitiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,88,57"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title=" " alt="" coords="136,5,241,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title=" " alt="" coords="289,56,444,83"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title=" " alt="" coords="317,5,417,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="492,31,561,57"/>
+<area shape="rect" title="Draws the ray on the screen." alt="" coords="5,31,88,57"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title="Modifies the pixel at the given coordinates." alt="" coords="136,5,241,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title="attemps to find the pixel at the given coordinates." alt="" coords="289,56,444,83"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title="attemps to find the pixel at the given coordinates." alt="" coords="317,5,417,32"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="492,31,561,57"/>
 </map>
 </div>
 <div class="dynheader">
@@ -166,10 +182,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_icgraph.png" border="0" usemap="#ainitiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_icgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_icgraph" id="ainitiate__mlx_8c_ab84f9fdc5e3aa37183a691f535383941_icgraph">
-<area shape="rect" title=" " alt="" coords="453,5,536,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="259,5,405,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Draws the ray on the screen." alt="" coords="453,5,536,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="259,5,405,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -207,6 +223,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Figures out what texture to use and how to draw it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">texture_height</td><td>Pointer to the height of the texture. </td></tr>
+    <tr><td class="paramname">ray</td><td>Pointer to the ray structure. </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="structs__ray.html#a5419946386aab4a5af2cadc46fafdf6d">s_ray::angle</a>, <a class="el" href="structs__ray.html#aceec7a0f79151d5652763f0908bec2b8">s_ray::distance</a>, <a class="el" href="structs__data.html#a7e2382361936ce9ab40e8fd8ef59c3be">s_data::east_texture</a>, <a class="el" href="cub3d_8h.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>, <a class="el" href="cub3d_8h.html#a1711232abf72723b5216c206e6bbb175">NORTH</a>, <a class="el" href="structs__data.html#a7229c81d9938cd25ca3370bde2604d3e">s_data::north_texture</a>, <a class="el" href="cub3d_8h.html#af3830320fe6287f717dca9669f417950">SOUTH</a>, <a class="el" href="structs__data.html#a17b6028a66f507ef23604149ba96dcd4">s_data::south_texture</a>, <a class="el" href="structs__ray.html#a7e3eb4329031b31f5514d8ba8a57965c">s_ray::texture</a>, <a class="el" href="cub3d_8h.html#a755da365a2f771fdb9e15af22fee7d74">WEST</a>, <a class="el" href="structs__data.html#a8dabcfe8bf051a1b0dfe3b5613002269">s_data::west_texture</a>, <a class="el" href="structs__ray.html#a5ba9663f8c36ac55f6bd0b522b0fa6a1">s_ray::x</a>, and <a class="el" href="structs__ray.html#a62c8aa8b3764fda21980d463a026f989">s_ray::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae">render_next_frame()</a>.</p>
@@ -215,10 +241,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e_icgraph.png" border="0" usemap="#ainitiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e_icgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e_icgraph" id="ainitiate__mlx_8c_a487758b5a96a9789ba81ac65fe12072e_icgraph">
-<area shape="rect" title=" " alt="" coords="453,5,595,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="259,5,405,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Figures out what texture to use and how to draw it." alt="" coords="453,5,595,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="259,5,405,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -240,6 +266,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Initializes the mlx library stuff. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="vector_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>, <a class="el" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022">free_all_and_exit()</a>, <a class="el" href="helper__functions_8c.html#a086076d5586afb94af1d7fb14ec44611">ft_err()</a>, <a class="el" href="cub3d_8h.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>, <a class="el" href="structs__data.html#a21a5ef56a5817352f9d783eae627f051">s_data::image</a>, <a class="el" href="structs__data.html#aa08af92adf0cee639d22b46c2d8b0b97">s_data::mlx</a>, and <a class="el" href="cub3d_8h.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016">mlx_looping()</a>.</p>
@@ -248,9 +282,9 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_cgraph.png" border="0" usemap="#ainitiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_cgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_cgraph" id="ainitiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,80,108"/>
-<area shape="rect" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022" title=" " alt="" coords="128,56,263,83"/>
-<area shape="rect" href="helper__functions_8c.html#a086076d5586afb94af1d7fb14ec44611" title=" " alt="" coords="167,107,223,133"/>
+<area shape="rect" title="Initializes the mlx library stuff." alt="" coords="5,81,80,108"/>
+<area shape="rect" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022" title="Frees all the allocated memory and exits the program." alt="" coords="128,56,263,83"/>
+<area shape="rect" href="helper__functions_8c.html#a086076d5586afb94af1d7fb14ec44611" title="writes an error message to the standard error output." alt="" coords="167,107,223,133"/>
 <area shape="rect" href="cub3d_8h.html#a61eef260fd276afee90a86ef5db943fc" title=" " alt="" coords="324,5,413,32"/>
 <area shape="rect" href="cub3d_8h.html#a54c7c7c6e3294c8a1ae4389db708b128" title=" " alt="" coords="311,56,427,83"/>
 <area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title="Finds the length of a string." alt="" coords="331,107,406,133"/>
@@ -261,9 +295,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_icgraph.png" border="0" usemap="#ainitiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_icgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_icgraph" id="ainitiate__mlx_8c_ae1eeb494b10f372f7b40a5372cd08991_icgraph">
-<area shape="rect" title=" " alt="" coords="259,5,333,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Initializes the mlx library stuff." alt="" coords="259,5,333,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -285,6 +319,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Main loop of the program. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022">free_all_and_exit()</a>, <a class="el" href="initiate__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991">init_mlx()</a>, <a class="el" href="player__control_8c.html#acf77a39baf3bcb7f5f8443bf30e202c2">key_press()</a>, <a class="el" href="structs__data.html#aa08af92adf0cee639d22b46c2d8b0b97">s_data::mlx</a>, <a class="el" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d">player_controller()</a>, and <a class="el" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae">render_next_frame()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
@@ -293,30 +335,30 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_cgraph.png" border="0" usemap="#ainitiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_cgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_cgraph" id="ainitiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_cgraph">
-<area shape="rect" title=" " alt="" coords="5,157,108,184"/>
-<area shape="rect" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022" title=" " alt="" coords="354,56,489,83"/>
-<area shape="rect" href="initiate__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991" title=" " alt="" coords="192,107,267,133"/>
-<area shape="rect" href="player__control_8c.html#acf77a39baf3bcb7f5f8443bf30e202c2" title=" " alt="" coords="186,157,273,184"/>
-<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title=" " alt="" coords="163,208,295,235"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="156,309,303,336"/>
+<area shape="rect" title="Main loop of the program." alt="" coords="5,157,108,184"/>
+<area shape="rect" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022" title="Frees all the allocated memory and exits the program." alt="" coords="354,56,489,83"/>
+<area shape="rect" href="initiate__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991" title="Initializes the mlx library stuff." alt="" coords="192,107,267,133"/>
+<area shape="rect" href="player__control_8c.html#acf77a39baf3bcb7f5f8443bf30e202c2" title="Closes the window when the escape key is pressed." alt="" coords="186,157,273,184"/>
+<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title="Controls the player movement." alt="" coords="163,208,295,235"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="156,309,303,336"/>
 <area shape="rect" href="cub3d_8h.html#a61eef260fd276afee90a86ef5db943fc" title=" " alt="" coords="553,5,643,32"/>
 <area shape="rect" href="cub3d_8h.html#a54c7c7c6e3294c8a1ae4389db708b128" title=" " alt="" coords="540,56,656,83"/>
-<area shape="rect" href="helper__functions_8c.html#a086076d5586afb94af1d7fb14ec44611" title=" " alt="" coords="393,107,449,133"/>
+<area shape="rect" href="helper__functions_8c.html#a086076d5586afb94af1d7fb14ec44611" title="writes an error message to the standard error output." alt="" coords="393,107,449,133"/>
 <area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title="Finds the length of a string." alt="" coords="561,107,635,133"/>
-<area shape="rect" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed" title=" " alt="" coords="368,157,475,184"/>
-<area shape="rect" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4" title=" " alt="" coords="373,208,469,235"/>
-<area shape="rect" href="ray__calculations_8c.html#a4a185f1d7500ad0a2153a620396354d3" title=" " alt="" coords="367,259,476,285"/>
-<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title=" " alt="" coords="380,309,463,336"/>
-<area shape="rect" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e" title=" " alt="" coords="351,360,492,387"/>
-<area shape="rect" href="helper__functions_8c.html#a59e245f491b2a5759a24ee37b1154272" title=" " alt="" coords="372,411,471,437"/>
-<area shape="rect" href="ray__calculations_8c.html#ab9f5d6da64a51086370b12ad33a682e4" title=" " alt="" coords="541,208,655,235"/>
-<area shape="rect" href="ray__calculations_8c.html#af165918679598f2330d2549ca4734c37" title=" " alt="" coords="549,259,647,285"/>
-<area shape="rect" href="ray__calculations_8c.html#a3fc8548add5cdd402491ba925e73378d" title=" " alt="" coords="728,259,835,285"/>
+<area shape="rect" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed" title="Moves the player." alt="" coords="368,157,475,184"/>
+<area shape="rect" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4" title="Turns the player." alt="" coords="373,208,469,235"/>
+<area shape="rect" href="ray__calculations_8c.html#a4a185f1d7500ad0a2153a620396354d3" title="Calculates the distance of the ray and the texture to use." alt="" coords="367,259,476,285"/>
+<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title="Draws the ray on the screen." alt="" coords="380,309,463,336"/>
+<area shape="rect" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e" title="Figures out what texture to use and how to draw it." alt="" coords="351,360,492,387"/>
+<area shape="rect" href="helper__functions_8c.html#a59e245f491b2a5759a24ee37b1154272" title="Fixes the fish eye effect." alt="" coords="372,411,471,437"/>
+<area shape="rect" href="ray__calculations_8c.html#ab9f5d6da64a51086370b12ad33a682e4" title="Calculates the horizontal travel ray." alt="" coords="541,208,655,235"/>
+<area shape="rect" href="ray__calculations_8c.html#af165918679598f2330d2549ca4734c37" title="Calculates the vertical travel ray." alt="" coords="549,259,647,285"/>
+<area shape="rect" href="ray__calculations_8c.html#a3fc8548add5cdd402491ba925e73378d" title="Finds the collision of the ray." alt="" coords="728,259,835,285"/>
 <area shape="rect" href="ft__strchr_8c.html#a8d986b0243eb93d15d9361e341877688" title=" " alt="" coords="907,259,981,285"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title=" " alt="" coords="545,309,651,336"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title=" " alt="" coords="704,360,859,387"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title=" " alt="" coords="731,309,831,336"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="909,335,979,361"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title="Modifies the pixel at the given coordinates." alt="" coords="545,309,651,336"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title="attemps to find the pixel at the given coordinates." alt="" coords="704,360,859,387"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title="attemps to find the pixel at the given coordinates." alt="" coords="731,309,831,336"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="909,335,979,361"/>
 </map>
 </div>
 <div class="dynheader">
@@ -324,8 +366,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_icgraph.png" border="0" usemap="#ainitiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_icgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_icgraph" id="ainitiate__mlx_8c_a16c63d8d44419a99162659233cdcd016_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -347,6 +389,17 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Renders the next frame of the game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">main_data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<h4><a class="anchor" id="This"></a>
+function is called by mlx_loop_hook</h4>
+<p>to render the next frame of the game. </p>
+
 <p class="reference">References <a class="el" href="structs__ray.html#a5419946386aab4a5af2cadc46fafdf6d">s_ray::angle</a>, <a class="el" href="ray__calculations_8c.html#a4a185f1d7500ad0a2153a620396354d3">calculate_ray()</a>, <a class="el" href="structs__ray.html#aceec7a0f79151d5652763f0908bec2b8">s_ray::distance</a>, <a class="el" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941">draw_ray()</a>, <a class="el" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e">figure_out_texture()</a>, <a class="el" href="helper__functions_8c.html#a59e245f491b2a5759a24ee37b1154272">fix_fish_eye()</a>, <a class="el" href="cub3d_8h.html#afab1d6380725d86a389fb84b888b091d">FOV</a>, <a class="el" href="cub3d_8h.html#aed89bd71aee8be823e8a20ec4e093c1e">HEIGHT</a>, <a class="el" href="structs__data.html#a446faee463ab2336804d50d38eb8f092">s_data::player</a>, <a class="el" href="structs__player.html#a78de9af13b255477486d81a2bb7badcb">s_player::rotation_angle</a>, and <a class="el" href="cub3d_8h.html#a241aeeb764887ae5e3de58b98f04b16d">WIDTH</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016">mlx_looping()</a>.</p>
@@ -355,19 +408,19 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_cgraph.png" border="0" usemap="#ainitiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_cgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_cgraph" id="ainitiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_cgraph">
-<area shape="rect" title=" " alt="" coords="5,132,152,159"/>
-<area shape="rect" href="ray__calculations_8c.html#a4a185f1d7500ad0a2153a620396354d3" title=" " alt="" coords="216,56,325,83"/>
-<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title=" " alt="" coords="229,107,312,133"/>
-<area shape="rect" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e" title=" " alt="" coords="200,157,341,184"/>
-<area shape="rect" href="helper__functions_8c.html#a59e245f491b2a5759a24ee37b1154272" title=" " alt="" coords="221,208,320,235"/>
-<area shape="rect" href="ray__calculations_8c.html#ab9f5d6da64a51086370b12ad33a682e4" title=" " alt="" coords="389,5,504,32"/>
-<area shape="rect" href="ray__calculations_8c.html#af165918679598f2330d2549ca4734c37" title=" " alt="" coords="397,56,496,83"/>
-<area shape="rect" href="ray__calculations_8c.html#a3fc8548add5cdd402491ba925e73378d" title=" " alt="" coords="576,44,683,71"/>
+<area shape="rect" title="Renders the next frame of the game." alt="" coords="5,132,152,159"/>
+<area shape="rect" href="ray__calculations_8c.html#a4a185f1d7500ad0a2153a620396354d3" title="Calculates the distance of the ray and the texture to use." alt="" coords="216,56,325,83"/>
+<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title="Draws the ray on the screen." alt="" coords="229,107,312,133"/>
+<area shape="rect" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e" title="Figures out what texture to use and how to draw it." alt="" coords="200,157,341,184"/>
+<area shape="rect" href="helper__functions_8c.html#a59e245f491b2a5759a24ee37b1154272" title="Fixes the fish eye effect." alt="" coords="221,208,320,235"/>
+<area shape="rect" href="ray__calculations_8c.html#ab9f5d6da64a51086370b12ad33a682e4" title="Calculates the horizontal travel ray." alt="" coords="389,5,504,32"/>
+<area shape="rect" href="ray__calculations_8c.html#af165918679598f2330d2549ca4734c37" title="Calculates the vertical travel ray." alt="" coords="397,56,496,83"/>
+<area shape="rect" href="ray__calculations_8c.html#a3fc8548add5cdd402491ba925e73378d" title="Finds the collision of the ray." alt="" coords="576,44,683,71"/>
 <area shape="rect" href="ft__strchr_8c.html#a8d986b0243eb93d15d9361e341877688" title=" " alt="" coords="755,44,829,71"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title=" " alt="" coords="394,107,499,133"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title=" " alt="" coords="552,157,707,184"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title=" " alt="" coords="579,107,679,133"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="757,120,827,147"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title="Modifies the pixel at the given coordinates." alt="" coords="394,107,499,133"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title="attemps to find the pixel at the given coordinates." alt="" coords="552,157,707,184"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title="attemps to find the pixel at the given coordinates." alt="" coords="579,107,679,133"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="757,120,827,147"/>
 </map>
 </div>
 <div class="dynheader">
@@ -375,9 +428,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_icgraph.png" border="0" usemap="#ainitiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_icgraph" alt=""/></div>
 <map name="ainitiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_icgraph" id="ainitiate__mlx_8c_a3723aa02a3ab2e4bedc030e70552f0ae_icgraph">
-<area shape="rect" title=" " alt="" coords="259,5,405,32"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="108,5,211,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Renders the next frame of the game." alt="" coords="259,5,405,32"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="108,5,211,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 

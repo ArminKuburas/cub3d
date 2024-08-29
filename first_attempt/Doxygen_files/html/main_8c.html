@@ -97,12 +97,16 @@ Include dependency graph for main.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afa9b83c1e3c27b84885f1049034c093d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afa9b83c1e3c27b84885f1049034c093d">set_rotation_angle</a> (<a class="el" href="cub3d_8h.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *map, <a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:afa9b83c1e3c27b84885f1049034c093d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the rotation angle of the player.  <a href="main_8c.html#afa9b83c1e3c27b84885f1049034c093d">More...</a><br /></td></tr>
 <tr class="separator:afa9b83c1e3c27b84885f1049034c093d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4b2f9d1424c89d393e5638eb41f52a6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6">populate_data</a> (<a class="el" href="cub3d_8h.html#aa6370cd7b08553210cd2ca45f421b122">t_map</a> *map, <a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data)</td></tr>
+<tr class="memdesc:ad4b2f9d1424c89d393e5638eb41f52a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Populates the data structure with the map data.  <a href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6">More...</a><br /></td></tr>
 <tr class="separator:ad4b2f9d1424c89d393e5638eb41f52a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2fcd61b8ec425fb355a5f1b246953e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aba2fcd61b8ec425fb355a5f1b246953e">initial_map_validation</a> (<a class="el" href="cub3d_8h.html#a24e28e95867f9681b9d87781b1caa65b">t_data</a> *data, char **argv, int argc)</td></tr>
+<tr class="memdesc:aba2fcd61b8ec425fb355a5f1b246953e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validates the map.  <a href="main_8c.html#aba2fcd61b8ec425fb355a5f1b246953e">More...</a><br /></td></tr>
 <tr class="separator:aba2fcd61b8ec425fb355a5f1b246953e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main function of the program.  <a href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">More...</a><br /></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -138,6 +142,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Validates the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+    <tr><td class="paramname">argv</td><td>Array of arguments </td></tr>
+    <tr><td class="paramname">argc</td><td>Number of arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Return 0 if the map is valid. </dd></dl>
+
 <p class="reference">References <a class="el" href="cub3d_8h.html#a0d8fde4adcb05f829b36a85fdd24c8f5">check_arguments()</a>, <a class="el" href="cub3d_8h.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a>, <a class="el" href="cub3d_8h.html#a54c7c7c6e3294c8a1ae4389db708b128">free_map_info()</a>, <a class="el" href="structs__map.html#a2732910ec118e39d05d314bd6f6e8c38">s_map::map_copy</a>, <a class="el" href="structs__data.html#a0fead1aa454d6e7ee8a8d7f7df351466">s_data::parse_data</a>, <a class="el" href="cub3d_8h.html#aa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>, <a class="el" href="cub3d_8h.html#a4cec9d1d22fe87b9bfb62d45b55228bd">validate_map()</a>, and <a class="el" href="vector_8c.html#a200e8b5c8c4828cd7a8140210a3bcf53">vec_new()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
@@ -146,7 +161,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_aba2fcd61b8ec425fb355a5f1b246953e_cgraph.png" border="0" usemap="#amain_8c_aba2fcd61b8ec425fb355a5f1b246953e_cgraph" alt=""/></div>
 <map name="amain_8c_aba2fcd61b8ec425fb355a5f1b246953e_cgraph" id="amain_8c_aba2fcd61b8ec425fb355a5f1b246953e_cgraph">
-<area shape="rect" title=" " alt="" coords="5,81,172,108"/>
+<area shape="rect" title="Validates the map." alt="" coords="5,81,172,108"/>
 <area shape="rect" href="cub3d_8h.html#a0d8fde4adcb05f829b36a85fdd24c8f5" title=" " alt="" coords="220,5,357,32"/>
 <area shape="rect" href="cub3d_8h.html#a54c7c7c6e3294c8a1ae4389db708b128" title=" " alt="" coords="231,56,347,83"/>
 <area shape="rect" href="cub3d_8h.html#a4cec9d1d22fe87b9bfb62d45b55228bd" title=" " alt="" coords="233,107,344,133"/>
@@ -158,8 +173,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_aba2fcd61b8ec425fb355a5f1b246953e_icgraph.png" border="0" usemap="#amain_8c_aba2fcd61b8ec425fb355a5f1b246953e_icgraph" alt=""/></div>
 <map name="amain_8c_aba2fcd61b8ec425fb355a5f1b246953e_icgraph" id="amain_8c_aba2fcd61b8ec425fb355a5f1b246953e_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,275,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Validates the map." alt="" coords="108,5,275,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -191,55 +206,65 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Main function of the program. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Number of arguments. </td></tr>
+    <tr><td class="paramname">argv</td><td>Array of arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Return 0 if the program runs successfully. </dd></dl>
+
 <p class="reference">References <a class="el" href="cub3d_8h.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a>, <a class="el" href="structs__map.html#a9b86b6771c87667e1845b0cccfdb6f5e">s_map::fd</a>, <a class="el" href="cub3d_8h.html#a61eef260fd276afee90a86ef5db943fc">free_array()</a>, <a class="el" href="cub3d_8h.html#a54c7c7c6e3294c8a1ae4389db708b128">free_map_info()</a>, <a class="el" href="main_8c.html#aba2fcd61b8ec425fb355a5f1b246953e">initial_map_validation()</a>, <a class="el" href="structs__data.html#a64bfba03d4e99b6ffa98aa6c7afaf0da">s_data::map</a>, <a class="el" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016">mlx_looping()</a>, <a class="el" href="load__data__functions_8c.html#a7fb85ae909538cee27908cdafbb267da">open_load_textures()</a>, <a class="el" href="structs__data.html#a0fead1aa454d6e7ee8a8d7f7df351466">s_data::parse_data</a>, <a class="el" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6">populate_data()</a>, <a class="el" href="load__data__functions_8c.html#afbf8107aeed946cd856caa39f1a71ec6">reformat_map()</a>, and <a class="el" href="cub3d_8h.html#aa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
 <map name="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" id="amain_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph">
-<area shape="rect" title=" " alt="" coords="5,588,60,614"/>
+<area shape="rect" title="Main function of the program." alt="" coords="5,588,60,614"/>
 <area shape="rect" href="cub3d_8h.html#a61eef260fd276afee90a86ef5db943fc" title=" " alt="" coords="727,588,816,614"/>
 <area shape="rect" href="cub3d_8h.html#a54c7c7c6e3294c8a1ae4389db708b128" title=" " alt="" coords="713,182,829,209"/>
-<area shape="rect" href="main_8c.html#aba2fcd61b8ec425fb355a5f1b246953e" title=" " alt="" coords="108,81,275,108"/>
-<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title=" " alt="" coords="140,461,243,488"/>
-<area shape="rect" href="load__data__functions_8c.html#a7fb85ae909538cee27908cdafbb267da" title=" " alt="" coords="116,740,267,766"/>
-<area shape="rect" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6" title=" " alt="" coords="339,917,453,944"/>
-<area shape="rect" href="load__data__functions_8c.html#afbf8107aeed946cd856caa39f1a71ec6" title=" " alt="" coords="339,689,453,716"/>
+<area shape="rect" href="main_8c.html#aba2fcd61b8ec425fb355a5f1b246953e" title="Validates the map." alt="" coords="108,81,275,108"/>
+<area shape="rect" href="initiate__mlx_8c.html#a16c63d8d44419a99162659233cdcd016" title="Main loop of the program." alt="" coords="140,461,243,488"/>
+<area shape="rect" href="load__data__functions_8c.html#a7fb85ae909538cee27908cdafbb267da" title="Opens and loads the textures." alt="" coords="116,740,267,766"/>
+<area shape="rect" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6" title="Populates the data structure with the map data." alt="" coords="339,917,453,944"/>
+<area shape="rect" href="load__data__functions_8c.html#afbf8107aeed946cd856caa39f1a71ec6" title="reformats the map to a rectangle and into a 2D&#45;array." alt="" coords="339,689,453,716"/>
 <area shape="rect" href="cub3d_8h.html#a0d8fde4adcb05f829b36a85fdd24c8f5" title=" " alt="" coords="327,132,465,158"/>
 <area shape="rect" href="cub3d_8h.html#a4cec9d1d22fe87b9bfb62d45b55228bd" title=" " alt="" coords="341,30,451,57"/>
 <area shape="rect" href="vector_8c.html#a200e8b5c8c4828cd7a8140210a3bcf53" title=" " alt="" coords="357,81,435,108"/>
-<area shape="rect" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022" title=" " alt="" coords="521,537,656,564"/>
-<area shape="rect" href="initiate__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991" title=" " alt="" coords="359,537,433,564"/>
-<area shape="rect" href="player__control_8c.html#acf77a39baf3bcb7f5f8443bf30e202c2" title=" " alt="" coords="353,486,439,513"/>
-<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title=" " alt="" coords="330,284,462,310"/>
-<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title=" " alt="" coords="323,385,469,412"/>
-<area shape="rect" href="helper__functions_8c.html#a086076d5586afb94af1d7fb14ec44611" title=" " alt="" coords="561,790,617,817"/>
+<area shape="rect" href="helper__functions_8c.html#a7b324feb36531a7f3381ee8cb73ca022" title="Frees all the allocated memory and exits the program." alt="" coords="521,537,656,564"/>
+<area shape="rect" href="initiate__mlx_8c.html#ae1eeb494b10f372f7b40a5372cd08991" title="Initializes the mlx library stuff." alt="" coords="359,537,433,564"/>
+<area shape="rect" href="player__control_8c.html#acf77a39baf3bcb7f5f8443bf30e202c2" title="Closes the window when the escape key is pressed." alt="" coords="353,486,439,513"/>
+<area shape="rect" href="player__control_8c.html#a073079a23abdacc30e1cdba23b3fbe1d" title="Controls the player movement." alt="" coords="330,284,462,310"/>
+<area shape="rect" href="initiate__mlx_8c.html#a3723aa02a3ab2e4bedc030e70552f0ae" title="Renders the next frame of the game." alt="" coords="323,385,469,412"/>
+<area shape="rect" href="helper__functions_8c.html#a086076d5586afb94af1d7fb14ec44611" title="writes an error message to the standard error output." alt="" coords="561,790,617,817"/>
 <area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title="Finds the length of a string." alt="" coords="734,790,809,817"/>
-<area shape="rect" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed" title=" " alt="" coords="535,284,642,310"/>
-<area shape="rect" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4" title=" " alt="" coords="541,233,637,260"/>
-<area shape="rect" href="ray__calculations_8c.html#a4a185f1d7500ad0a2153a620396354d3" title=" " alt="" coords="534,486,643,513"/>
-<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title=" " alt="" coords="547,385,630,412"/>
-<area shape="rect" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e" title=" " alt="" coords="518,334,659,361"/>
-<area shape="rect" href="helper__functions_8c.html#a59e245f491b2a5759a24ee37b1154272" title=" " alt="" coords="539,436,638,462"/>
-<area shape="rect" href="ray__calculations_8c.html#ab9f5d6da64a51086370b12ad33a682e4" title=" " alt="" coords="714,537,829,564"/>
-<area shape="rect" href="ray__calculations_8c.html#af165918679598f2330d2549ca4734c37" title=" " alt="" coords="722,486,821,513"/>
-<area shape="rect" href="ray__calculations_8c.html#a3fc8548add5cdd402491ba925e73378d" title=" " alt="" coords="907,512,1013,538"/>
+<area shape="rect" href="player__control_8c.html#aa2b15f62c4821eedde6c6380bd70c0ed" title="Moves the player." alt="" coords="535,284,642,310"/>
+<area shape="rect" href="player__control_8c.html#a584096c3ea3fc35a06612d7dc957bea4" title="Turns the player." alt="" coords="541,233,637,260"/>
+<area shape="rect" href="ray__calculations_8c.html#a4a185f1d7500ad0a2153a620396354d3" title="Calculates the distance of the ray and the texture to use." alt="" coords="534,486,643,513"/>
+<area shape="rect" href="initiate__mlx_8c.html#ab84f9fdc5e3aa37183a691f535383941" title="Draws the ray on the screen." alt="" coords="547,385,630,412"/>
+<area shape="rect" href="initiate__mlx_8c.html#a487758b5a96a9789ba81ac65fe12072e" title="Figures out what texture to use and how to draw it." alt="" coords="518,334,659,361"/>
+<area shape="rect" href="helper__functions_8c.html#a59e245f491b2a5759a24ee37b1154272" title="Fixes the fish eye effect." alt="" coords="539,436,638,462"/>
+<area shape="rect" href="ray__calculations_8c.html#ab9f5d6da64a51086370b12ad33a682e4" title="Calculates the horizontal travel ray." alt="" coords="714,537,829,564"/>
+<area shape="rect" href="ray__calculations_8c.html#af165918679598f2330d2549ca4734c37" title="Calculates the vertical travel ray." alt="" coords="722,486,821,513"/>
+<area shape="rect" href="ray__calculations_8c.html#a3fc8548add5cdd402491ba925e73378d" title="Finds the collision of the ray." alt="" coords="907,512,1013,538"/>
 <area shape="rect" href="ft__strchr_8c.html#a8d986b0243eb93d15d9361e341877688" title=" " alt="" coords="1085,512,1160,538"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title=" " alt="" coords="719,385,824,412"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title=" " alt="" coords="883,436,1037,462"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title=" " alt="" coords="910,385,1010,412"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="1088,436,1157,462"/>
-<area shape="rect" href="load__data__functions_8c.html#aad8f3a0626dc5f0e91b237d0826b1d4d" title=" " alt="" coords="341,740,451,766"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a2872d9c7dcd3899e475ea4eeb0f98d64" title="Modifies the pixel at the given coordinates." alt="" coords="719,385,824,412"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a4592bec96f95eb9c2f172b6a5ddaf064" title="attemps to find the pixel at the given coordinates." alt="" coords="883,436,1037,462"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a12e0ba665595079acf8cd4af6f720056" title="attemps to find the pixel at the given coordinates." alt="" coords="910,385,1010,412"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="1088,436,1157,462"/>
+<area shape="rect" href="load__data__functions_8c.html#aad8f3a0626dc5f0e91b237d0826b1d4d" title="Loads the images into textures." alt="" coords="341,740,451,766"/>
 <area shape="rect" href="ft__atoi_8c.html#afad2ec371b4188602da9a94db687cb16" title="Converts the initial portion of the string pointed to by str to int." alt="" coords="557,1044,620,1070"/>
 <area shape="rect" href="ft__strdup_8c.html#aeab425f44e9a04e54160d60d3c9e870c" title="Duplicates a string." alt="" coords="549,841,628,868"/>
-<area shape="rect" href="main_8c.html#afa9b83c1e3c27b84885f1049034c093d" title=" " alt="" coords="517,942,660,969"/>
+<area shape="rect" href="main_8c.html#afa9b83c1e3c27b84885f1049034c093d" title="Sets the rotation angle of the player." alt="" coords="517,942,660,969"/>
 <area shape="rect" href="vector_8c.html#a8ec3a8bb9012599135219f7f3502f490" title=" " alt="" coords="552,993,625,1020"/>
 <area shape="rect" href="ft__calloc_8c.html#a6747f1fa402c0eb1dde5b99d3cdc900f" title="Allocates memory for an pointer array and sets each element to zero." alt="" coords="733,714,809,741"/>
 <area shape="rect" href="ft__memcpy_8c.html#a28cfd23975baf37693e3ddc17815b9ce" title=" " alt="" coords="724,841,819,868"/>
 <area shape="rect" href="ft__memset_8c.html#ac340ddbfddbbf2c8de3c36f0f28c336d" title="Writes len bytes of value c to the string b." alt="" coords="914,714,1006,741"/>
 <area shape="rect" href="cub3d_8h.html#ab48dbed3bdf6db167f89209ae91c5415" title=" " alt="" coords="532,689,645,716"/>
 <area shape="rect" href="load__data__functions_8c.html#a232014ff8d45f3177734cefc987fd8e4" title=" " alt="" coords="540,638,637,665"/>
-<area shape="rect" href="load__data__functions_8c.html#a766820be38b2029f97daa096808c9f8a" title=" " alt="" coords="708,638,835,665"/>
+<area shape="rect" href="load__data__functions_8c.html#a766820be38b2029f97daa096808c9f8a" title="sets the rest of the data to spaces." alt="" coords="708,638,835,665"/>
 </map>
 </div>
 
@@ -271,6 +296,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Populates the data structure with the map data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>Pointer to the map structure. </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int Return 0 if the function runs successfully. </dd></dl>
+
 <p class="reference">References <a class="el" href="structs__map.html#a58e41f64fd829845ef33875f49282b37">s_map::ceiling</a>, <a class="el" href="structs__data.html#a4a303b375c4a198122b463b0c2472029">s_data::ceiling_colour</a>, <a class="el" href="cub3d_8h.html#a6d58f9ac447476b4e084d7ca383f5183">FAILURE</a>, <a class="el" href="structs__map.html#a6eca3be739ad758c5db6257ec7e47309">s_map::floor</a>, <a class="el" href="structs__data.html#ab953b5ebff38d904f2972e3dc23b0187">s_data::floor_colour</a>, <a class="el" href="ft__atoi_8c.html#afad2ec371b4188602da9a94db687cb16">ft_atoi()</a>, <a class="el" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6">ft_pixel()</a>, <a class="el" href="ft__strdup_8c.html#aeab425f44e9a04e54160d60d3c9e870c">ft_strdup()</a>, <a class="el" href="structs__map.html#a574e59937ddea4e289486aad7798a459">s_map::line_count</a>, <a class="el" href="structs__data.html#a64bfba03d4e99b6ffa98aa6c7afaf0da">s_data::map</a>, <a class="el" href="structs__map.html#a2732910ec118e39d05d314bd6f6e8c38">s_map::map_copy</a>, <a class="el" href="structs__data.html#a446faee463ab2336804d50d38eb8f092">s_data::player</a>, <a class="el" href="main_8c.html#afa9b83c1e3c27b84885f1049034c093d">set_rotation_angle()</a>, <a class="el" href="structs__map.html#a5f634fd90f03628e1189fd0097077720">s_map::start_x</a>, <a class="el" href="structs__map.html#ad28457aeddb82b0abd3956b05dd7d9ba">s_map::start_y</a>, <a class="el" href="cub3d_8h.html#aa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>, <a class="el" href="vector_8c.html#a8ec3a8bb9012599135219f7f3502f490">vec_get()</a>, <a class="el" href="structs__player.html#a61fbe2226f8d06cec19218f6f9a5013b">s_player::x</a>, and <a class="el" href="structs__player.html#ab5c4a62581d260519aa41178463f0695">s_player::y</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>.</p>
@@ -279,11 +314,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_ad4b2f9d1424c89d393e5638eb41f52a6_cgraph.png" border="0" usemap="#amain_8c_ad4b2f9d1424c89d393e5638eb41f52a6_cgraph" alt=""/></div>
 <map name="amain_8c_ad4b2f9d1424c89d393e5638eb41f52a6_cgraph" id="amain_8c_ad4b2f9d1424c89d393e5638eb41f52a6_cgraph">
-<area shape="rect" title=" " alt="" coords="5,107,120,133"/>
+<area shape="rect" title="Populates the data structure with the map data." alt="" coords="5,107,120,133"/>
 <area shape="rect" href="ft__atoi_8c.html#afad2ec371b4188602da9a94db687cb16" title="Converts the initial portion of the string pointed to by str to int." alt="" coords="208,5,271,32"/>
-<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title=" " alt="" coords="205,56,274,83"/>
+<area shape="rect" href="colour__helper__functions_8c.html#a998754e1a2fcc7ec315a3c449be7d2e6" title="Creates a pixel from the given colour values." alt="" coords="205,56,274,83"/>
 <area shape="rect" href="ft__strdup_8c.html#aeab425f44e9a04e54160d60d3c9e870c" title="Duplicates a string." alt="" coords="200,107,279,133"/>
-<area shape="rect" href="main_8c.html#afa9b83c1e3c27b84885f1049034c093d" title=" " alt="" coords="168,157,311,184"/>
+<area shape="rect" href="main_8c.html#afa9b83c1e3c27b84885f1049034c093d" title="Sets the rotation angle of the player." alt="" coords="168,157,311,184"/>
 <area shape="rect" href="vector_8c.html#a8ec3a8bb9012599135219f7f3502f490" title=" " alt="" coords="203,208,276,235"/>
 <area shape="rect" href="ft__calloc_8c.html#a6747f1fa402c0eb1dde5b99d3cdc900f" title="Allocates memory for an pointer array and sets each element to zero." alt="" coords="368,56,444,83"/>
 <area shape="rect" href="ft__memcpy_8c.html#a28cfd23975baf37693e3ddc17815b9ce" title=" " alt="" coords="359,107,453,133"/>
@@ -296,8 +331,8 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_ad4b2f9d1424c89d393e5638eb41f52a6_icgraph.png" border="0" usemap="#amain_8c_ad4b2f9d1424c89d393e5638eb41f52a6_icgraph" alt=""/></div>
 <map name="amain_8c_ad4b2f9d1424c89d393e5638eb41f52a6_icgraph" id="amain_8c_ad4b2f9d1424c89d393e5638eb41f52a6_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,223,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Populates the data structure with the map data." alt="" coords="108,5,223,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
@@ -329,6 +364,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Sets the rotation angle of the player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>Pointer to the map structure. </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to the data structure. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p class="reference">References <a class="el" href="cub3d_8h.html#a072a1ef1143314441742097b799be322">EAST</a>, <a class="el" href="cub3d_8h.html#a1711232abf72723b5216c206e6bbb175">NORTH</a>, <a class="el" href="structs__data.html#a446faee463ab2336804d50d38eb8f092">s_data::player</a>, <a class="el" href="structs__player.html#a78de9af13b255477486d81a2bb7badcb">s_player::rotation_angle</a>, <a class="el" href="cub3d_8h.html#af3830320fe6287f717dca9669f417950">SOUTH</a>, <a class="el" href="structs__map.html#a47b1ca81b46ec31cb48f99f52708aefe">s_map::start_dir</a>, and <a class="el" href="cub3d_8h.html#a755da365a2f771fdb9e15af22fee7d74">WEST</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6">populate_data()</a>.</p>
@@ -337,9 +381,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_afa9b83c1e3c27b84885f1049034c093d_icgraph.png" border="0" usemap="#amain_8c_afa9b83c1e3c27b84885f1049034c093d_icgraph" alt=""/></div>
 <map name="amain_8c_afa9b83c1e3c27b84885f1049034c093d_icgraph" id="amain_8c_afa9b83c1e3c27b84885f1049034c093d_icgraph">
-<area shape="rect" title=" " alt="" coords="271,5,413,32"/>
-<area shape="rect" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6" title=" " alt="" coords="108,5,223,32"/>
-<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,5,60,32"/>
+<area shape="rect" title="Sets the rotation angle of the player." alt="" coords="271,5,413,32"/>
+<area shape="rect" href="main_8c.html#ad4b2f9d1424c89d393e5638eb41f52a6" title="Populates the data structure with the map data." alt="" coords="108,5,223,32"/>
+<area shape="rect" href="main_8c.html#a3c04138a5bfe5d72780bb7e82a18e627" title="Main function of the program." alt="" coords="5,5,60,32"/>
 </map>
 </div>
 
