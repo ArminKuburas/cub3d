@@ -6,14 +6,14 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 17:24:21 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/29 13:41:37 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:34:46 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
 /**
- * @brief Creates a pixel from the given colour values.
+ * @brief Creates a colour from the given colour values.
  * @param r The red value of the pixel.
  * @param g The green value of the pixel.
  * @param b The blue value of the pixel.

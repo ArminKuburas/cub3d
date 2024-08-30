@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 00:52:48 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/29 13:23:39 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:37:01 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,13 @@ int	populate_data(t_map *map, t_data *data)
 
 	data->map = malloc((map->line_count + 1) * sizeof(char *));
 	if (!data->map)
-		return (FAILURE);
+		return (ft_err("malloc error\n"));
 	i = 0;
 	while (i < map->line_count)
 	{
 		data->map[i] = ft_strdup(*(char **)vec_get(&map->map_copy, i));
+		if (!data->map[i])
+			return (ft_err("malloc error\n"));
 		i++;
 	}
 	data->map[i] = NULL;
@@ -101,9 +103,9 @@ int	main(int argc, char **argv)
 		return (FAILURE);
 	if (populate_data(&map, &data))
 	{
-		free(data.map);
 		close(map.fd);
 		free_map_info(&map);
+		free_array(data.map);
 		return (FAILURE);
 	}
 	if (reformat_map(&data) || open_load_textures(&data))
