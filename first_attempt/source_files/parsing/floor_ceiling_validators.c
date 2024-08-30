@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:23:33 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/29 18:27:34 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/30 13:25:04 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	split_floor(t_map *map)
 		i++;
 	}
 	if (i != 3)
-		return (ft_err("Incorrect floor color format: \
-			exactly three numbers required\n"));
+		return (ft_err("Incorrect floor color format\n"));
 	return (0);
 }
 
