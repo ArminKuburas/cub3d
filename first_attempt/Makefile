@@ -6,7 +6,7 @@
 #    By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/19 15:56:21 by akovalev          #+#    #+#              #
-#    Updated: 2024/08/29 06:58:28 by akuburas         ###   ########.fr        #
+#    Updated: 2024/08/30 14:57:30 by akuburas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LIBMLX	:= ./other_libraries/MLX42
 HEADERS	:= -I $(LIBMLX)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a -ldl -pthread -lm -L/Users/$(USER)/.brew/Cellar/glfw/3.3.8/lib -lglfw
 
-SRCS	:=	./source_files/parsing/akovalev_parsing.c \
+SRCS	:=	./source_files/parsing/parsing.c \
 			./source_files/main.c \
 			./source_files/initiate_mlx.c \
 			./source_files/colour_helper_functions.c \

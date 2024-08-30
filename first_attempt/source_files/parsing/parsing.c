@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   akovalev_parsing.c                                 :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:08:41 by akovalev          #+#    #+#             */
-/*   Updated: 2024/08/29 14:14:57 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/30 14:57:37 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,23 @@ int	check_arguments(int argc, char **argv, t_map *map)
 
 int	parse_map_data_lines(t_map *map, char *line, int *count)
 {
-	if (!strncmp(line, "NO", 2) || !strncmp(line, "SO", 2)
-		|| !strncmp(line, "EA", 2) || !strncmp(line, "WE", 2))
+	if (!ft_strncmp(line, "NO", 2) || !ft_strncmp(line, "SO", 2)
+		|| !ft_strncmp(line, "EA", 2) || !ft_strncmp(line, "WE", 2))
 	{
 		if (parse_directions(map, line, count))
 			return (1);
 	}
-	else if (!strncmp(line, "F", 1))
+	else if (!ft_strncmp(line, "F", 1))
 	{
 		if (parse_f(map, line, count))
 			return (1);
 	}
-	else if (!strncmp(line, "C", 1))
+	else if (!ft_strncmp(line, "C", 1))
 	{
 		if (parse_c(map, line, count))
 			return (1);
 	}
-	else if (strncmp(line, "\n", 1) && *count != 6)
+	else if (ft_strncmp(line, "\n", 1) && *count != 6)
 	{
 		return (ft_err("Incorrect or missing map lines\n"));
 	}

@@ -6,7 +6,7 @@
 /*   By: akuburas <akuburas@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:04:23 by akuburas          #+#    #+#             */
-/*   Updated: 2024/08/26 15:08:34 by akuburas         ###   ########.fr       */
+/*   Updated: 2024/08/30 14:51:41 by akuburas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,22 +98,22 @@ int	parse_ea(t_map *map, char *line, int *count)
 
 int	parse_directions(t_map *map, char *line, int *count)
 {
-	if (!strncmp(line, "NO", 2))
+	if (!ft_strncmp(line, "NO", 2))
 	{
 		if (parse_no(map, line, count))
 			return (1);
 	}
-	else if (!strncmp(line, "SO", 2))
+	else if (!ft_strncmp(line, "SO", 2))
 	{
 		if (parse_so(map, line, count))
 			return (1);
 	}
-	else if (!strncmp(line, "WE", 2))
+	else if (!ft_strncmp(line, "WE", 2))
 	{
 		if (parse_we(map, line, count))
 			return (1);
 	}
-	else if (!strncmp(line, "EA", 2))
+	else if (!ft_strncmp(line, "EA", 2))
 	{
 		if (parse_ea(map, line, count))
 			return (1);
