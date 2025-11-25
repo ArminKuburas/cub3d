@@ -1,3 +1,5 @@
 # cub3d
 
-libmlx42.a -Iinclude -ldl -lglfw -pthread -lm
+Here is a video demonstration of our Cub3D implementation
+
+https://youtu.be/dwAx6tYZXvQ
