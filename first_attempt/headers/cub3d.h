@@ -13,7 +13,7 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "../../../MLX42/include/MLX42/MLX42.h"
+# include "../other_libraries/MLX42/include/MLX42/MLX42.h"
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdlib.h>
